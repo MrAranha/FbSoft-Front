@@ -2,10 +2,10 @@ import { Box, Button, Modal, Stack, TextField, Typography } from '@mui/material'
 import { useFormik } from 'formik';
 import * as React from 'react';
 import * as yup from 'yup';
-import { editUser } from './requests';
+import { editCarro } from './requests';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { getEmpresaByIDs } from './crud';
+import { getCarroByIDs } from './crud';
 
 const style = {
   position: 'absolute',
@@ -19,49 +19,49 @@ const style = {
   p: 4,
 };
 
-export const EditEmpresaForm = ({
+export const EditCarroForm = ({
   open,
   setOpen,
   sendNotification,
   setLoading,
-  setEmpresas,
-  empresaID,
-  setEmpresaID,
+  setCarros,
+  CarroID,
+  setCarroID,
 }) => {
-  const [user, setEmpresa] = useState({});
+  const [Carro, setCarro] = useState({});
   useEffect(() => {
-    if (empresaID)
-      getEmpresaByIDs(empresaID, sendNotification)
+    if (CarroID)
+      getCarroByIDs(CarroID, sendNotification)
         .then((data) => {
-          setEmpresas(data.data);
+          setCarro(data.data);
         })
         .catch((error) => {
           sendNotification({ msg: error.title || error, variant: 'error' });
         });
-  }, [empresaID]);
+  }, [CarroID]);
   return (
-    <EditEmpresaModal
+    <EditCarroModal
       open={open}
       setOpen={setOpen}
       sendNotification={sendNotification}
       setLoading={setLoading}
-      setEmpresas={setEmpresas}
-      user={user}
-      setEmpresaID={setEmpresaID}
-      setEmpresa={setEmpresa}
+      setCarros={setCarros}
+      Carro={Carro}
+      setCarroID={setCarroID}
+      setCarro={setCarro}
     />
   );
 };
 
-export const EditEmpresaModal = ({
+export const EditCarroModal = ({
   open,
   setOpen,
   sendNotification,
   setLoading,
-  setEmpresas,
-  user,
-  setEmpresaID,
-  setEmpresa,
+  setCarros,
+  Carro,
+  setCarroID,
+  setCarro,
 }) => {
   const validationSchema = yup.object({
     name: yup.string('Insira o nome').required('Nome é obrigatório'),
@@ -73,11 +73,11 @@ export const EditEmpresaModal = ({
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      ...user,
+      ...Carro,
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      editEmpresa(values, setLoading, sendNotification, handleClose, setEmpresas);
+      editCarro(values, setLoading, sendNotification, handleClose, setCarros);
     },
   });
 
@@ -85,8 +85,8 @@ export const EditEmpresaModal = ({
     if (reason && reason === 'backdropClick') return;
     formik.resetForm();
     setOpen(false);
-    setEmpresaID('');
-    setEmpresa();
+    setCarroID('');
+    setCarro();
   };
 
   return (
@@ -105,8 +105,8 @@ export const EditEmpresaModal = ({
             <TextField
               fullWidth
               id="email"
-              inputProps={{ maxLength: 255 }}
               name="email"
+              inputProps={{ maxLength: 255 }}
               label="E-mail"
               value={formik.values.email}
               onChange={formik.handleChange}
@@ -131,6 +131,7 @@ export const EditEmpresaModal = ({
             paddingTop={3}
             direction="row"
             spacing={1}
+            inputProps={{ maxLength: 255 }}
             justifyContent="flex-end"
             alignItems="flex-start"
           >

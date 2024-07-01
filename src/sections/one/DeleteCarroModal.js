@@ -1,6 +1,6 @@
 import { Box, Button, Modal, Stack, Typography } from '@mui/material';
 import * as React from 'react';
-import { deleteEmpresa } from './requests';
+import { deleteCarro } from './requests';
 
 const style = {
   position: 'absolute',
@@ -14,18 +14,18 @@ const style = {
   p: 4,
 };
 
-export const DeleteEmpresaModal = ({
+export const DeleteCarroModal = ({
   open,
   setOpen,
   sendNotification,
   setLoading,
-  setUsers,
-  empresaID,
-  setEmpresaID,
+  setCarros,
+  CarroID,
+  setCarroID,
 }) => {
   const handleClose = (event, reason) => {
     setOpen(false);
-    setEmpresaID('');
+    setCarroID('');
   };
 
   return (
@@ -56,7 +56,7 @@ export const DeleteEmpresaModal = ({
             color="secondary"
             variant="contained"
             onClick={() => {
-              deleteEmpresa(empresaID, setLoading, sendNotification, handleClose, setUsers);
+              deleteCarro(CarroID, setLoading, sendNotification, handleClose, setCarros);
             }}
           >
             Deletar

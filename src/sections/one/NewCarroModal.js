@@ -2,7 +2,7 @@ import { Box, Button, Modal, Stack, TextField, Typography } from '@mui/material'
 import { useFormik } from 'formik';
 import * as React from 'react';
 import * as yup from 'yup';
-import { createEmpresa } from './requests';
+import { createCarro } from './requests';
 
 const style = {
   position: 'absolute',
@@ -16,7 +16,7 @@ const style = {
   p: 4,
 };
 
-export const NewEmpresaModal = ({ open, setOpen, sendNotification, setLoading, setEmpresas }) => {
+export const NewCarroModal = ({ open, setOpen, sendNotification, setLoading, setCarros }) => {
   const validationSchema = yup.object({
     Nome: yup.string('Insira o nome').required('Nome é obrigatório'),
     Email: yup
@@ -36,7 +36,7 @@ export const NewEmpresaModal = ({ open, setOpen, sendNotification, setLoading, s
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      createEmpresa(values, setLoading, sendNotification, handleClose, setEmpresas);
+      createCarro(values, setLoading, sendNotification, handleClose, setCarros);
     },
   });
 
@@ -64,8 +64,8 @@ export const NewEmpresaModal = ({ open, setOpen, sendNotification, setLoading, s
               id="Email"
               name="Email"
               label="E-mail"
-              inputProps={{ maxLength: 255 }}
               value={formik.values.Email}
+              inputProps={{ maxLength: 255 }}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.touched.Email && Boolean(formik.errors.Email)}
@@ -75,8 +75,8 @@ export const NewEmpresaModal = ({ open, setOpen, sendNotification, setLoading, s
               fullWidth
               id="Nome"
               name="Nome"
-              inputProps={{ maxLength: 255 }}
               label="Nome"
+              inputProps={{ maxLength: 255 }}
               value={formik.values.Nome}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -88,8 +88,8 @@ export const NewEmpresaModal = ({ open, setOpen, sendNotification, setLoading, s
               id="Password"
               name="Password"
               label="Senha"
-              inputProps={{ maxLength: 255 }}
               type="Password"
+              inputProps={{ maxLength: 255 }}
               value={formik.values.Password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}

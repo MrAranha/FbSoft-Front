@@ -1,13 +1,15 @@
 import { DataGrid, GridActionsCellItem, GridDeleteIcon } from '@mui/x-data-grid';
 import React, { useEffect, useState } from 'react';
 import { LoadingScreen } from 'src/components/loading-screen';
+import { getCarros } from './requests';
 import Iconify from 'src/components/iconify';
+import { DeleteCarroModal } from './DeleteCarroModal';
 
-export const EmpresasTable = ({
+export const CarrosTable = ({
   rows,
   loading,
   setOpenDeleteModal,
-  setEmpresaID,
+  setCarroID,
   setOpenEditModal,
   setOpenTrocarSenhaModal,
 }) => {
@@ -21,14 +23,14 @@ export const EmpresasTable = ({
         <GridActionsCellItem
           icon={<Iconify width={24} icon={'mdi:pencil'} />}
           onClick={() => {
-            setEmpresaID(params.row['id']);
+            setCarroID(params.row['id']);
             setOpenEditModal(true);
           }}
           label="Editar"
         />,
         <GridActionsCellItem
           onClick={() => {
-            setEmpresaID(params.row['id']);
+            setCarroID(params.row['id']);
             setOpenDeleteModal(true);
           }}
           icon={<GridDeleteIcon />}
@@ -36,11 +38,11 @@ export const EmpresasTable = ({
         />,
         <GridActionsCellItem
           onClick={() => {
-            setEmpresaID(params.row['id']);
+            setCarroID(params.row['id']);
             setOpenTrocarSenhaModal(true);
           }}
           icon={<Iconify width={24} icon={'mdi:eye'} />}
-          label="Deletar"
+          label="Trocar Senha"
         />,
       ],
     },

@@ -1,13 +1,13 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Iconify from 'src/components/iconify';
-import { getUsers } from './requests';
+import { getCarros } from './requests';
 
-export const EmpresasHeader = ({ getUsers, handleOpenNewModal }) => {
+export const CarrosHeader = ({ getCarros, handleOpenNewModal }) => {
   return (
     <Stack direction="row" justifyContent="space-between" alignItems="flex-start" spacing={2}>
       <Stack container spacing={1}>
         <Box align="left">
-          <Typography variant="h4"> Empresas </Typography>
+          <Typography variant="h4"> Usuários </Typography>
         </Box>
       </Stack>
       <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={1}>
@@ -17,7 +17,7 @@ export const EmpresasHeader = ({ getUsers, handleOpenNewModal }) => {
             direction="row-reverse"
             endIcon={<Iconify width={24} icon={'mdi:magnify'} />}
             onClick={() => {
-              getUsers();
+              getCarros();
             }}
           >
             Buscar

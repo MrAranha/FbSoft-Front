@@ -1,30 +1,95 @@
 'use client';
-
-import Box from '@mui/material/Box';
-import { alpha } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-
+import { CarrosTable } from './CarrosTable';
 import { useSettingsContext } from 'src/components/settings';
+import { CarrosFilter } from './CarrosFilter';
+import { CarrosHeader } from './CarrosHeader';
+import { useEffect, useState } from 'react';
+import { searchCarros } from './requests';
+import { getCarros } from './crud';
+import useNotification from 'src/theme/overrides/components/AlertMessage';
+import { SnackbarProvider, enqueueSnackbar } from 'notistack';
+import { NewCarroModal } from './NewCarroModal';
+import { DeleteCarroModal } from './DeleteCarroModal';
+import { EditCarroForm } from './EditCarroModal';
 
 // ----------------------------------------------------------------------
 
 export default function OneView() {
+  const [openNewModal, setOpenNewModal] = useState(false);
+  const handleOpenNewModal = () => {
+    setOpenNewModal(true);
+  };
+  const [openDeleteModal, setOpenDeleteModal] = useState(false);
+  const [openTrocarSenhaModal, setOpenTrocarSenhaModal] = useState(false);
+  const [openEditCarroModal, setOpenEditCarroModal] = useState(false);
+  const [CarroID, setCarroID] = useState('');
+  const [msg, sendNotification] = useNotification();
   const settings = useSettingsContext();
+  const [Carros, setCarros] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [queries, setQueries] = useState({
+    Nome: '',
+    Email: '',
+    Empresa: '',
+  });
+  useEffect(() => {
+    setLoading(true);
+    getCarros(queries)
+      .then((data) => {
+        if (data.data) {
+          setCarros(data.data);
+        } else {
+          setCarros([]);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        sendNotification({ msg: error.title || error, variant: 'error' });
+        setLoading(false);
+      });
+  }, []);
 
+  const getCarrosFilter = () => {
+    searchCarros(queries, setLoading, setCarros, sendNotification);
+  };
   return (
     <Container maxWidth={settings.themeStretch ? false : 'xl'}>
-      <Typography variant="h4"> Page One </Typography>
-
-      <Box
-        sx={{
-          mt: 5,
-          width: 1,
-          height: 320,
-          borderRadius: 2,
-          bgcolor: (theme) => alpha(theme.palette.grey[500], 0.04),
-          border: (theme) => `dashed 1px ${theme.palette.divider}`,
-        }}
+      <SnackbarProvider />
+      <CarrosHeader getCarros={getCarrosFilter} handleOpenNewModal={handleOpenNewModal} />
+      <NewCarroModal
+        open={openNewModal}
+        setOpen={setOpenNewModal}
+        sendNotification={sendNotification}
+        setLoading={setLoading}
+        setCarros={setCarros}
+      />
+      <CarrosFilter queries={queries} setQueries={setQueries} />
+      <CarrosTable
+        rows={Carros}
+        loading={loading}
+        setOpenEditModal={setOpenEditCarroModal}
+        setOpenDeleteModal={setOpenDeleteModal}
+        setCarroID={setCarroID}
+        setOpenTrocarSenhaModal={setOpenTrocarSenhaModal}
+      />
+      <DeleteCarroModal
+        open={openDeleteModal}
+        setOpen={setOpenDeleteModal}
+        sendNotification={sendNotification}
+        setLoading={setLoading}
+        setCarros={setCarros}
+        CarroID={CarroID}
+        setCarroID={setCarroID}
+      />
+      <EditCarroForm
+        open={openEditCarroModal}
+        setOpen={setOpenEditCarroModal}
+        sendNotification={sendNotification}
+        setLoading={setLoading}
+        setCarros={setCarros}
+        CarroID={CarroID}
+        setCarroID={setCarroID}
       />
     </Container>
   );
