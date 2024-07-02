@@ -1,4 +1,13 @@
-import { Box, Button, Modal, Stack, TextField, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  ButtonBase,
+  Modal,
+  Stack,
+  TextField,
+  ToggleButton,
+  Typography,
+} from '@mui/material';
 import { useFormik } from 'formik';
 import * as React from 'react';
 import * as yup from 'yup';
@@ -6,6 +15,7 @@ import { editUser } from './requests';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { getUserByIDs } from './crud';
+import Iconify from 'src/components/iconify';
 
 const style = {
   position: 'absolute',
@@ -77,10 +87,11 @@ export const EditUserModal = ({
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
+      values.role = roleBool ? 'A' : 'U';
       editUser(values, setLoading, sendNotification, handleClose, setUsers);
     },
   });
-
+  const [roleBool, setRoleBool] = useState(formik.values.role ? 'A' : 'U');
   const handleClose = (event, reason) => {
     if (reason && reason === 'backdropClick') return;
     formik.resetForm();
@@ -126,6 +137,16 @@ export const EditUserModal = ({
               error={formik.touched.name && Boolean(formik.errors.name)}
               helperText={formik.touched.name && formik.errors.name}
             />
+            <ToggleButton
+              value={roleBool}
+              label="Administrador?"
+              selected={roleBool}
+              onChange={() => {
+                setRoleBool(!roleBool);
+              }}
+            >
+              <Iconify width={24} icon={'mdi:check'} />
+            </ToggleButton>
           </Stack>
           <Stack
             paddingTop={3}

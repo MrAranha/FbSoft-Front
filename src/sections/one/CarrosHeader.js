@@ -1,8 +1,10 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Iconify from 'src/components/iconify';
 import { getCarros } from './requests';
+import { localStorageGetItem } from 'src/utils/storage-available';
 
 export const CarrosHeader = ({ getCarros, handleOpenNewModal }) => {
+  const role = localStorageGetItem('role');
   return (
     <Stack direction="row" justifyContent="space-between" alignItems="flex-start" spacing={2}>
       <Stack container spacing={1}>
@@ -24,16 +26,20 @@ export const CarrosHeader = ({ getCarros, handleOpenNewModal }) => {
           </Button>
         </Box>
         <Box>
-          <Button
-            variant="contained"
-            direction="row-reverse"
-            onClick={() => {
-              handleOpenNewModal();
-            }}
-            endIcon={<Iconify width={24} icon={'mdi:paper'} />}
-          >
-            Novo
-          </Button>
+          {role === 'A' ? (
+            <Button
+              variant="contained"
+              direction="row-reverse"
+              onClick={() => {
+                handleOpenNewModal();
+              }}
+              endIcon={<Iconify width={24} icon={'mdi:paper'} />}
+            >
+              Novo
+            </Button>
+          ) : (
+            <></>
+          )}
         </Box>
       </Stack>
     </Stack>

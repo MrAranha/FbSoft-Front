@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { paths } from 'src/routes/paths';
 
 import SvgColor from 'src/components/svg-color';
+import { localStorageGetItem } from 'src/utils/storage-available';
 
 // ----------------------------------------------------------------------
 
@@ -44,38 +45,45 @@ const ICONS = {
 
 // ----------------------------------------------------------------------
 
-export function useNavData() {
-  const data = useMemo(
-    () => [
-      // OVERVIEW
-      // ----------------------------------------------------------------------
-      {
-        subheader: 'Menu',
-        items: [{ title: 'Carros', path: paths.dashboard.root, icon: ICONS.dashboard }],
-      },
+const role = localStorageGetItem('role');
 
-      // MANAGEMENT
-      // ----------------------------------------------------------------------
-      {
-        subheader: 'Administração',
-        items: [
+export function useNavData() {
+  const data =
+    role === 'A'
+      ? [
+          // OVERVIEW
+          // ----------------------------------------------------------------------
+
           {
-            title: 'Usuários',
-            path: paths.dashboard.group.root,
-            icon: ICONS.user,
-            children: [
+            subheader: 'Menu',
+            items: [{ title: 'Carros', path: paths.dashboard.root, icon: ICONS.dashboard }],
+          },
+
+          // MANAGEMENT
+          // ----------------------------------------------------------------------
+          {
+            subheader: 'Administração',
+            items: [
               {
-                title: 'Gerenciar Usuários',
-                path: paths.dashboard.group.usuarios,
-                icon: ICONS.gear,
+                title: 'Usuários',
+                path: paths.dashboard.group.root,
+                icon: ICONS.user,
+                children: [
+                  {
+                    title: 'Gerenciar Usuários',
+                    path: paths.dashboard.group.usuarios,
+                    icon: ICONS.gear,
+                  },
+                ],
               },
             ],
           },
-        ],
-      },
-    ],
-    []
-  );
-
+        ]
+      : [
+          {
+            subheader: 'Menu',
+            items: [{ title: 'Carros', path: paths.dashboard.root, icon: ICONS.dashboard }],
+          },
+        ];
   return data;
 }

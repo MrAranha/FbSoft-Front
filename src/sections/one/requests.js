@@ -3,6 +3,7 @@ import {
   createCarros,
   deleteCarros,
   editCarros,
+  fazerPedidoRequest,
   getCarroByIDs,
   getCarros,
 } from './crud';
@@ -15,6 +16,31 @@ export const searchCarros = (queries, setLoading, setCarros, sendNotification) =
         setCarros(data.data);
       } else {
         setCarros([]);
+      }
+      setLoading(false);
+    })
+    .catch((error) => {
+      sendNotification({ msg: error.title || error.slice(0, 700), variant: 'error' });
+      setLoading(false);
+    });
+};
+export const fazerPedidoCrud = (carroid, userid, setLoading, sendNotification) => {
+  setLoading(true);
+  fazerPedidoRequest(carroid, userid)
+    .then((data) => {
+      debugger;
+      if (data.data.id === 0) {
+        sendNotification({
+          msg: 'PEDIDO FEITO, UM CONSULTOR O CONTATARÁ LOGO EM DIANTE' || error.slice(0, 700),
+          variant: 'success',
+        });
+      } else {
+        sendNotification({
+          msg:
+            'PEDIDO FEITO, PORÉM SEM ESTOQUE, QUANDO HOUVER ABERTURA DE ESTOQUE CHEGARÁ UM EMAIL' ||
+            error.slice(0, 700),
+          variant: 'success',
+        });
       }
       setLoading(false);
     })

@@ -5,6 +5,18 @@ export function getCarros(queries) {
   return response;
 }
 
+export function fazerPedidoRequest(carroid, userid) {
+  const response = axios({
+    method: 'put',
+    url: '/api/Carros/fazerPedido',
+    data: { user: userid, idCarro: carroid },
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+  return response;
+}
+
 export function deleteCarros(user) {
   const response = axios.delete('/api/Carros/delete', { params: { Id: user } });
   return response;

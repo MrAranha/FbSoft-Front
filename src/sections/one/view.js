@@ -5,13 +5,14 @@ import { useSettingsContext } from 'src/components/settings';
 import { CarrosFilter } from './CarrosFilter';
 import { CarrosHeader } from './CarrosHeader';
 import { useEffect, useState } from 'react';
-import { searchCarros } from './requests';
+import { fazerPedidoCrud, searchCarros } from './requests';
 import { getCarros } from './crud';
 import useNotification from 'src/theme/overrides/components/AlertMessage';
 import { SnackbarProvider, enqueueSnackbar } from 'notistack';
 import { NewCarroModal } from './NewCarroModal';
 import { DeleteCarroModal } from './DeleteCarroModal';
 import { EditCarroForm } from './EditCarroModal';
+import { localStorageGetItem } from 'src/utils/storage-available';
 
 // ----------------------------------------------------------------------
 
@@ -33,6 +34,7 @@ export default function OneView() {
     Ano: '',
     Marca: '',
   });
+  const role = localStorageGetItem('role');
 
   useEffect(() => {
     setLoading(true);
@@ -54,6 +56,9 @@ export default function OneView() {
   const getCarrosFilter = () => {
     searchCarros(queries, setLoading, setCarros, sendNotification);
   };
+  const fazerPedido = (carroid, userid) => {
+    fazerPedidoCrud(carroid, userid, setLoading, sendNotification);
+  };
   return (
     <Container maxWidth={settings.themeStretch ? false : 'xl'}>
       <SnackbarProvider />
@@ -68,11 +73,13 @@ export default function OneView() {
       <CarrosFilter queries={queries} setQueries={setQueries} />
       <CarrosTable
         rows={Carros}
+        role={role}
         loading={loading}
         setOpenEditModal={setOpenEditCarroModal}
         setOpenDeleteModal={setOpenDeleteModal}
         setCarroID={setCarroID}
         setOpenTrocarSenhaModal={setOpenTrocarSenhaModal}
+        fazerPedido={fazerPedido}
       />
       <DeleteCarroModal
         open={openDeleteModal}

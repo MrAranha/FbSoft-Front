@@ -59,14 +59,14 @@ export function AuthProvider({ children }) {
   const initialize = useCallback(async () => {
     try {
       const accessToken = localStorage.getItem(STORAGE_KEY);
-
       if (accessToken && isValidToken(accessToken)) {
         setSession(accessToken);
-
         const response = await axios.get(endpoints.auth.me);
 
         const { user } = response.data;
         localStorage.setItem('username', user.username);
+        localStorage.setItem('role', user.role);
+        localStorage.setItem('userid', user.id);
         localStorage.setItem('email', user.email);
 
         dispatch({
@@ -109,9 +109,9 @@ export function AuthProvider({ children }) {
     };
 
     const response = await axios.post(endpoints.auth.login, data);
-
     const { accessToken, user } = response.data;
-    setSession(accessToken, user.displayName, user.email);
+
+    setSession(accessToken, user);
 
     dispatch({
       type: 'LOGIN',
