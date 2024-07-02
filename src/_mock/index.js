@@ -1,16 +1,16 @@
-export/n*/nfrom/n'./assets';
-export/n*/nfrom/n'./_mock';
+export * from './assets';
+export * from './_mock';
 
-//----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/n*/nfrom/n'./_job';
-export/n*/nfrom/n'./_user';
-export/n*/nfrom/n'./_tour';
-export/n*/nfrom/n'./_blog';
-export/n*/nfrom/n'./_files';
-export/n*/nfrom/n'./_order';
-export/n*/nfrom/n'./_others';
-export/n*/nfrom/n'./_invoice';
-export/n*/nfrom/n'./_product';
-export/n*/nfrom/n'./_overview';
-export/n*/nfrom/n'./_calendar';
+export * from './_job';
+export * from './_user';
+export * from './_tour';
+export * from './_blog';
+export * from './_files';
+export * from './_order';
+export * from './_others';
+export * from './_invoice';
+export * from './_product';
+export * from './_overview';
+export * from './_calendar';

@@ -1,123 +1,123 @@
-import/n{/nBarlow,/nPublic_Sans/n}/nfrom/n'next/font/google';
+import { Barlow, Public_Sans } from 'next/font/google';
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/nremToPx(value)/n{
-/n/nreturn/nMath.round(parseFloat(value)/n*/n16);
+export function remToPx(value) {
+  return Math.round(parseFloat(value) * 16);
 }
 
-export/nfunction/npxToRem(value)/n{
-/n/nreturn/n`${value/n//n16}rem`;
+export function pxToRem(value) {
+  return `${value / 16}rem`;
 }
 
-export/nfunction/nresponsiveFontSizes({/nsm,/nmd,/nlg/n})/n{
-/n/nreturn/n{
-/n/n/n/n'@media/n(min-width:600px)':/n{
-/n/n/n/n/n/nfontSize:/npxToRem(sm),
-/n/n/n/n},
-/n/n/n/n'@media/n(min-width:900px)':/n{
-/n/n/n/n/n/nfontSize:/npxToRem(md),
-/n/n/n/n},
-/n/n/n/n'@media/n(min-width:1200px)':/n{
-/n/n/n/n/n/nfontSize:/npxToRem(lg),
-/n/n/n/n},
-/n/n};
+export function responsiveFontSizes({ sm, md, lg }) {
+  return {
+    '@media (min-width:600px)': {
+      fontSize: pxToRem(sm),
+    },
+    '@media (min-width:900px)': {
+      fontSize: pxToRem(md),
+    },
+    '@media (min-width:1200px)': {
+      fontSize: pxToRem(lg),
+    },
+  };
 }
 
-export/nconst/nprimaryFont/n=/nPublic_Sans({
-/n/nweight:/n['400',/n'500',/n'600',/n'700',/n'800',/n'900'],
-/n/nsubsets:/n['latin'],
-/n/ndisplay:/n'swap',
-/n/nfallback:/n['Helvetica',/n'Arial',/n'sans-serif'],
+export const primaryFont = Public_Sans({
+  weight: ['400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Helvetica', 'Arial', 'sans-serif'],
 });
 
-export/nconst/nsecondaryFont/n=/nBarlow({
-/n/nweight:/n['400',/n'500',/n'600',/n'700',/n'800',/n'900'],
-/n/nsubsets:/n['latin'],
-/n/ndisplay:/n'swap',
-/n/nfallback:/n['Helvetica',/n'Arial',/n'sans-serif'],
+export const secondaryFont = Barlow({
+  weight: ['400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Helvetica', 'Arial', 'sans-serif'],
 });
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-///nLEARN/nMORE
-///nhttps://nextjs.org/docs/basic-features/font-optimization#google-fonts
+// LEARN MORE
+// https://nextjs.org/docs/basic-features/font-optimization#google-fonts
 
-export/nconst/ntypography/n=/n{
-/n/nfontFamily:/nprimaryFont.style.fontFamily,
-/n/nfontSecondaryFamily:/nsecondaryFont.style.fontFamily,
-/n/nfontWeightRegular:/n400,
-/n/nfontWeightMedium:/n500,
-/n/nfontWeightSemiBold:/n600,
-/n/nfontWeightBold:/n700,
-/n/nh1:/n{
-/n/n/n/nfontWeight:/n800,
-/n/n/n/nlineHeight:/n80/n//n64,
-/n/n/n/nfontSize:/npxToRem(40),
-/n/n/n/n...responsiveFontSizes({/nsm:/n52,/nmd:/n58,/nlg:/n64/n}),
-/n/n},
-/n/nh2:/n{
-/n/n/n/nfontWeight:/n800,
-/n/n/n/nlineHeight:/n64/n//n48,
-/n/n/n/nfontSize:/npxToRem(32),
-/n/n/n/n...responsiveFontSizes({/nsm:/n40,/nmd:/n44,/nlg:/n48/n}),
-/n/n},
-/n/nh3:/n{
-/n/n/n/nfontWeight:/n700,
-/n/n/n/nlineHeight:/n1.5,
-/n/n/n/nfontSize:/npxToRem(24),
-/n/n/n/n...responsiveFontSizes({/nsm:/n26,/nmd:/n30,/nlg:/n32/n}),
-/n/n},
-/n/nh4:/n{
-/n/n/n/nfontWeight:/n700,
-/n/n/n/nlineHeight:/n1.5,
-/n/n/n/nfontSize:/npxToRem(20),
-/n/n/n/n...responsiveFontSizes({/nsm:/n20,/nmd:/n24,/nlg:/n24/n}),
-/n/n},
-/n/nh5:/n{
-/n/n/n/nfontWeight:/n700,
-/n/n/n/nlineHeight:/n1.5,
-/n/n/n/nfontSize:/npxToRem(18),
-/n/n/n/n...responsiveFontSizes({/nsm:/n19,/nmd:/n20,/nlg:/n20/n}),
-/n/n},
-/n/nh6:/n{
-/n/n/n/nfontWeight:/n700,
-/n/n/n/nlineHeight:/n28/n//n18,
-/n/n/n/nfontSize:/npxToRem(17),
-/n/n/n/n...responsiveFontSizes({/nsm:/n18,/nmd:/n18,/nlg:/n18/n}),
-/n/n},
-/n/nsubtitle1:/n{
-/n/n/n/nfontWeight:/n600,
-/n/n/n/nlineHeight:/n1.5,
-/n/n/n/nfontSize:/npxToRem(16),
-/n/n},
-/n/nsubtitle2:/n{
-/n/n/n/nfontWeight:/n600,
-/n/n/n/nlineHeight:/n22/n//n14,
-/n/n/n/nfontSize:/npxToRem(14),
-/n/n},
-/n/nbody1:/n{
-/n/n/n/nlineHeight:/n1.5,
-/n/n/n/nfontSize:/npxToRem(16),
-/n/n},
-/n/nbody2:/n{
-/n/n/n/nlineHeight:/n22/n//n14,
-/n/n/n/nfontSize:/npxToRem(14),
-/n/n},
-/n/ncaption:/n{
-/n/n/n/nlineHeight:/n1.5,
-/n/n/n/nfontSize:/npxToRem(12),
-/n/n},
-/n/noverline:/n{
-/n/n/n/nfontWeight:/n700,
-/n/n/n/nlineHeight:/n1.5,
-/n/n/n/nfontSize:/npxToRem(12),
-/n/n/n/ntextTransform:/n'uppercase',
-/n/n},
-/n/nbutton:/n{
-/n/n/n/nfontWeight:/n700,
-/n/n/n/nlineHeight:/n24/n//n14,
-/n/n/n/nfontSize:/npxToRem(14),
-/n/n/n/ntextTransform:/n'unset',
-/n/n},
+export const typography = {
+  fontFamily: primaryFont.style.fontFamily,
+  fontSecondaryFamily: secondaryFont.style.fontFamily,
+  fontWeightRegular: 400,
+  fontWeightMedium: 500,
+  fontWeightSemiBold: 600,
+  fontWeightBold: 700,
+  h1: {
+    fontWeight: 800,
+    lineHeight: 80 / 64,
+    fontSize: pxToRem(40),
+    ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
+  },
+  h2: {
+    fontWeight: 800,
+    lineHeight: 64 / 48,
+    fontSize: pxToRem(32),
+    ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
+  },
+  h3: {
+    fontWeight: 700,
+    lineHeight: 1.5,
+    fontSize: pxToRem(24),
+    ...responsiveFontSizes({ sm: 26, md: 30, lg: 32 }),
+  },
+  h4: {
+    fontWeight: 700,
+    lineHeight: 1.5,
+    fontSize: pxToRem(20),
+    ...responsiveFontSizes({ sm: 20, md: 24, lg: 24 }),
+  },
+  h5: {
+    fontWeight: 700,
+    lineHeight: 1.5,
+    fontSize: pxToRem(18),
+    ...responsiveFontSizes({ sm: 19, md: 20, lg: 20 }),
+  },
+  h6: {
+    fontWeight: 700,
+    lineHeight: 28 / 18,
+    fontSize: pxToRem(17),
+    ...responsiveFontSizes({ sm: 18, md: 18, lg: 18 }),
+  },
+  subtitle1: {
+    fontWeight: 600,
+    lineHeight: 1.5,
+    fontSize: pxToRem(16),
+  },
+  subtitle2: {
+    fontWeight: 600,
+    lineHeight: 22 / 14,
+    fontSize: pxToRem(14),
+  },
+  body1: {
+    lineHeight: 1.5,
+    fontSize: pxToRem(16),
+  },
+  body2: {
+    lineHeight: 22 / 14,
+    fontSize: pxToRem(14),
+  },
+  caption: {
+    lineHeight: 1.5,
+    fontSize: pxToRem(12),
+  },
+  overline: {
+    fontWeight: 700,
+    lineHeight: 1.5,
+    fontSize: pxToRem(12),
+    textTransform: 'uppercase',
+  },
+  button: {
+    fontWeight: 700,
+    lineHeight: 24 / 14,
+    fontSize: pxToRem(14),
+    textTransform: 'unset',
+  },
 };

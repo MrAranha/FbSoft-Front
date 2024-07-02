@@ -57,9 +57,11 @@ export const tokenExpired = (exp) => {
 
 // ----------------------------------------------------------------------
 
-export const setSession = (accessToken) => {
+export const setSession = (accessToken, username, email) => {
   if (accessToken) {
     localStorage.setItem('accessToken', accessToken);
+    localStorage.setItem('username', username);
+    localStorage.setItem('email', email);
 
     axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
 

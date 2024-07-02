@@ -1,88 +1,88 @@
-//----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-exportconstPRODUCT_GENDER_OPTIONS/n=/n[
-/n/n{/nlabel:/n'Men',/nvalue:/n'Men'/n},
-/n/n{/nlabel:/n'Women',/nvalue:/n'Women'/n},
-/n/n{/nlabel:/n'Kids',/nvalue:/n'Kids'/n},
+export const PRODUCT_GENDER_OPTIONS = [
+  { label: 'Men', value: 'Men' },
+  { label: 'Women', value: 'Women' },
+  { label: 'Kids', value: 'Kids' },
 ];
 
-exportconstPRODUCT_CATEGORY_OPTIONS/n=/n['Shose',/n'Apparel',/n'Accessories'];
+export const PRODUCT_CATEGORY_OPTIONS = ['Shose', 'Apparel', 'Accessories'];
 
-exportconstPRODUCT_RATING_OPTIONS/n=/n['up4Star',/n'up3Star',/n'up2Star',/n'up1Star'];
+export const PRODUCT_RATING_OPTIONS = ['up4Star', 'up3Star', 'up2Star', 'up1Star'];
 
-exportconstPRODUCT_COLOR_OPTIONS/n=/n[
-/n/n'#00AB55',
-/n/n'#000000',
-/n/n'#FFFFFF',
-/n/n'#FFC0CB',
-/n/n'#FF4842',
-/n/n'#1890FF',
-/n/n'#94D82D',
-/n/n'#FFC107',
+export const PRODUCT_COLOR_OPTIONS = [
+  '#00AB55',
+  '#000000',
+  '#FFFFFF',
+  '#FFC0CB',
+  '#FF4842',
+  '#1890FF',
+  '#94D82D',
+  '#FFC107',
 ];
 
-exportconstPRODUCT_COLOR_NAME_OPTIONS/n=/n[
-/n/n{/nvalue:/n'red',/nlabel:/n'Red'/n},
-/n/n{/nvalue:/n'blue',/nlabel:/n'Blue'/n},
-/n/n{/nvalue:/n'cyan',/nlabel:/n'Cyan'/n},
-/n/n{/nvalue:/n'green',/nlabel:/n'Green'/n},
-/n/n{/nvalue:/n'yellow',/nlabel:/n'Yellow'/n},
-/n/n{/nvalue:/n'violet',/nlabel:/n'Violet'/n},
-/n/n{/nvalue:/n'black',/nlabel:/n'Black'/n},
-/n/n{/nvalue:/n'white',/nlabel:/n'White'/n},
+export const PRODUCT_COLOR_NAME_OPTIONS = [
+  { value: 'red', label: 'Red' },
+  { value: 'blue', label: 'Blue' },
+  { value: 'cyan', label: 'Cyan' },
+  { value: 'green', label: 'Green' },
+  { value: 'yellow', label: 'Yellow' },
+  { value: 'violet', label: 'Violet' },
+  { value: 'black', label: 'Black' },
+  { value: 'white', label: 'White' },
 ];
 
-exportconstPRODUCT_SIZE_OPTIONS/n=/n[
-/n/n{/nvalue:/n'7',/nlabel:/n'7'/n},
-/n/n{/nvalue:/n'8',/nlabel:/n'8'/n},
-/n/n{/nvalue:/n'8.5',/nlabel:/n'8.5'/n},
-/n/n{/nvalue:/n'9',/nlabel:/n'9'/n},
-/n/n{/nvalue:/n'9.5',/nlabel:/n'9.5'/n},
-/n/n{/nvalue:/n'10',/nlabel:/n'10'/n},
-/n/n{/nvalue:/n'10.5',/nlabel:/n'10.5'/n},
-/n/n{/nvalue:/n'11',/nlabel:/n'11'/n},
-/n/n{/nvalue:/n'11.5',/nlabel:/n'11.5'/n},
-/n/n{/nvalue:/n'12',/nlabel:/n'12'/n},
-/n/n{/nvalue:/n'13',/nlabel:/n'13'/n},
+export const PRODUCT_SIZE_OPTIONS = [
+  { value: '7', label: '7' },
+  { value: '8', label: '8' },
+  { value: '8.5', label: '8.5' },
+  { value: '9', label: '9' },
+  { value: '9.5', label: '9.5' },
+  { value: '10', label: '10' },
+  { value: '10.5', label: '10.5' },
+  { value: '11', label: '11' },
+  { value: '11.5', label: '11.5' },
+  { value: '12', label: '12' },
+  { value: '13', label: '13' },
 ];
 
-exportconstPRODUCT_STOCK_OPTIONS/n=/n[
-/n/n{/nvalue:/n'instock',/nlabel:/n'Instock'/n},
-/n/n{/nvalue:/n'lowstock',/nlabel:/n'Lowstock'/n},
-/n/n{/nvalue:/n'outofstock',/nlabel:/n'Outofstock'/n},
+export const PRODUCT_STOCK_OPTIONS = [
+  { value: 'in stock', label: 'In stock' },
+  { value: 'low stock', label: 'Low stock' },
+  { value: 'out of stock', label: 'Out of stock' },
 ];
 
-exportconstPRODUCT_PUBLISH_OPTIONS/n=/n[
-/n/n{
-/n/n/n/nvalue:/n'published',
-/n/n/n/nlabel:/n'Published',
-/n/n},
-/n/n{
-/n/n/n/nvalue:/n'draft',
-/n/n/n/nlabel:/n'Draft',
-/n/n},
+export const PRODUCT_PUBLISH_OPTIONS = [
+  {
+    value: 'published',
+    label: 'Published',
+  },
+  {
+    value: 'draft',
+    label: 'Draft',
+  },
 ];
 
-exportconstPRODUCT_SORT_OPTIONS/n=/n[
-/n/n{/nvalue:/n'featured',/nlabel:/n'Featured'/n},
-/n/n{/nvalue:/n'newest',/nlabel:/n'Newest'/n},
-/n/n{/nvalue:/n'priceDesc',/nlabel:/n'Price:High-Low'/n},
-/n/n{/nvalue:/n'priceAsc',/nlabel:/n'Price:Low-High'/n},
+export const PRODUCT_SORT_OPTIONS = [
+  { value: 'featured', label: 'Featured' },
+  { value: 'newest', label: 'Newest' },
+  { value: 'priceDesc', label: 'Price: High - Low' },
+  { value: 'priceAsc', label: 'Price: Low - High' },
 ];
 
-exportconstPRODUCT_CATEGORY_GROUP_OPTIONS/n=/n[
-/n/n{
-/n/n/n/ngroup:/n'Clothing',
-/n/n/n/nclassify:/n['Shirts',/n'T-shirts',/n'Jeans',/n'Leather',/n'Accessories'],
-/n/n},
-/n/n{
-/n/n/n/ngroup:/n'Tailored',
-/n/n/n/nclassify:/n['Suits',/n'Blazers',/n'Trousers',/n'Waistcoats',/n'Apparel'],
-/n/n},
-/n/n{
-/n/n/n/ngroup:/n'Accessories',
-/n/n/n/nclassify:/n['Shoes',/n'Backpacksandbags',/n'Bracelets',/n'Facemasks'],
-/n/n},
+export const PRODUCT_CATEGORY_GROUP_OPTIONS = [
+  {
+    group: 'Clothing',
+    classify: ['Shirts', 'T-shirts', 'Jeans', 'Leather', 'Accessories'],
+  },
+  {
+    group: 'Tailored',
+    classify: ['Suits', 'Blazers', 'Trousers', 'Waistcoats', 'Apparel'],
+  },
+  {
+    group: 'Accessories',
+    classify: ['Shoes', 'Backpacks and bags', 'Bracelets', 'Face masks'],
+  },
 ];
 
-exportconstPRODUCT_CHECKOUT_STEPS/n=/n['Cart',/n'Billing&address',/n'Payment'];
+export const PRODUCT_CHECKOUT_STEPS = ['Cart', 'Billing & address', 'Payment'];

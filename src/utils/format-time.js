@@ -1,50 +1,50 @@
-import/n{/nformat,/ngetTime,/nformatDistanceToNow/n}/nfrom/n'date-fns';
+import { format, getTime, formatDistanceToNow } from 'date-fns';
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/nfDate(date,/nnewFormat)/n{
-/n/nconst/nfm/n=/nnewFormat/n||/n'dd/nMMM/nyyyy';
+export function fDate(date, newFormat) {
+  const fm = newFormat || 'dd MMM yyyy';
 
-/n/nreturn/ndate/n?/nformat(new/nDate(date),/nfm)/n:/n'';
+  return date ? format(new Date(date), fm) : '';
 }
 
-export/nfunction/nfTime(date,/nnewFormat)/n{
-/n/nconst/nfm/n=/nnewFormat/n||/n'p';
+export function fTime(date, newFormat) {
+  const fm = newFormat || 'p';
 
-/n/nreturn/ndate/n?/nformat(new/nDate(date),/nfm)/n:/n'';
+  return date ? format(new Date(date), fm) : '';
 }
 
-export/nfunction/nfDateTime(date,/nnewFormat)/n{
-/n/nconst/nfm/n=/nnewFormat/n||/n'dd/nMMM/nyyyy/np';
+export function fDateTime(date, newFormat) {
+  const fm = newFormat || 'dd MMM yyyy p';
 
-/n/nreturn/ndate/n?/nformat(new/nDate(date),/nfm)/n:/n'';
+  return date ? format(new Date(date), fm) : '';
 }
 
-export/nfunction/nfTimestamp(date)/n{
-/n/nreturn/ndate/n?/ngetTime(new/nDate(date))/n:/n'';
+export function fTimestamp(date) {
+  return date ? getTime(new Date(date)) : '';
 }
 
-export/nfunction/nfToNow(date)/n{
-/n/nreturn/ndate
-/n/n/n/n?/nformatDistanceToNow(new/nDate(date),/n{
-/n/n/n/n/n/n/n/naddSuffix:/ntrue,
-/n/n/n/n/n/n})
-/n/n/n/n:/n'';
+export function fToNow(date) {
+  return date
+    ? formatDistanceToNow(new Date(date), {
+        addSuffix: true,
+      })
+    : '';
 }
 
-export/nfunction/nisBetween(inputDate,/nstartDate,/nendDate)/n{
-/n/nconst/ndate/n=/nnew/nDate(inputDate);
+export function isBetween(inputDate, startDate, endDate) {
+  const date = new Date(inputDate);
 
-/n/nconst/nresults/n=
-/n/n/n/nnew/nDate(date.toDateString())/n>=/nnew/nDate(startDate.toDateString())/n&&
-/n/n/n/nnew/nDate(date.toDateString())/n<=/nnew/nDate(endDate.toDateString());
+  const results =
+    new Date(date.toDateString()) >= new Date(startDate.toDateString()) &&
+    new Date(date.toDateString()) <= new Date(endDate.toDateString());
 
-/n/nreturn/nresults;
+  return results;
 }
 
-export/nfunction/nisAfter(startDate,/nendDate)/n{
-/n/nconst/nresults/n=
-/n/n/n/nstartDate/n&&/nendDate/n?/nnew/nDate(startDate).getTime()/n>/nnew/nDate(endDate).getTime()/n:/nfalse;
+export function isAfter(startDate, endDate) {
+  const results =
+    startDate && endDate ? new Date(startDate).getTime() > new Date(endDate).getTime() : false;
 
-/n/nreturn/nresults;
+  return results;
 }

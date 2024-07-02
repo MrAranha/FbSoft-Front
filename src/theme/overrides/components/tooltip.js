@@ -1,18 +1,18 @@
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/ntooltip(theme)/n{
-/n/nconst/nlightMode/n=/ntheme.palette.mode/n===/n'light';
+export function tooltip(theme) {
+  const lightMode = theme.palette.mode === 'light';
 
-/n/nreturn/n{
-/n/n/n/nMuiTooltip:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/ntooltip:/n{
-/n/n/n/n/n/n/n/n/n/nbackgroundColor:/ntheme.palette.grey[lightMode/n?/n800/n:/n700],
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/narrow:/n{
-/n/n/n/n/n/n/n/n/n/ncolor:/ntheme.palette.grey[lightMode/n?/n800/n:/n700],
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n};
+  return {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: theme.palette.grey[lightMode ? 800 : 700],
+        },
+        arrow: {
+          color: theme.palette.grey[lightMode ? 800 : 700],
+        },
+      },
+    },
+  };
 }

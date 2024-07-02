@@ -1,9 +1,7 @@
 import { DataGrid, GridActionsCellItem, GridDeleteIcon } from '@mui/x-data-grid';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { LoadingScreen } from 'src/components/loading-screen';
-import { getCarros } from './requests';
 import Iconify from 'src/components/iconify';
-import { DeleteCarroModal } from './DeleteCarroModal';
 
 export const CarrosTable = ({
   rows,
@@ -11,7 +9,6 @@ export const CarrosTable = ({
   setOpenDeleteModal,
   setCarroID,
   setOpenEditModal,
-  setOpenTrocarSenhaModal,
 }) => {
   const [pageSize, setPageSize] = useState(20);
   const columns = [
@@ -36,24 +33,12 @@ export const CarrosTable = ({
           icon={<GridDeleteIcon />}
           label="Deletar"
         />,
-        <GridActionsCellItem
-          onClick={() => {
-            setCarroID(params.row['id']);
-            setOpenTrocarSenhaModal(true);
-          }}
-          icon={<Iconify width={24} icon={'mdi:eye'} />}
-          label="Trocar Senha"
-        />,
       ],
     },
-    { field: 'displayName', headerName: 'Nome', width: 200 },
-    { field: 'email', headerName: 'E-mail', width: 200 },
-    { field: 'phoneNumber', headerName: 'Telefone', width: 200 },
-    { field: 'country', headerName: 'País', width: 200 },
-    { field: 'address', headerName: 'Endereço', width: 200 },
-    { field: 'state', headerName: 'Estado', width: 200 },
-    { field: 'city', headerName: 'Cidade', width: 200 },
-    { field: 'zipCode', headerName: 'CEP', width: 200 },
+    { field: 'nome', headerName: 'Nome', width: 500 },
+    { field: 'marca', headerName: 'Marca', width: 500 },
+    { field: 'ano', headerName: 'Ano', width: 500 },
+    { field: 'quantidade', headerName: 'Quantidade', width: 500 },
   ];
 
   return (

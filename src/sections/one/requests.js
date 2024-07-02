@@ -66,9 +66,9 @@ export const deleteCarro = (Carro, setLoading, sendNotification, handleClose, se
     });
 };
 
-export const editCarro = (Carro, setLoading, sendNotification, handleClose, setCarros) => {
+export const editCarro = (Carro, CarroID, setLoading, sendNotification, handleClose, setCarros) => {
   setLoading(true);
-  editCarros(Carro)
+  editCarros(Carro, CarroID)
     .then((data) => {
       getCarros({ id: Carro.id }).then((data) => {
         if (data.data) {
@@ -84,19 +84,5 @@ export const editCarro = (Carro, setLoading, sendNotification, handleClose, setC
     .catch((error) => {
       sendNotification({ msg: error.title || error.slice(0, 700), variant: 'error' });
       setLoading(false);
-    });
-};
-
-export const changeCarroPassword = (Carro, sendNotification, handleClose) => {
-  changeCarroPasswords(Carro)
-    .then((data) => {
-      if (data) {
-        sendNotification({ msg: 'Senha alterada com sucesso!', variant: 'success' });
-      }
-      handleClose();
-    })
-    .catch((error) => {
-      console.log(error);
-      sendNotification({ msg: error.title || error.slice(0, 700), variant: 'error' });
     });
 };

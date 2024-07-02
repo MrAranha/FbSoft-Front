@@ -98,7 +98,7 @@ export const EditUserModal = ({
     >
       <Box sx={style}>
         <Typography id="keep-mounted-modal-title" variant="h4" component="h2" paddingBottom={1}>
-          Novo Usuário
+          Editar Usuário
         </Typography>
         <form onSubmit={formik.handleSubmit}>
           <Stack direction="row" spacing={1} paddingTop={3}>

@@ -1,326 +1,330 @@
-import/n{/n_mock/n}/nfrom/n'./_mock';
+import { _mock } from './_mock';
 
-//APP
-//----------------------------------------------------------------------
+// APP
+// ----------------------------------------------------------------------
 
-exportconst_appRelated/n=/n['Chrome',/n'Drive',/n'Dropbox',/n'Evernote',/n'Github'].map((name,/nindex)/n=>/n{
-/n/nconstsystem/n=/n[2,/n4].includes(index)/n?/n'Windows'/n:/n'Mac';
+export const _appRelated = ['Chrome', 'Drive', 'Dropbox', 'Evernote', 'Github'].map(
+  (name, index) => {
+    const system = [2, 4].includes(index) ? 'Windows' : 'Mac';
 
-/n/nconstprice/n=/n[2,/n4].includes(index)/n?/n_mock.number.price(index)/n:/n0;
+    const price = [2, 4].includes(index) ? _mock.number.price(index) : 0;
 
-/n/nconstshortcut/n=
-/n/n/n/n(name/n===/n'Chrome'/n&&/n'/assets/icons/app/ic_chrome.svg')/n||
-/n/n/n/n(name/n===/n'Drive'/n&&/n'/assets/icons/app/ic_drive.svg')/n||
-/n/n/n/n(name/n===/n'Dropbox'/n&&/n'/assets/icons/app/ic_dropbox.svg')/n||
-/n/n/n/n(name/n===/n'Evernote'/n&&/n'/assets/icons/app/ic_evernote.svg')/n||
-/n/n/n/n'/assets/icons/app/ic_github.svg';
+    const shortcut =
+      (name === 'Chrome' && '/assets/icons/app/ic_chrome.svg') ||
+      (name === 'Drive' && '/assets/icons/app/ic_drive.svg') ||
+      (name === 'Dropbox' && '/assets/icons/app/ic_dropbox.svg') ||
+      (name === 'Evernote' && '/assets/icons/app/ic_evernote.svg') ||
+      '/assets/icons/app/ic_github.svg';
 
-/n/nreturn/n{
-/n/n/n/nid:/n_mock.id(index),
-/n/n/n/nname,
-/n/n/n/nprice,
-/n/n/n/nsystem,
-/n/n/n/nshortcut,
-/n/n/n/nratingNumber:/n_mock.number.rating(index),
-/n/n/n/ntotalReviews:/n_mock.number.nativeL(index),
-/n/n};
-});
-
-exportconst_appInstalled/n=/n['Germany',/n'England',/n'France',/n'Korean',/n'USA'].map((name,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nname,
-/n/nandroid:/n_mock.number.nativeL(index),
-/n/nwindows:/n_mock.number.nativeL(index/n+/n1),
-/n/napple:/n_mock.number.nativeL(index/n+/n2),
-/n/nflag:/n['flagpack:de',/n'flagpack:gb-nir',/n'flagpack:fr',/n'flagpack:kr',/n'flagpack:us'][index],
-}));
-
-exportconst_appAuthors/n=/n[...Array(3)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nname:/n_mock.fullName(index),
-/n/navatarUrl:/n_mock.image.avatar(index),
-/n/ntotalFavorites:/n_mock.number.nativeL(index),
-}));
-
-exportconst_appInvoices/n=/n[...Array(5)].map((_,/nindex)/n=>/n{
-/n/nconstcategory/n=/n['Android',/n'Mac',/n'Windows',/n'Android',/n'Mac'][index];
-
-/n/nconststatus/n=/n['paid',/n'outofdate',/n'progress',/n'paid',/n'paid'][index];
-
-/n/nreturn/n{
-/n/n/n/nid:/n_mock.id(index),
-/n/n/n/ninvoiceNumber:/n`INV-199${index}`,
-/n/n/n/nprice:/n_mock.number.price(index),
-/n/n/n/ncategory,
-/n/n/n/nstatus,
-/n/n};
-});
-
-exportconst_appFeatured/n=/n[...Array(3)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/ntitle:/n_mock.postTitle(index),
-/n/ndescription:/n_mock.sentence(index),
-/n/ncoverUrl:/n_mock.image.cover(index),
-}));
-
-//ANALYTIC
-//----------------------------------------------------------------------
-
-exportconst_analyticTasks/n=/n[...Array(5)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nname:/n_mock.taskNames(index),
-}));
-
-exportconst_analyticPosts/n=/n[...Array(5)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/npostedAt:/n_mock.time(index),
-/n/ntitle:/n_mock.postTitle(index),
-/n/ncoverUrl:/n_mock.image.cover(index),
-/n/ndescription:/n_mock.sentence(index),
-}));
-
-exportconst_analyticOrderTimeline/n=/n[...Array(5)].map((_,/nindex)/n=>/n{
-/n/nconsttitle/n=/n[
-/n/n/n/n'1983,orders,$4220',
-/n/n/n/n'12Invoiceshavebeenpaid',
-/n/n/n/n'Order#37745fromSeptember',
-/n/n/n/n'Neworderplaced#XF-2356',
-/n/n/n/n'Neworderplaced#XF-2346',
-/n/n][index];
-
-/n/nreturn/n{
-/n/n/n/nid:/n_mock.id(index),
-/n/n/n/ntitle,
-/n/n/n/ntype:/n`order${index/n+/n1}`,
-/n/n/n/ntime:/n_mock.time(index),
-/n/n};
-});
-
-exportconst_analyticTraffic/n=/n[
-/n/n{
-/n/n/n/nvalue:/n'facebook',
-/n/n/n/nlabel:/n'FaceBook',
-/n/n/n/ntotal:/n_mock.number.nativeL(1),
-/n/n/n/nicon:/n'eva:facebook-fill',
-/n/n},
-/n/n{
-/n/n/n/nvalue:/n'google',
-/n/n/n/nlabel:/n'Google',
-/n/n/n/ntotal:/n_mock.number.nativeL(2),
-/n/n/n/nicon:/n'eva:google-fill',
-/n/n},
-/n/n{
-/n/n/n/nvalue:/n'linkedin',
-/n/n/n/nlabel:/n'Linkedin',
-/n/n/n/ntotal:/n_mock.number.nativeL(3),
-/n/n/n/nicon:/n'eva:linkedin-fill',
-/n/n},
-/n/n{
-/n/n/n/nvalue:/n'twitter',
-/n/n/n/nlabel:/n'Twitter',
-/n/n/n/ntotal:/n_mock.number.nativeL(4),
-/n/n/n/nicon:/n'eva:twitter-fill',
-/n/n},
-];
-
-//ECOMMERCE
-//----------------------------------------------------------------------
-
-exportconst_ecommerceSalesOverview/n=/n['TotalProfit',/n'TotalIncome',/n'TotalExpenses'].map(
-/n/n(label,/nindex)/n=>/n({
-/n/n/n/nlabel,
-/n/n/n/ntotalAmount:/n_mock.number.price(index)/n*/n100,
-/n/n/n/nvalue:/n_mock.number.percent(index),
-/n/n})
+    return {
+      id: _mock.id(index),
+      name,
+      price,
+      system,
+      shortcut,
+      ratingNumber: _mock.number.rating(index),
+      totalReviews: _mock.number.nativeL(index),
+    };
+  }
 );
 
-exportconst_ecommerceBestSalesman/n=/n[...Array(5)].map((_,/nindex)/n=>/n{
-/n/nconstcategory/n=/n['CAP',/n'BrandedShoes',/n'Headphone',/n'CellPhone',/n'Earings'][index];
+export const _appInstalled = ['Germany', 'England', 'France', 'Korean', 'USA'].map(
+  (name, index) => ({
+    id: _mock.id(index),
+    name,
+    android: _mock.number.nativeL(index),
+    windows: _mock.number.nativeL(index + 1),
+    apple: _mock.number.nativeL(index + 2),
+    flag: ['flagpack:de', 'flagpack:gb-nir', 'flagpack:fr', 'flagpack:kr', 'flagpack:us'][index],
+  })
+);
 
-/n/nconstflag/n=/n['flagpack:de',/n'flagpack:gb-nir',/n'flagpack:fr',/n'flagpack:kr',/n'flagpack:us'][
-/n/n/n/nindex
-/n/n];
-
-/n/nreturn/n{
-/n/n/n/nid:/n_mock.id(index),
-/n/n/n/nflag,
-/n/n/n/ncategory,
-/n/n/n/nrank:/n`Top${index/n+/n1}`,
-/n/n/n/nemail:/n_mock.email(index),
-/n/n/n/nname:/n_mock.fullName(index),
-/n/n/n/ntotalAmount:/n_mock.number.price(index),
-/n/n/n/navatarUrl:/n_mock.image.avatar(index/n+/n8),
-/n/n};
-});
-
-exportconst_ecommerceLatestProducts/n=/n[...Array(5)].map((_,/nindex)/n=>/n{
-/n/nconstcolors/n=/n(index/n===/n0/n&&/n['#2EC4B6',/n'#E71D36',/n'#FF9F1C',/n'#011627'])/n||
-/n/n/n/n(index/n===/n1/n&&/n['#92140C',/n'#FFCF99'])/n||
-/n/n/n/n(index/n===/n2/n&&/n['#0CECDD',/n'#FFF338',/n'#FF67E7',/n'#C400FF',/n'#52006A',/n'#046582'])/n||
-/n/n/n/n(index/n===/n3/n&&/n['#845EC2',/n'#E4007C',/n'#2A1A5E'])/n||/n['#090088'];
-
-/n/nreturn/n{
-/n/n/n/nid:/n_mock.id(index),
-/n/n/n/ncolors,
-/n/n/n/nname:/n_mock.productName(index),
-/n/n/n/nprice:/n_mock.number.price(index),
-/n/n/n/ncoverUrl:/n_mock.image.product(index),
-/n/n/n/npriceSale:/n[1,/n3].includes(index)/n?/n_mock.number.price(index)/n:/n0,
-/n/n};
-});
-
-exportconst_ecommerceNewProducts/n=/n[...Array(5)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nname:/n_mock.productName(index),
-/n/ncoverUrl:/n_mock.image.product(index),
+export const _appAuthors = [...Array(3)].map((_, index) => ({
+  id: _mock.id(index),
+  name: _mock.fullName(index),
+  avatarUrl: _mock.image.avatar(index),
+  totalFavorites: _mock.number.nativeL(index),
 }));
 
-//BANKING
-//----------------------------------------------------------------------
+export const _appInvoices = [...Array(5)].map((_, index) => {
+  const category = ['Android', 'Mac', 'Windows', 'Android', 'Mac'][index];
 
-exportconst_bankingContacts/n=/n[...Array(12)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nname:/n_mock.fullName(index),
-/n/nemail:/n_mock.email(index),
-/n/navatarUrl:/n_mock.image.avatar(index),
+  const status = ['paid', 'out of date', 'progress', 'paid', 'paid'][index];
+
+  return {
+    id: _mock.id(index),
+    invoiceNumber: `INV-199${index}`,
+    price: _mock.number.price(index),
+    category,
+    status,
+  };
+});
+
+export const _appFeatured = [...Array(3)].map((_, index) => ({
+  id: _mock.id(index),
+  title: _mock.postTitle(index),
+  description: _mock.sentence(index),
+  coverUrl: _mock.image.cover(index),
 }));
 
-exportconst_bankingCreditCard/n=/n[
-/n/n{
-/n/n/n/nid:/n_mock.id(2),
-/n/n/n/nbalance:/n23432.03,
-/n/n/n/ncardType:/n'mastercard',
-/n/n/n/ncardHolder:/n_mock.fullName(2),
-/n/n/n/ncardNumber:/n'************3640',
-/n/n/n/ncardValid:/n'11/22',
-/n/n},
-/n/n{
-/n/n/n/nid:/n_mock.id(3),
-/n/n/n/nbalance:/n18000.23,
-/n/n/n/ncardType:/n'visa',
-/n/n/n/ncardHolder:/n_mock.fullName(3),
-/n/n/n/ncardNumber:/n'************8864',
-/n/n/n/ncardValid:/n'11/25',
-/n/n},
-/n/n{
-/n/n/n/nid:/n_mock.id(4),
-/n/n/n/nbalance:/n2000.89,
-/n/n/n/ncardType:/n'mastercard',
-/n/n/n/ncardHolder:/n_mock.fullName(4),
-/n/n/n/ncardNumber:/n'************7755',
-/n/n/n/ncardValid:/n'11/22',
-/n/n},
+// ANALYTIC
+// ----------------------------------------------------------------------
+
+export const _analyticTasks = [...Array(5)].map((_, index) => ({
+  id: _mock.id(index),
+  name: _mock.taskNames(index),
+}));
+
+export const _analyticPosts = [...Array(5)].map((_, index) => ({
+  id: _mock.id(index),
+  postedAt: _mock.time(index),
+  title: _mock.postTitle(index),
+  coverUrl: _mock.image.cover(index),
+  description: _mock.sentence(index),
+}));
+
+export const _analyticOrderTimeline = [...Array(5)].map((_, index) => {
+  const title = [
+    '1983, orders, $4220',
+    '12 Invoices have been paid',
+    'Order #37745 from September',
+    'New order placed #XF-2356',
+    'New order placed #XF-2346',
+  ][index];
+
+  return {
+    id: _mock.id(index),
+    title,
+    type: `order${index + 1}`,
+    time: _mock.time(index),
+  };
+});
+
+export const _analyticTraffic = [
+  {
+    value: 'facebook',
+    label: 'FaceBook',
+    total: _mock.number.nativeL(1),
+    icon: 'eva:facebook-fill',
+  },
+  {
+    value: 'google',
+    label: 'Google',
+    total: _mock.number.nativeL(2),
+    icon: 'eva:google-fill',
+  },
+  {
+    value: 'linkedin',
+    label: 'Linkedin',
+    total: _mock.number.nativeL(3),
+    icon: 'eva:linkedin-fill',
+  },
+  {
+    value: 'twitter',
+    label: 'Twitter',
+    total: _mock.number.nativeL(4),
+    icon: 'eva:twitter-fill',
+  },
 ];
 
-exportconst_bankingRecentTransitions/n=/n[
-/n/n{
-/n/n/n/nid:/n_mock.id(2),
-/n/n/n/nname:/n_mock.fullName(2),
-/n/n/n/navatarUrl:/n_mock.image.avatar(2),
-/n/n/n/ntype:/n'Income',
-/n/n/n/nmessage:/n'Receivemoneyfrom',
-/n/n/n/ncategory:/n'AnnetteBlack',
-/n/n/n/ndate:/n_mock.time(2),
-/n/n/n/nstatus:/n'progress',
-/n/n/n/namount:/n_mock.number.price(2),
-/n/n},
-/n/n{
-/n/n/n/nid:/n_mock.id(3),
-/n/n/n/nname:/n_mock.fullName(3),
-/n/n/n/navatarUrl:/n_mock.image.avatar(3),
-/n/n/n/ntype:/n'Expenses',
-/n/n/n/nmessage:/n'Paymentfor',
-/n/n/n/ncategory:/n'CourtneyHenry',
-/n/n/n/ndate:/n_mock.time(3),
-/n/n/n/nstatus:/n'completed',
-/n/n/n/namount:/n_mock.number.price(3),
-/n/n},
-/n/n{
-/n/n/n/nid:/n_mock.id(4),
-/n/n/n/nname:/n_mock.fullName(4),
-/n/n/n/navatarUrl:/n_mock.image.avatar(4),
-/n/n/n/ntype:/n'Receive',
-/n/n/n/nmessage:/n'Paymentfor',
-/n/n/n/ncategory:/n'TheresaWebb',
-/n/n/n/ndate:/n_mock.time(4),
-/n/n/n/nstatus:/n'failed',
-/n/n/n/namount:/n_mock.number.price(4),
-/n/n},
-/n/n{
-/n/n/n/nid:/n_mock.id(5),
-/n/n/n/nname:/nnull,
-/n/n/n/navatarUrl:/nnull,
-/n/n/n/ntype:/n'Expenses',
-/n/n/n/nmessage:/n'Paymentfor',
-/n/n/n/ncategory:/n'Beauty&Health',
-/n/n/n/ndate:/n_mock.time(5),
-/n/n/n/nstatus:/n'completed',
-/n/n/n/namount:/n_mock.number.price(5),
-/n/n},
-/n/n{
-/n/n/n/nid:/n_mock.id(6),
-/n/n/n/nname:/nnull,
-/n/n/n/navatarUrl:/nnull,
-/n/n/n/ntype:/n'Expenses',
-/n/n/n/nmessage:/n'Paymentfor',
-/n/n/n/ncategory:/n'Books',
-/n/n/n/ndate:/n_mock.time(6),
-/n/n/n/nstatus:/n'progress',
-/n/n/n/namount:/n_mock.number.price(6),
-/n/n},
-];
+// ECOMMERCE
+// ----------------------------------------------------------------------
 
-//BOOKING
-//----------------------------------------------------------------------
+export const _ecommerceSalesOverview = ['Total Profit', 'Total Income', 'Total Expenses'].map(
+  (label, index) => ({
+    label,
+    totalAmount: _mock.number.price(index) * 100,
+    value: _mock.number.percent(index),
+  })
+);
 
-exportconst_bookings/n=/n[...Array(5)].map((_,/nindex)/n=>/n{
-/n/nconststatus/n=/n['Paid',/n'Paid',/n'Pending',/n'Cancelled',/n'Paid'][index];
+export const _ecommerceBestSalesman = [...Array(5)].map((_, index) => {
+  const category = ['CAP', 'Branded Shoes', 'Headphone', 'Cell Phone', 'Earings'][index];
 
-/n/nconstcustomer/n=/n{
-/n/n/n/navatarUrl:/n_mock.image.avatar(index),
-/n/n/n/nname:/n_mock.fullName(index),
-/n/n/n/nphoneNumber:/n_mock.phoneNumber(index),
-/n/n};
+  const flag = ['flagpack:de', 'flagpack:gb-nir', 'flagpack:fr', 'flagpack:kr', 'flagpack:us'][
+    index
+  ];
 
-/n/nconstdestination/n=/n[...Array(5)].map((__,/n_index)/n=>/n({
-/n/n/n/nname:/n_mock.tourName(_index/n+/n1),
-/n/n/n/ncoverUrl:/n_mock.image.travel(_index/n+/n1),
-/n/n}))[index];
-
-/n/nreturn/n{
-/n/n/n/nid:/n_mock.id(index),
-/n/n/n/ndestination,
-/n/n/n/nstatus,
-/n/n/n/ncustomer,
-/n/n/n/ncheckIn:/n_mock.time(index),
-/n/n/n/ncheckOut:/n_mock.time(index),
-/n/n};
+  return {
+    id: _mock.id(index),
+    flag,
+    category,
+    rank: `Top ${index + 1}`,
+    email: _mock.email(index),
+    name: _mock.fullName(index),
+    totalAmount: _mock.number.price(index),
+    avatarUrl: _mock.image.avatar(index + 8),
+  };
 });
 
-exportconst_bookingsOverview/n=/n[...Array(3)].map((_,/nindex)/n=>/n({
-/n/nstatus:/n['Pending',/n'Canceled',/n'Sold'][index],
-/n/nquantity:/n_mock.number.nativeL(index),
-/n/nvalue:/n_mock.number.percent(index),
+export const _ecommerceLatestProducts = [...Array(5)].map((_, index) => {
+  const colors = (index === 0 && ['#2EC4B6', '#E71D36', '#FF9F1C', '#011627']) ||
+    (index === 1 && ['#92140C', '#FFCF99']) ||
+    (index === 2 && ['#0CECDD', '#FFF338', '#FF67E7', '#C400FF', '#52006A', '#046582']) ||
+    (index === 3 && ['#845EC2', '#E4007C', '#2A1A5E']) || ['#090088'];
+
+  return {
+    id: _mock.id(index),
+    colors,
+    name: _mock.productName(index),
+    price: _mock.number.price(index),
+    coverUrl: _mock.image.product(index),
+    priceSale: [1, 3].includes(index) ? _mock.number.price(index) : 0,
+  };
+});
+
+export const _ecommerceNewProducts = [...Array(5)].map((_, index) => ({
+  id: _mock.id(index),
+  name: _mock.productName(index),
+  coverUrl: _mock.image.product(index),
 }));
 
-exportconst_bookingReview/n=/n[...Array(5)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nname:/n_mock.fullName(index),
-/n/npostedAt:/n_mock.time(index),
-/n/nrating:/n_mock.number.rating(index),
-/n/navatarUrl:/n_mock.image.avatar(index),
-/n/ndescription:/n_mock.description(index),
-/n/ntags:/n['GreatSevice',/n'Recommended',/n'BestPrice'],
+// BANKING
+// ----------------------------------------------------------------------
+
+export const _bankingContacts = [...Array(12)].map((_, index) => ({
+  id: _mock.id(index),
+  name: _mock.fullName(index),
+  email: _mock.email(index),
+  avatarUrl: _mock.image.avatar(index),
 }));
 
-exportconst_bookingNew/n=/n[...Array(5)].map((_,/nindex)/n=>/n({
-/n/nguests:/n'3-5',
-/n/nid:/n_mock.id(index),
-/n/nbookedAt:/n_mock.time(index),
-/n/nduration:/n'3days2nights',
-/n/nisHot:/n_mock.boolean(index),
-/n/nname:/n_mock.fullName(index),
-/n/nprice:/n_mock.number.price(index),
-/n/navatarUrl:/n_mock.image.avatar(index),
-/n/ncoverUrl:/n_mock.image.travel(index),
+export const _bankingCreditCard = [
+  {
+    id: _mock.id(2),
+    balance: 23432.03,
+    cardType: 'mastercard',
+    cardHolder: _mock.fullName(2),
+    cardNumber: '**** **** **** 3640',
+    cardValid: '11/22',
+  },
+  {
+    id: _mock.id(3),
+    balance: 18000.23,
+    cardType: 'visa',
+    cardHolder: _mock.fullName(3),
+    cardNumber: '**** **** **** 8864',
+    cardValid: '11/25',
+  },
+  {
+    id: _mock.id(4),
+    balance: 2000.89,
+    cardType: 'mastercard',
+    cardHolder: _mock.fullName(4),
+    cardNumber: '**** **** **** 7755',
+    cardValid: '11/22',
+  },
+];
+
+export const _bankingRecentTransitions = [
+  {
+    id: _mock.id(2),
+    name: _mock.fullName(2),
+    avatarUrl: _mock.image.avatar(2),
+    type: 'Income',
+    message: 'Receive money from',
+    category: 'Annette Black',
+    date: _mock.time(2),
+    status: 'progress',
+    amount: _mock.number.price(2),
+  },
+  {
+    id: _mock.id(3),
+    name: _mock.fullName(3),
+    avatarUrl: _mock.image.avatar(3),
+    type: 'Expenses',
+    message: 'Payment for',
+    category: 'Courtney Henry',
+    date: _mock.time(3),
+    status: 'completed',
+    amount: _mock.number.price(3),
+  },
+  {
+    id: _mock.id(4),
+    name: _mock.fullName(4),
+    avatarUrl: _mock.image.avatar(4),
+    type: 'Receive',
+    message: 'Payment for',
+    category: 'Theresa Webb',
+    date: _mock.time(4),
+    status: 'failed',
+    amount: _mock.number.price(4),
+  },
+  {
+    id: _mock.id(5),
+    name: null,
+    avatarUrl: null,
+    type: 'Expenses',
+    message: 'Payment for',
+    category: 'Beauty & Health',
+    date: _mock.time(5),
+    status: 'completed',
+    amount: _mock.number.price(5),
+  },
+  {
+    id: _mock.id(6),
+    name: null,
+    avatarUrl: null,
+    type: 'Expenses',
+    message: 'Payment for',
+    category: 'Books',
+    date: _mock.time(6),
+    status: 'progress',
+    amount: _mock.number.price(6),
+  },
+];
+
+// BOOKING
+// ----------------------------------------------------------------------
+
+export const _bookings = [...Array(5)].map((_, index) => {
+  const status = ['Paid', 'Paid', 'Pending', 'Cancelled', 'Paid'][index];
+
+  const customer = {
+    avatarUrl: _mock.image.avatar(index),
+    name: _mock.fullName(index),
+    phoneNumber: _mock.phoneNumber(index),
+  };
+
+  const destination = [...Array(5)].map((__, _index) => ({
+    name: _mock.tourName(_index + 1),
+    coverUrl: _mock.image.travel(_index + 1),
+  }))[index];
+
+  return {
+    id: _mock.id(index),
+    destination,
+    status,
+    customer,
+    checkIn: _mock.time(index),
+    checkOut: _mock.time(index),
+  };
+});
+
+export const _bookingsOverview = [...Array(3)].map((_, index) => ({
+  status: ['Pending', 'Canceled', 'Sold'][index],
+  quantity: _mock.number.nativeL(index),
+  value: _mock.number.percent(index),
+}));
+
+export const _bookingReview = [...Array(5)].map((_, index) => ({
+  id: _mock.id(index),
+  name: _mock.fullName(index),
+  postedAt: _mock.time(index),
+  rating: _mock.number.rating(index),
+  avatarUrl: _mock.image.avatar(index),
+  description: _mock.description(index),
+  tags: ['Great Sevice', 'Recommended', 'Best Price'],
+}));
+
+export const _bookingNew = [...Array(5)].map((_, index) => ({
+  guests: '3-5',
+  id: _mock.id(index),
+  bookedAt: _mock.time(index),
+  duration: '3 days 2 nights',
+  isHot: _mock.boolean(index),
+  name: _mock.fullName(index),
+  price: _mock.number.price(index),
+  avatarUrl: _mock.image.avatar(index),
+  coverUrl: _mock.image.travel(index),
 }));

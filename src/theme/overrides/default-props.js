@@ -1,312 +1,312 @@
-import/nSvgIcon/nfrom/n'@mui/material/SvgIcon';
+import SvgIcon from '@mui/material/SvgIcon';
 
-import/nIconify/nfrom/n'src/components/iconify';
+import Iconify from 'src/components/iconify';
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-const/nArrowDownIcon/n=/n(props)/n=>/n(
-/n/n<SvgIcon/n{...props}>
-/n/n/n/n<path/nd="M12,16/nC11.7663478,16.0004565/n11.5399121,15.9190812/n11.36,15.77/nL5.36,10.77/nC4.93474074,10.4165378/n4.87653776,9.78525926/n5.23,9.36/nC5.58346224,8.93474074/n6.21474074,8.87653776/n6.64,9.23/nL12,13.71/nL17.36,9.39/nC17.5665934,9.2222295/n17.8315409,9.14373108/n18.0961825,9.17188444/nC18.3608241,9.2000378/n18.6033268,9.33252029/n18.77,9.54/nC18.9551341,9.74785947/n19.0452548,10.0234772/n19.0186853,10.3005589/nC18.9921158,10.5776405/n18.8512608,10.8311099/n18.63,11/nL12.63,15.83/nC12.444916,15.955516/n12.2231011,16.0153708/n12,16/nZ"/n/>
-/n/n</SvgIcon>
+const ArrowDownIcon = (props) => (
+  <SvgIcon {...props}>
+    <path d="M12,16 C11.7663478,16.0004565 11.5399121,15.9190812 11.36,15.77 L5.36,10.77 C4.93474074,10.4165378 4.87653776,9.78525926 5.23,9.36 C5.58346224,8.93474074 6.21474074,8.87653776 6.64,9.23 L12,13.71 L17.36,9.39 C17.5665934,9.2222295 17.8315409,9.14373108 18.0961825,9.17188444 C18.3608241,9.2000378 18.6033268,9.33252029 18.77,9.54 C18.9551341,9.74785947 19.0452548,10.0234772 19.0186853,10.3005589 C18.9921158,10.5776405 18.8512608,10.8311099 18.63,11 L12.63,15.83 C12.444916,15.955516 12.2231011,16.0153708 12,16 Z" />
+  </SvgIcon>
 );
 
-const/nCheckboxIcon/n=/n(props)/n=>/n(
-/n/n<SvgIcon/n{...props}>
-/n/n/n/n<path/nd="M17.9/n2.318A5/n5/n0/n0/n1/n22.895/n7.1l.005.217v10a5/n5/n0/n0/n1-4.783/n4.995l-.217.005h-10a5/n5/n0/n0/n1-4.995-4.783l-.005-.217v-10a5/n5/n0/n0/n1/n4.783-4.996l.217-.004h10Zm-.5/n1.5h-9a4/n4/n0/n0/n0-4/n4v9a4/n4/n0/n0/n0/n4/n4h9a4/n4/n0/n0/n0/n4-4v-9a4/n4/n0/n0/n0-4-4Z"/n/>
-/n/n</SvgIcon>
+const CheckboxIcon = (props) => (
+  <SvgIcon {...props}>
+    <path d="M17.9 2.318A5 5 0 0 1 22.895 7.1l.005.217v10a5 5 0 0 1-4.783 4.995l-.217.005h-10a5 5 0 0 1-4.995-4.783l-.005-.217v-10a5 5 0 0 1 4.783-4.996l.217-.004h10Zm-.5 1.5h-9a4 4 0 0 0-4 4v9a4 4 0 0 0 4 4h9a4 4 0 0 0 4-4v-9a4 4 0 0 0-4-4Z" />
+  </SvgIcon>
 );
 
-const/nCheckboxCheckedIcon/n=/n(props)/n=>/n(
-/n/n<SvgIcon/n{...props}>
-/n/n/n/n<path/nd="M17/n2a5/n5/n0/n0/n1/n5/n5v10a5/n5/n0/n0/n1-5/n5H7a5/n5/n0/n0/n1-5-5V7a5/n5/n0/n0/n1/n5-5Zm-1.625/n7.255-4.13/n4.13-1.75-1.75a.881.881/n0/n0/n0-1.24/n0c-.34.34-.34.89/n0/n1.24l2.38/n2.37c.17.17.39.25.61.25.23/n0/n.45-.08.62-.25l4.75-4.75c.34-.34.34-.89/n0-1.24a.881.881/n0/n0/n0-1.24/n0Z"/n/>
-/n/n</SvgIcon>
+const CheckboxCheckedIcon = (props) => (
+  <SvgIcon {...props}>
+    <path d="M17 2a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm-1.625 7.255-4.13 4.13-1.75-1.75a.881.881 0 0 0-1.24 0c-.34.34-.34.89 0 1.24l2.38 2.37c.17.17.39.25.61.25.23 0 .45-.08.62-.25l4.75-4.75c.34-.34.34-.89 0-1.24a.881.881 0 0 0-1.24 0Z" />
+  </SvgIcon>
 );
 
-const/nCheckboxIndeterminateIcon/n=/n(props)/n=>/n(
-/n/n<SvgIcon/n{...props}>
-/n/n/n/n<path/nd="M17,2/nC19.7614,2/n22,4.23858/n22,7/nL22,7/nL22,17/nC22,19.7614/n19.7614,22/n17,22/nL17,22/nL7,22/nC4.23858,22/n2,19.7614/n2,17/nL2,17/nL2,7/nC2,4.23858/n4.23858,2/n7,2/nL7,2/nZ/nM15,11/nL9,11/nC8.44772,11/n8,11.4477/n8,12/nC8,12.5523/n8.44772,13/n9,13/nL15,13/nC15.5523,13/n16,12.5523/n16,12/nC16,11.4477/n15.5523,11/n15,11/nZ"/n/>
-/n/n</SvgIcon>
+const CheckboxIndeterminateIcon = (props) => (
+  <SvgIcon {...props}>
+    <path d="M17,2 C19.7614,2 22,4.23858 22,7 L22,7 L22,17 C22,19.7614 19.7614,22 17,22 L17,22 L7,22 C4.23858,22 2,19.7614 2,17 L2,17 L2,7 C2,4.23858 4.23858,2 7,2 L7,2 Z M15,11 L9,11 C8.44772,11 8,11.4477 8,12 C8,12.5523 8.44772,13 9,13 L15,13 C15.5523,13 16,12.5523 16,12 C16,11.4477 15.5523,11 15,11 Z" />
+  </SvgIcon>
 );
 
-const/nRadioIcon/n=/n(props)/n=>/n(
-/n/n<SvgIcon/n{...props}>
-/n/n/n/n<path/nd="M12/n2A10/n10/n0/n1/n1/n2/n12C2/n6.477/n6.477/n2/n12/n2Zm0/n1.5a8.5/n8.5/n0/n1/n0/n0/n17/n8.5/n8.5/n0/n0/n0/n0-17Z"/n/>
-/n/n</SvgIcon>
+const RadioIcon = (props) => (
+  <SvgIcon {...props}>
+    <path d="M12 2A10 10 0 1 1 2 12C2 6.477 6.477 2 12 2Zm0 1.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17Z" />
+  </SvgIcon>
 );
 
-const/nRadioCheckedIcon/n=/n(props)/n=>/n(
-/n/n<SvgIcon/n{...props}>
-/n/n/n/n<path/nd="M12/n2A10/n10/n0/n1/n1/n2/n12C2/n6.477/n6.477/n2/n12/n2Zm0/n1.5a8.5/n8.5/n0/n1/n0/n0/n17/n8.5/n8.5/n0/n0/n0/n0-17ZM12/n7a5/n5/n0/n1/n1/n0/n10/n5/n5/n0/n0/n1/n0-10Z"/n/>
-/n/n</SvgIcon>
+const RadioCheckedIcon = (props) => (
+  <SvgIcon {...props}>
+    <path d="M12 2A10 10 0 1 1 2 12C2 6.477 6.477 2 12 2Zm0 1.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z" />
+  </SvgIcon>
 );
 
-const/nRatingIcon/n=/n(props)/n=>/n(
-/n/n<SvgIcon/n{...props}>
-/n/n/n/n<path/nd="M17.56,21/nC17.4000767,21.0006435/n17.2423316,20.9629218/n17.1,20.89/nL12,18.22/nL6.9,20.89/nC6.56213339,21.067663/n6.15259539,21.0374771/n5.8444287,20.8121966/nC5.53626201,20.5869161/n5.38323252,20.2058459/n5.45,19.83/nL6.45,14.2/nL2.33,10.2/nC2.06805623,9.93860108/n1.9718844,9.55391377/n2.08,9.2/nC2.19824414,8.83742187/n2.51242293,8.57366684/n2.89,8.52/nL8.59,7.69/nL11.1,2.56/nC11.2670864,2.21500967/n11.6166774,1.99588989/n12,1.99588989/nC12.3833226,1.99588989/n12.7329136,2.21500967/n12.9,2.56/nL15.44,7.68/nL21.14,8.51/nC21.5175771,8.56366684/n21.8317559,8.82742187/n21.95,9.19/nC22.0581156,9.54391377/n21.9619438,9.92860108/n21.7,10.19/nL17.58,14.19/nL18.58,19.82/nC18.652893,20.2027971/n18.4967826,20.5930731/n18.18,20.82/nC17.9989179,20.9468967/n17.7808835,21.010197/n17.56,21/nL17.56,21/nZ"/n/>
-/n/n</SvgIcon>
+const RatingIcon = (props) => (
+  <SvgIcon {...props}>
+    <path d="M17.56,21 C17.4000767,21.0006435 17.2423316,20.9629218 17.1,20.89 L12,18.22 L6.9,20.89 C6.56213339,21.067663 6.15259539,21.0374771 5.8444287,20.8121966 C5.53626201,20.5869161 5.38323252,20.2058459 5.45,19.83 L6.45,14.2 L2.33,10.2 C2.06805623,9.93860108 1.9718844,9.55391377 2.08,9.2 C2.19824414,8.83742187 2.51242293,8.57366684 2.89,8.52 L8.59,7.69 L11.1,2.56 C11.2670864,2.21500967 11.6166774,1.99588989 12,1.99588989 C12.3833226,1.99588989 12.7329136,2.21500967 12.9,2.56 L15.44,7.68 L21.14,8.51 C21.5175771,8.56366684 21.8317559,8.82742187 21.95,9.19 C22.0581156,9.54391377 21.9619438,9.92860108 21.7,10.19 L17.58,14.19 L18.58,19.82 C18.652893,20.2027971 18.4967826,20.5930731 18.18,20.82 C17.9989179,20.9468967 17.7808835,21.010197 17.56,21 L17.56,21 Z" />
+  </SvgIcon>
 );
 
-const/nTreeViewCollapseIcon/n=/n(props)/n=>/n(
-/n/n<SvgIcon/n{...props}>
-/n/n/n/n<path/nd="M18,3/nC19.6568542,3/n21,4.34314575/n21,6/nL21,6/nL21,18/nC21,19.6568542/n19.6568542,21/n18,21/nL18,21/nL6,21/nC4.34314575,21/n3,19.6568542/n3,18/nL3,18/nL3,6/nC3,4.34314575/n4.34314575,3/n6,3/nL6,3/nZ/nM18,5/nL6,5/nC5.44771525,5/n5,5.44771525/n5,6/nL5,6/nL5,18/nC5,18.5522847/n5.44771525,19/n6,19/nL6,19/nL18,19/nC18.5522847,19/n19,18.5522847/n19,18/nL19,18/nL19,6/nC19,5.44771525/n18.5522847,5/n18,5/nL18,5/nZ/nM12,8/nC12.5522847,8/n13,8.44771525/n13,9/nL13,9/nL13,11/nL15,11/nC15.5522847,11/n16,11.4477153/n16,12/nC16,12.5522847/n15.5522847,13/n15,13/nL15,13/nL13,13/nL13,15/nC13,15.5522847/n12.5522847,16/n12,16/nC11.4477153,16/n11,15.5522847/n11,15/nL11,15/nL11,13/nL9,13/nC8.44771525,13/n8,12.5522847/n8,12/nC8,11.4477153/n8.44771525,11/n9,11/nL9,11/nL11,11/nL11,9/nC11,8.44771525/n11.4477153,8/n12,8/nZ"/n/>
-/n/n</SvgIcon>
+const TreeViewCollapseIcon = (props) => (
+  <SvgIcon {...props}>
+    <path d="M18,3 C19.6568542,3 21,4.34314575 21,6 L21,6 L21,18 C21,19.6568542 19.6568542,21 18,21 L18,21 L6,21 C4.34314575,21 3,19.6568542 3,18 L3,18 L3,6 C3,4.34314575 4.34314575,3 6,3 L6,3 Z M18,5 L6,5 C5.44771525,5 5,5.44771525 5,6 L5,6 L5,18 C5,18.5522847 5.44771525,19 6,19 L6,19 L18,19 C18.5522847,19 19,18.5522847 19,18 L19,18 L19,6 C19,5.44771525 18.5522847,5 18,5 L18,5 Z M12,8 C12.5522847,8 13,8.44771525 13,9 L13,9 L13,11 L15,11 C15.5522847,11 16,11.4477153 16,12 C16,12.5522847 15.5522847,13 15,13 L15,13 L13,13 L13,15 C13,15.5522847 12.5522847,16 12,16 C11.4477153,16 11,15.5522847 11,15 L11,15 L11,13 L9,13 C8.44771525,13 8,12.5522847 8,12 C8,11.4477153 8.44771525,11 9,11 L9,11 L11,11 L11,9 C11,8.44771525 11.4477153,8 12,8 Z" />
+  </SvgIcon>
 );
 
-const/nTreeViewExpandIcon/n=/n(props)/n=>/n(
-/n/n<SvgIcon/n{...props}>
-/n/n/n/n<path/nd="M18,3/nC19.6568542,3/n21,4.34314575/n21,6/nL21,6/nL21,18/nC21,19.6568542/n19.6568542,21/n18,21/nL18,21/nL6,21/nC4.34314575,21/n3,19.6568542/n3,18/nL3,18/nL3,6/nC3,4.34314575/n4.34314575,3/n6,3/nL6,3/nZ/nM18,5/nL6,5/nC5.44771525,5/n5,5.44771525/n5,6/nL5,6/nL5,18/nC5,18.5522847/n5.44771525,19/n6,19/nL6,19/nL18,19/nC18.5522847,19/n19,18.5522847/n19,18/nL19,18/nL19,6/nC19,5.44771525/n18.5522847,5/n18,5/nL18,5/nZ/nM15,11/nC15.5522847,11/n16,11.4477153/n16,12/nC16,12.5522847/n15.5522847,13/n15,13/nL15,13/nL9,13/nC8.44771525,13/n8,12.5522847/n8,12/nC8,11.4477153/n8.44771525,11/n9,11/nL9,11/nZ"/n/>
-/n/n</SvgIcon>
+const TreeViewExpandIcon = (props) => (
+  <SvgIcon {...props}>
+    <path d="M18,3 C19.6568542,3 21,4.34314575 21,6 L21,6 L21,18 C21,19.6568542 19.6568542,21 18,21 L18,21 L6,21 C4.34314575,21 3,19.6568542 3,18 L3,18 L3,6 C3,4.34314575 4.34314575,3 6,3 L6,3 Z M18,5 L6,5 C5.44771525,5 5,5.44771525 5,6 L5,6 L5,18 C5,18.5522847 5.44771525,19 6,19 L6,19 L18,19 C18.5522847,19 19,18.5522847 19,18 L19,18 L19,6 C19,5.44771525 18.5522847,5 18,5 L18,5 Z M15,11 C15.5522847,11 16,11.4477153 16,12 C16,12.5522847 15.5522847,13 15,13 L15,13 L9,13 C8.44771525,13 8,12.5522847 8,12 C8,11.4477153 8.44771525,11 9,11 L9,11 Z" />
+  </SvgIcon>
 );
 
-const/nTreeViewEndIcon/n=/n(props)/n=>/n(
-/n/n<SvgIcon/n{...props}>
-/n/n/n/n<path/nd="M18,3/nC19.6568542,3/n21,4.34314575/n21,6/nL21,6/nL21,18/nC21,19.6568542/n19.6568542,21/n18,21/nL18,21/nL6,21/nC4.34314575,21/n3,19.6568542/n3,18/nL3,18/nL3,6/nC3,4.34314575/n4.34314575,3/n6,3/nL6,3/nZ/nM18,5/nL6,5/nC5.44771525,5/n5,5.44771525/n5,6/nL5,6/nL5,18/nC5,18.5522847/n5.44771525,19/n6,19/nL6,19/nL18,19/nC18.5522847,19/n19,18.5522847/n19,18/nL19,18/nL19,6/nC19,5.44771525/n18.5522847,5/n18,5/nL18,5/nZ/nM14,8.99420168/nC14.2666375,8.99420168/n14.5222334,9.10068735/n14.71,9.29/nC14.8993127,9.4777666/n15.0057983,9.73336246/n15.0057983,10/nC15.0057983,10.2666375/n14.8993127,10.5222334/n14.71,10.71/nL14.71,10.71/nL13.41,12/nL14.71,13.29/nC14.8993127,13.4777666/n15.0057983,13.7333625/n15.0057983,14/nC15.0057983,14.2666375/n14.8993127,14.5222334/n14.71,14.71/nC14.5222334,14.8993127/n14.2666375,15.0057983/n14,15.0057983/nC13.7333625,15.0057983/n13.4777666,14.8993127/n13.29,14.71/nL13.29,14.71/nL12,13.41/nL10.71,14.71/nC10.5222334,14.8993127/n10.2666375,15.0057983/n10,15.0057983/nC9.73336246,15.0057983/n9.4777666,14.8993127/n9.29,14.71/nC9.10068735,14.5222334/n8.99420168,14.2666375/n8.99420168,14/nC8.99420168,13.7333625/n9.10068735,13.4777666/n9.29,13.29/nL9.29,13.29/nL10.59,12/nL9.29,10.71/nC8.89787783,10.3178778/n8.89787783,9.68212217/n9.29,9.29/nC9.68212217,8.89787783/n10.3178778,8.89787783/n10.71,9.29/nL10.71,9.29/nL12,10.59/nL13.29,9.29/nC13.4777666,9.10068735/n13.7333625,8.99420168/n14,8.99420168/nZ"/n/>
-/n/n</SvgIcon>
+const TreeViewEndIcon = (props) => (
+  <SvgIcon {...props}>
+    <path d="M18,3 C19.6568542,3 21,4.34314575 21,6 L21,6 L21,18 C21,19.6568542 19.6568542,21 18,21 L18,21 L6,21 C4.34314575,21 3,19.6568542 3,18 L3,18 L3,6 C3,4.34314575 4.34314575,3 6,3 L6,3 Z M18,5 L6,5 C5.44771525,5 5,5.44771525 5,6 L5,6 L5,18 C5,18.5522847 5.44771525,19 6,19 L6,19 L18,19 C18.5522847,19 19,18.5522847 19,18 L19,18 L19,6 C19,5.44771525 18.5522847,5 18,5 L18,5 Z M14,8.99420168 C14.2666375,8.99420168 14.5222334,9.10068735 14.71,9.29 C14.8993127,9.4777666 15.0057983,9.73336246 15.0057983,10 C15.0057983,10.2666375 14.8993127,10.5222334 14.71,10.71 L14.71,10.71 L13.41,12 L14.71,13.29 C14.8993127,13.4777666 15.0057983,13.7333625 15.0057983,14 C15.0057983,14.2666375 14.8993127,14.5222334 14.71,14.71 C14.5222334,14.8993127 14.2666375,15.0057983 14,15.0057983 C13.7333625,15.0057983 13.4777666,14.8993127 13.29,14.71 L13.29,14.71 L12,13.41 L10.71,14.71 C10.5222334,14.8993127 10.2666375,15.0057983 10,15.0057983 C9.73336246,15.0057983 9.4777666,14.8993127 9.29,14.71 C9.10068735,14.5222334 8.99420168,14.2666375 8.99420168,14 C8.99420168,13.7333625 9.10068735,13.4777666 9.29,13.29 L9.29,13.29 L10.59,12 L9.29,10.71 C8.89787783,10.3178778 8.89787783,9.68212217 9.29,9.29 C9.68212217,8.89787783 10.3178778,8.89787783 10.71,9.29 L10.71,9.29 L12,10.59 L13.29,9.29 C13.4777666,9.10068735 13.7333625,8.99420168 14,8.99420168 Z" />
+  </SvgIcon>
 );
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/ndefaultProps(theme)/n{
-/n/nreturn/n{
-/n/n/n/nMuiAlert:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/niconMapping:/n{
-/n/n/n/n/n/n/n/n/n/nerror:/n<Iconify/nicon="solar:danger-bold"/nwidth={24}/n/>,
-/n/n/n/n/n/n/n/n/n/ninfo:/n<Iconify/nicon="eva:info-fill"/nwidth={24}/n/>,
-/n/n/n/n/n/n/n/n/n/nsuccess:/n<Iconify/nicon="eva:checkmark-circle-2-fill"/nwidth={24}/n/>,
-/n/n/n/n/n/n/n/n/n/nwarning:/n<Iconify/nicon="eva:alert-triangle-fill"/nwidth={24}/n/>,
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiStack:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nuseFlexGap:/ntrue,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiAppBar:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ncolor:/n'transparent',
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiAvatarGroup:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nmax:/n4,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiButtonGroup:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ndisableElevation:/ntrue,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiButton:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ncolor:/n'inherit',
-/n/n/n/n/n/n/n/ndisableElevation:/ntrue,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiCardHeader:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ntitleTypographyProps:/n{/nvariant:/n'h6'/n},
-/n/n/n/n/n/n/n/nsubheaderTypographyProps:/n{
-/n/n/n/n/n/n/n/n/n/nvariant:/n'body2',
-/n/n/n/n/n/n/n/n/n/nmarginTop:/ntheme.spacing(0.5),
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiChip:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ndeleteIcon:/n<Iconify/nicon="solar:close-circle-bold"/n/>,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiDialogActions:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ndisableSpacing:/ntrue,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiFab:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ncolor:/n'primary',
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiLink:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nunderline:/n'hover',
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiListItemText:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nprimaryTypographyProps:/n{
-/n/n/n/n/n/n/n/n/n/ntypography:/n'subtitle2',
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/nsecondaryTypographyProps:/n{
-/n/n/n/n/n/n/n/n/n/ncomponent:/n'span',
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiPaper:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nelevation:/n0,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiSkeleton:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nanimation:/n'wave',
-/n/n/n/n/n/n/n/nvariant:/n'rounded',
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiFilledInput:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ndisableUnderline:/ntrue,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiFormHelperText:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ncomponent:/n'div',
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiTab:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ndisableRipple:/ntrue,
-/n/n/n/n/n/n/n/niconPosition:/n'start',
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiTabs:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ntextColor:/n'inherit',
-/n/n/n/n/n/n/n/nvariant:/n'scrollable',
-/n/n/n/n/n/n/n/nallowScrollButtonsMobile:/ntrue,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiTablePagination:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nbackIconButtonProps:/n{
-/n/n/n/n/n/n/n/n/n/nsize:/n'small',
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/nnextIconButtonProps:/n{
-/n/n/n/n/n/n/n/n/n/nsize:/n'small',
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiSlider:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nsize:/n'small',
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiAutocomplete:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/npopupIcon:/n<ArrowDownIcon/n/>,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiSelect:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nIconComponent:/nArrowDownIcon,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiNativeSelect:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nIconComponent:/nArrowDownIcon,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiCheckbox:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nsize:/n'small',
-/n/n/n/n/n/n/n/nicon:/n<CheckboxIcon/n/>,
-/n/n/n/n/n/n/n/ncheckedIcon:/n<CheckboxCheckedIcon/n/>,
-/n/n/n/n/n/n/n/nindeterminateIcon:/n<CheckboxIndeterminateIcon/n/>,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiRadio:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nsize:/n'small',
-/n/n/n/n/n/n/n/nicon:/n<RadioIcon/n/>,
-/n/n/n/n/n/n/n/ncheckedIcon:/n<RadioCheckedIcon/n/>,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiRating:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nemptyIcon:/n<RatingIcon/n/>,
-/n/n/n/n/n/n/n/nicon:/n<RatingIcon/n/>,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiTreeView:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/ndefaultCollapseIcon:/n<TreeViewCollapseIcon/n/>,
-/n/n/n/n/n/n/n/ndefaultExpandIcon:/n<TreeViewExpandIcon/n/>,
-/n/n/n/n/n/n/n/ndefaultEndIcon:/n<TreeViewEndIcon/n/>,
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiDataGrid:/n{
-/n/n/n/n/n/ndefaultProps:/n{
-/n/n/n/n/n/n/n/nslots:/n{
-/n/n/n/n/n/n/n/n/n/n///ncolumn
-/n/n/n/n/n/n/n/n/n/ncolumnSortedAscendingIcon:/n()/n=>/n(
-/n/n/n/n/n/n/n/n/n/n/n/n<Iconify
-/n/n/n/n/n/n/n/n/n/n/n/n/n/nwidth={20}
-/n/n/n/n/n/n/n/n/n/n/n/n/n/nicon="solar:alt-arrow-up-bold-duotone"
-/n/n/n/n/n/n/n/n/n/n/n/n/n/nsx={{/ncolor:/n'text.primary'/n}}
-/n/n/n/n/n/n/n/n/n/n/n/n/>
-/n/n/n/n/n/n/n/n/n/n),
-/n/n/n/n/n/n/n/n/n/ncolumnSortedDescendingIcon:/n()/n=>/n(
-/n/n/n/n/n/n/n/n/n/n/n/n<Iconify
-/n/n/n/n/n/n/n/n/n/n/n/n/n/nwidth={20}
-/n/n/n/n/n/n/n/n/n/n/n/n/n/nicon="solar:alt-arrow-down-bold-duotone"
-/n/n/n/n/n/n/n/n/n/n/n/n/n/nsx={{/ncolor:/n'text.primary'/n}}
-/n/n/n/n/n/n/n/n/n/n/n/n/>
-/n/n/n/n/n/n/n/n/n/n),
-/n/n/n/n/n/n/n/n/n/ncolumnUnsortedIcon:/n()/n=>/n(
-/n/n/n/n/n/n/n/n/n/n/n/n<Iconify
-/n/n/n/n/n/n/n/n/n/n/n/n/n/nwidth={20}
-/n/n/n/n/n/n/n/n/n/n/n/n/n/nicon="solar:alt-arrow-up-bold-duotone"
-/n/n/n/n/n/n/n/n/n/n/n/n/n/nsx={{/ncolor:/n'text.disabled'/n}}
-/n/n/n/n/n/n/n/n/n/n/n/n/>
-/n/n/n/n/n/n/n/n/n/n),
-/n/n/n/n/n/n/n/n/n/ncolumnMenuIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="mingcute:more-1-fill"/n/>,
-/n/n/n/n/n/n/n/n/n/ncolumnMenuSortAscendingIcon:/n()/n=>/n(
-/n/n/n/n/n/n/n/n/n/n/n/n<Iconify/nwidth={20}/nicon="solar:alt-arrow-up-bold-duotone"/n/>
-/n/n/n/n/n/n/n/n/n/n),
-/n/n/n/n/n/n/n/n/n/ncolumnMenuSortDescendingIcon:/n()/n=>/n(
-/n/n/n/n/n/n/n/n/n/n/n/n<Iconify/nwidth={20}/nicon="solar:alt-arrow-down-bold-duotone"/n/>
-/n/n/n/n/n/n/n/n/n/n),
-/n/n/n/n/n/n/n/n/n/ncolumnMenuFilterIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="solar:filter-bold"/n/>,
-/n/n/n/n/n/n/n/n/n/ncolumnMenuHideIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="solar:eye-closed-bold"/n/>,
-/n/n/n/n/n/n/n/n/n/ncolumnMenuManageColumnsIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="solar:eye-bold"/n/>,
-/n/n/n/n/n/n/n/n/n/ncolumnSelectorIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="solar:eye-bold"/n/>,
-/n/n/n/n/n/n/n/n/n/n///nfilter
-/n/n/n/n/n/n/n/n/n/nfilterPanelDeleteIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="eva:close-fill"/n/>,
-/n/n/n/n/n/n/n/n/n/nopenFilterButtonIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="solar:filter-bold"/n/>,
-/n/n/n/n/n/n/n/n/n/ncolumnFilteredIcon:/n()/n=>/n(
-/n/n/n/n/n/n/n/n/n/n/n/n<Iconify/nwidth={16}/nicon="solar:filter-bold"/nsx={{/ncolor:/n'text.primary'/n}}/n/>
-/n/n/n/n/n/n/n/n/n/n),
-/n/n/n/n/n/n/n/n/n/n///ndensity
-/n/n/n/n/n/n/n/n/n/ndensityCompactIcon:/n()/n=>/n(
-/n/n/n/n/n/n/n/n/n/n/n/n<Iconify/nwidth={20}/nicon="material-symbols:table-rows-narrow-rounded"/n/>
-/n/n/n/n/n/n/n/n/n/n),
-/n/n/n/n/n/n/n/n/n/ndensityStandardIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="mingcute:rows-4-fill"/n/>,
-/n/n/n/n/n/n/n/n/n/ndensityComfortableIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="mingcute:rows-2-fill"/n/>,
-/n/n/n/n/n/n/n/n/n/n///nexport
-/n/n/n/n/n/n/n/n/n/nexportIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="solar:export-bold"/n/>,
-/n/n/n/n/n/n/n/n/n/n///nquick/nfilter
-/n/n/n/n/n/n/n/n/n/nquickFilterIcon:/n()/n=>/n(
-/n/n/n/n/n/n/n/n/n/n/n/n<Iconify/nwidth={24}/nicon="eva:search-fill"/nsx={{/ncolor:/n'text.secondary'/n}}/n/>
-/n/n/n/n/n/n/n/n/n/n),
-/n/n/n/n/n/n/n/n/n/nquickFilterClearIcon:/n()/n=>/n<Iconify/nwidth={20}/nicon="eva:close-fill"/n/>,
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/nslotProps:/n{
-/n/n/n/n/n/n/n/n/n/nbasePopper:/n{
-/n/n/n/n/n/n/n/n/n/n/n/nplacement:/n'bottom-end',
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/nbaseTextField:/n{
-/n/n/n/n/n/n/n/n/n/n/n/nvariant:/n'outlined',
-/n/n/n/n/n/n/n/n/n/n/n/nInputLabelProps:/n{/nshrink:/ntrue/n},
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/nbaseFormControl:/n{
-/n/n/n/n/n/n/n/n/n/n/n/nvariant:/n'outlined',
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/nbaseSelect:/n{
-/n/n/n/n/n/n/n/n/n/n/n/nvariant:/n'outlined',
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n};
+export function defaultProps(theme) {
+  return {
+    MuiAlert: {
+      defaultProps: {
+        iconMapping: {
+          error: <Iconify icon="solar:danger-bold" width={24} />,
+          info: <Iconify icon="eva:info-fill" width={24} />,
+          success: <Iconify icon="eva:checkmark-circle-2-fill" width={24} />,
+          warning: <Iconify icon="eva:alert-triangle-fill" width={24} />,
+        },
+      },
+    },
+    MuiStack: {
+      defaultProps: {
+        useFlexGap: true,
+      },
+    },
+    MuiAppBar: {
+      defaultProps: {
+        color: 'transparent',
+      },
+    },
+    MuiAvatarGroup: {
+      defaultProps: {
+        max: 4,
+      },
+    },
+    MuiButtonGroup: {
+      defaultProps: {
+        disableElevation: true,
+      },
+    },
+    MuiButton: {
+      defaultProps: {
+        color: 'inherit',
+        disableElevation: true,
+      },
+    },
+    MuiCardHeader: {
+      defaultProps: {
+        titleTypographyProps: { variant: 'h6' },
+        subheaderTypographyProps: {
+          variant: 'body2',
+          marginTop: theme.spacing(0.5),
+        },
+      },
+    },
+    MuiChip: {
+      defaultProps: {
+        deleteIcon: <Iconify icon="solar:close-circle-bold" />,
+      },
+    },
+    MuiDialogActions: {
+      defaultProps: {
+        disableSpacing: true,
+      },
+    },
+    MuiFab: {
+      defaultProps: {
+        color: 'primary',
+      },
+    },
+    MuiLink: {
+      defaultProps: {
+        underline: 'hover',
+      },
+    },
+    MuiListItemText: {
+      defaultProps: {
+        primaryTypographyProps: {
+          typography: 'subtitle2',
+        },
+        secondaryTypographyProps: {
+          component: 'span',
+        },
+      },
+    },
+    MuiPaper: {
+      defaultProps: {
+        elevation: 0,
+      },
+    },
+    MuiSkeleton: {
+      defaultProps: {
+        animation: 'wave',
+        variant: 'rounded',
+      },
+    },
+    MuiFilledInput: {
+      defaultProps: {
+        disableUnderline: true,
+      },
+    },
+    MuiFormHelperText: {
+      defaultProps: {
+        component: 'div',
+      },
+    },
+    MuiTab: {
+      defaultProps: {
+        disableRipple: true,
+        iconPosition: 'start',
+      },
+    },
+    MuiTabs: {
+      defaultProps: {
+        textColor: 'inherit',
+        variant: 'scrollable',
+        allowScrollButtonsMobile: true,
+      },
+    },
+    MuiTablePagination: {
+      defaultProps: {
+        backIconButtonProps: {
+          size: 'small',
+        },
+        nextIconButtonProps: {
+          size: 'small',
+        },
+      },
+    },
+    MuiSlider: {
+      defaultProps: {
+        size: 'small',
+      },
+    },
+    MuiAutocomplete: {
+      defaultProps: {
+        popupIcon: <ArrowDownIcon />,
+      },
+    },
+    MuiSelect: {
+      defaultProps: {
+        IconComponent: ArrowDownIcon,
+      },
+    },
+    MuiNativeSelect: {
+      defaultProps: {
+        IconComponent: ArrowDownIcon,
+      },
+    },
+    MuiCheckbox: {
+      defaultProps: {
+        size: 'small',
+        icon: <CheckboxIcon />,
+        checkedIcon: <CheckboxCheckedIcon />,
+        indeterminateIcon: <CheckboxIndeterminateIcon />,
+      },
+    },
+    MuiRadio: {
+      defaultProps: {
+        size: 'small',
+        icon: <RadioIcon />,
+        checkedIcon: <RadioCheckedIcon />,
+      },
+    },
+    MuiRating: {
+      defaultProps: {
+        emptyIcon: <RatingIcon />,
+        icon: <RatingIcon />,
+      },
+    },
+    MuiTreeView: {
+      defaultProps: {
+        defaultCollapseIcon: <TreeViewCollapseIcon />,
+        defaultExpandIcon: <TreeViewExpandIcon />,
+        defaultEndIcon: <TreeViewEndIcon />,
+      },
+    },
+    MuiDataGrid: {
+      defaultProps: {
+        slots: {
+          // column
+          columnSortedAscendingIcon: () => (
+            <Iconify
+              width={20}
+              icon="solar:alt-arrow-up-bold-duotone"
+              sx={{ color: 'text.primary' }}
+            />
+          ),
+          columnSortedDescendingIcon: () => (
+            <Iconify
+              width={20}
+              icon="solar:alt-arrow-down-bold-duotone"
+              sx={{ color: 'text.primary' }}
+            />
+          ),
+          columnUnsortedIcon: () => (
+            <Iconify
+              width={20}
+              icon="solar:alt-arrow-up-bold-duotone"
+              sx={{ color: 'text.disabled' }}
+            />
+          ),
+          columnMenuIcon: () => <Iconify width={20} icon="mingcute:more-1-fill" />,
+          columnMenuSortAscendingIcon: () => (
+            <Iconify width={20} icon="solar:alt-arrow-up-bold-duotone" />
+          ),
+          columnMenuSortDescendingIcon: () => (
+            <Iconify width={20} icon="solar:alt-arrow-down-bold-duotone" />
+          ),
+          columnMenuFilterIcon: () => <Iconify width={20} icon="solar:filter-bold" />,
+          columnMenuHideIcon: () => <Iconify width={20} icon="solar:eye-closed-bold" />,
+          columnMenuManageColumnsIcon: () => <Iconify width={20} icon="solar:eye-bold" />,
+          columnSelectorIcon: () => <Iconify width={20} icon="solar:eye-bold" />,
+          // filter
+          filterPanelDeleteIcon: () => <Iconify width={20} icon="eva:close-fill" />,
+          openFilterButtonIcon: () => <Iconify width={20} icon="solar:filter-bold" />,
+          columnFilteredIcon: () => (
+            <Iconify width={16} icon="solar:filter-bold" sx={{ color: 'text.primary' }} />
+          ),
+          // density
+          densityCompactIcon: () => (
+            <Iconify width={20} icon="material-symbols:table-rows-narrow-rounded" />
+          ),
+          densityStandardIcon: () => <Iconify width={20} icon="mingcute:rows-4-fill" />,
+          densityComfortableIcon: () => <Iconify width={20} icon="mingcute:rows-2-fill" />,
+          // export
+          exportIcon: () => <Iconify width={20} icon="solar:export-bold" />,
+          // quick filter
+          quickFilterIcon: () => (
+            <Iconify width={24} icon="eva:search-fill" sx={{ color: 'text.secondary' }} />
+          ),
+          quickFilterClearIcon: () => <Iconify width={20} icon="eva:close-fill" />,
+        },
+        slotProps: {
+          basePopper: {
+            placement: 'bottom-end',
+          },
+          baseTextField: {
+            variant: 'outlined',
+            InputLabelProps: { shrink: true },
+          },
+          baseFormControl: {
+            variant: 'outlined',
+          },
+          baseSelect: {
+            variant: 'outlined',
+          },
+        },
+      },
+    },
+  };
 }

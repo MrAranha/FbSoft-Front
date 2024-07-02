@@ -18,21 +18,20 @@ const style = {
 
 export const NewCarroModal = ({ open, setOpen, sendNotification, setLoading, setCarros }) => {
   const validationSchema = yup.object({
-    Nome: yup.string('Insira o nome').required('Nome é obrigatório'),
-    Email: yup
-      .string('Insira o e-mail')
-      .email('Formato de Email não é válido')
-      .required('Email é obrigatório'),
-    Password: yup
-      .string('Insira a senha')
-      .min(8, 'A senha deve conter no mínimo 8 dígitos')
-      .required('Senha é obrigatório'),
+    Nome: yup.string('Insira o Nome').required('Nome é obrigatório'),
+    Marca: yup.string('Insira a Marca').required('Marca é obrigatório'),
+    Quantidade: yup.string('Insira a Quantidade').required('Quantidade é obrigatório'),
+    Ano: yup
+      .string('Insira o Ano')
+      .min(4, 'Ano deve conter no mínimo 4 dígitos')
+      .required('Ano é obrigatório'),
   });
   const formik = useFormik({
     initialValues: {
-      Email: '',
+      Marca: '',
       Nome: '',
-      Password: '',
+      Ano: '',
+      Quantidade: 0,
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -61,18 +60,6 @@ export const NewCarroModal = ({ open, setOpen, sendNotification, setLoading, set
           <Stack direction="row" spacing={1} paddingTop={3}>
             <TextField
               fullWidth
-              id="Email"
-              name="Email"
-              label="E-mail"
-              value={formik.values.Email}
-              inputProps={{ maxLength: 255 }}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              error={formik.touched.Email && Boolean(formik.errors.Email)}
-              helperText={formik.touched.Email && formik.errors.Email}
-            />
-            <TextField
-              fullWidth
               id="Nome"
               name="Nome"
               label="Nome"
@@ -85,16 +72,41 @@ export const NewCarroModal = ({ open, setOpen, sendNotification, setLoading, set
             />
             <TextField
               fullWidth
-              id="Password"
-              name="Password"
-              label="Senha"
-              type="Password"
+              id="Marca"
+              name="Marca"
+              label="Marca"
+              value={formik.values.Marca}
               inputProps={{ maxLength: 255 }}
-              value={formik.values.Password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.Password && Boolean(formik.errors.Password)}
-              helperText={formik.touched.Password && formik.errors.Password}
+              error={formik.touched.Marca && Boolean(formik.errors.Marca)}
+              helperText={formik.touched.Marca && formik.errors.Marca}
+            />
+            <TextField
+              fullWidth
+              id="Ano"
+              name="Ano"
+              label="Ano"
+              type="Ano"
+              inputProps={{ maxLength: 255 }}
+              value={formik.values.Ano}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.Ano && Boolean(formik.errors.Ano)}
+              helperText={formik.touched.Ano && formik.errors.Ano}
+            />
+            <TextField
+              fullWidth
+              id="Quantidade"
+              name="Quantidade"
+              label="Quantidade"
+              type="Quantidade"
+              inputProps={{ maxLength: 255 }}
+              value={formik.values.Quantidade}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.Quantidade && Boolean(formik.errors.Quantidade)}
+              helperText={formik.touched.Quantidade && formik.errors.Quantidade}
             />
           </Stack>
           <Stack

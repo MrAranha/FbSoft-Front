@@ -50,16 +50,8 @@ export function useNavData() {
       // OVERVIEW
       // ----------------------------------------------------------------------
       {
-        subheader: 'Módulos',
-        items: [
-          { title: 'one', path: paths.dashboard.root, icon: ICONS.dashboard },
-          { title: 'two', path: paths.dashboard.two, icon: ICONS.ecommerce },
-          {
-            title: 'three',
-            path: paths.dashboard.three,
-            icon: ICONS.analytics,
-          },
-        ],
+        subheader: 'Menu',
+        items: [{ title: 'Carros', path: paths.dashboard.root, icon: ICONS.dashboard }],
       },
 
       // MANAGEMENT
@@ -75,11 +67,6 @@ export function useNavData() {
               {
                 title: 'Gerenciar Usuários',
                 path: paths.dashboard.group.usuarios,
-                icon: ICONS.gear,
-              },
-              {
-                title: 'Gerenciar Empresas',
-                path: paths.dashboard.group.empresas,
                 icon: ICONS.gear,
               },
             ],

@@ -1,156 +1,157 @@
-import/n{/ncountries/n}/nfrom/n'src/assets/data';
+import { countries } from 'src/assets/data';
 
-import/n{/n_mock/n}/nfrom/n'./_mock';
+import { _mock } from './_mock';
 
-//----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-exportconstUSER_STATUS_OPTIONS/n=/n[
-/n/n{/nvalue:/n'active',/nlabel:/n'Active'/n},
-/n/n{/nvalue:/n'pending',/nlabel:/n'Pending'/n},
-/n/n{/nvalue:/n'banned',/nlabel:/n'Banned'/n},
-/n/n{/nvalue:/n'rejected',/nlabel:/n'Rejected'/n},
+export const USER_STATUS_OPTIONS = [
+  { value: 'active', label: 'Active' },
+  { value: 'pending', label: 'Pending' },
+  { value: 'banned', label: 'Banned' },
+  { value: 'rejected', label: 'Rejected' },
 ];
 
-exportconst_userAbout/n=/n{
-/n/nid:/n_mock.id(1),
-/n/nrole:/n_mock.role(1),
-/n/nemail:/n_mock.email(1),
-/n/ncountry:/ncountries[1].label,
-/n/nschool:/n_mock.companyName(2),
-/n/ncompany:/n_mock.companyName(1),
-/n/ncoverUrl:/n_mock.image.cover(3),
-/n/ntotalFollowers:/n_mock.number.nativeL(1),
-/n/ntotalFollowing:/n_mock.number.nativeL(2),
-/n/nquote:/n'TartIlovesugarplumIloveoatcake.SweetrollcaramelsIlovejujubes.Toppingcakewafer..',
-/n/nsocialLinks:/n{
-/n/n/n/nfacebook:/n`https://www.facebook.com/caitlyn.kerluke`,
-/n/n/n/ninstagram:/n`https://www.instagram.com/caitlyn.kerluke`,
-/n/n/n/nlinkedin:/n`https://www.linkedin.com/in/caitlyn.kerluke`,
-/n/n/n/ntwitter:/n`https://www.twitter.com/caitlyn.kerluke`,
-/n/n},
+export const _userAbout = {
+  id: _mock.id(1),
+  role: _mock.role(1),
+  email: _mock.email(1),
+  country: countries[1].label,
+  school: _mock.companyName(2),
+  company: _mock.companyName(1),
+  coverUrl: _mock.image.cover(3),
+  totalFollowers: _mock.number.nativeL(1),
+  totalFollowing: _mock.number.nativeL(2),
+  quote:
+    'Tart I love sugar plum I love oat cake. Sweet roll caramels I love jujubes. Topping cake wafer..',
+  socialLinks: {
+    facebook: `https://www.facebook.com/caitlyn.kerluke`,
+    instagram: `https://www.instagram.com/caitlyn.kerluke`,
+    linkedin: `https://www.linkedin.com/in/caitlyn.kerluke`,
+    twitter: `https://www.twitter.com/caitlyn.kerluke`,
+  },
 };
 
-exportconst_userFollowers/n=/n[...Array(18)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nname:/n_mock.fullName(index),
-/n/ncountry:/ncountries[index/n+/n1].label,
-/n/navatarUrl:/n_mock.image.avatar(index),
+export const _userFollowers = [...Array(18)].map((_, index) => ({
+  id: _mock.id(index),
+  name: _mock.fullName(index),
+  country: countries[index + 1].label,
+  avatarUrl: _mock.image.avatar(index),
 }));
 
-exportconst_userFriends/n=/n[...Array(18)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nrole:/n_mock.role(index),
-/n/nname:/n_mock.fullName(index),
-/n/navatarUrl:/n_mock.image.avatar(index),
+export const _userFriends = [...Array(18)].map((_, index) => ({
+  id: _mock.id(index),
+  role: _mock.role(index),
+  name: _mock.fullName(index),
+  avatarUrl: _mock.image.avatar(index),
 }));
 
-exportconst_userGallery/n=/n[...Array(12)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/npostedAt:/n_mock.time(index),
-/n/ntitle:/n_mock.postTitle(index),
-/n/nimageUrl:/n_mock.image.cover(index),
+export const _userGallery = [...Array(12)].map((_, index) => ({
+  id: _mock.id(index),
+  postedAt: _mock.time(index),
+  title: _mock.postTitle(index),
+  imageUrl: _mock.image.cover(index),
 }));
 
-exportconst_userFeeds/n=/n[...Array(3)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/ncreatedAt:/n_mock.time(index),
-/n/nmedia:/n_mock.image.travel(index/n+/n1),
-/n/nmessage:/n_mock.sentence(index),
-/n/npersonLikes:/n[...Array(20)].map((__,/npersonIndex)/n=>/n({
-/n/n/n/nname:/n_mock.fullName(personIndex),
-/n/n/n/navatarUrl:/n_mock.image.avatar(personIndex/n+/n2),
-/n/n})),
-/n/ncomments:/n(index/n===/n2/n&&/n[])/n||/n[
-/n/n/n/n{
-/n/n/n/n/n/nid:/n_mock.id(7),
-/n/n/n/n/n/nauthor:/n{
-/n/n/n/n/n/n/n/nid:/n_mock.id(8),
-/n/n/n/n/n/n/n/navatarUrl:/n_mock.image.avatar(index/n+/n5),
-/n/n/n/n/n/n/n/nname:/n_mock.fullName(index/n+/n5),
-/n/n/n/n/n/n},
-/n/n/n/n/n/ncreatedAt:/n_mock.time(2),
-/n/n/n/n/n/nmessage:/n'Praesentvenenatismetusat',
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/nid:/n_mock.id(9),
-/n/n/n/n/n/nauthor:/n{
-/n/n/n/n/n/n/n/nid:/n_mock.id(10),
-/n/n/n/n/n/n/n/navatarUrl:/n_mock.image.avatar(index/n+/n6),
-/n/n/n/n/n/n/n/nname:/n_mock.fullName(index/n+/n6),
-/n/n/n/n/n/n},
-/n/n/n/n/n/ncreatedAt:/n_mock.time(3),
-/n/n/n/n/n/nmessage:
-/n/n/n/n/n/n/n/n'Etiamrhoncus.Nullamvelsem.Pellentesqueliberotortor,tinciduntet,tincidunteget,sempernec,quam.Sedlectus.',
-/n/n/n/n},
-/n/n],
+export const _userFeeds = [...Array(3)].map((_, index) => ({
+  id: _mock.id(index),
+  createdAt: _mock.time(index),
+  media: _mock.image.travel(index + 1),
+  message: _mock.sentence(index),
+  personLikes: [...Array(20)].map((__, personIndex) => ({
+    name: _mock.fullName(personIndex),
+    avatarUrl: _mock.image.avatar(personIndex + 2),
+  })),
+  comments: (index === 2 && []) || [
+    {
+      id: _mock.id(7),
+      author: {
+        id: _mock.id(8),
+        avatarUrl: _mock.image.avatar(index + 5),
+        name: _mock.fullName(index + 5),
+      },
+      createdAt: _mock.time(2),
+      message: 'Praesent venenatis metus at',
+    },
+    {
+      id: _mock.id(9),
+      author: {
+        id: _mock.id(10),
+        avatarUrl: _mock.image.avatar(index + 6),
+        name: _mock.fullName(index + 6),
+      },
+      createdAt: _mock.time(3),
+      message:
+        'Etiam rhoncus. Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed lectus.',
+    },
+  ],
 }));
 
-exportconst_userCards/n=/n[...Array(21)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nrole:/n_mock.role(index),
-/n/nname:/n_mock.fullName(index),
-/n/ncoverUrl:/n_mock.image.cover(index),
-/n/navatarUrl:/n_mock.image.avatar(index),
-/n/ntotalFollowers:/n_mock.number.nativeL(index),
-/n/ntotalPosts:/n_mock.number.nativeL(index/n+/n2),
-/n/ntotalFollowing:/n_mock.number.nativeL(index/n+/n1),
+export const _userCards = [...Array(21)].map((_, index) => ({
+  id: _mock.id(index),
+  role: _mock.role(index),
+  name: _mock.fullName(index),
+  coverUrl: _mock.image.cover(index),
+  avatarUrl: _mock.image.avatar(index),
+  totalFollowers: _mock.number.nativeL(index),
+  totalPosts: _mock.number.nativeL(index + 2),
+  totalFollowing: _mock.number.nativeL(index + 1),
 }));
 
-exportconst_userPayment/n=/n[...Array(3)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/ncardNumber:/n['************1234',/n'************5678',/n'************7878'][index],
-/n/ncardType:/n['mastercard',/n'visa',/n'visa'][index],
-/n/nprimary:/nindex/n===/n1,
+export const _userPayment = [...Array(3)].map((_, index) => ({
+  id: _mock.id(index),
+  cardNumber: ['**** **** **** 1234', '**** **** **** 5678', '**** **** **** 7878'][index],
+  cardType: ['mastercard', 'visa', 'visa'][index],
+  primary: index === 1,
 }));
 
-exportconst_userAddressBook/n=/n[...Array(4)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nprimary:/nindex/n===/n0,
-/n/nname:/n_mock.fullName(index),
-/n/nphoneNumber:/n_mock.phoneNumber(index),
-/n/nfullAddress:/n_mock.fullAddress(index),
-/n/naddressType:/n(index/n===/n0/n&&/n'Home')/n||/n'Office',
+export const _userAddressBook = [...Array(4)].map((_, index) => ({
+  id: _mock.id(index),
+  primary: index === 0,
+  name: _mock.fullName(index),
+  phoneNumber: _mock.phoneNumber(index),
+  fullAddress: _mock.fullAddress(index),
+  addressType: (index === 0 && 'Home') || 'Office',
 }));
 
-exportconst_userInvoices/n=/n[...Array(10)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/ninvoiceNumber:/n`INV-199${index}`,
-/n/ncreatedAt:/n_mock.time(index),
-/n/nprice:/n_mock.number.price(index),
+export const _userInvoices = [...Array(10)].map((_, index) => ({
+  id: _mock.id(index),
+  invoiceNumber: `INV-199${index}`,
+  createdAt: _mock.time(index),
+  price: _mock.number.price(index),
 }));
 
-exportconst_userPlans/n=/n[
-/n/n{
-/n/n/n/nsubscription:/n'basic',
-/n/n/n/nprice:/n0,
-/n/n/n/nprimary:/nfalse,
-/n/n},
-/n/n{
-/n/n/n/nsubscription:/n'starter',
-/n/n/n/nprice:/n4.99,
-/n/n/n/nprimary:/ntrue,
-/n/n},
-/n/n{
-/n/n/n/nsubscription:/n'premium',
-/n/n/n/nprice:/n9.99,
-/n/n/n/nprimary:/nfalse,
-/n/n},
+export const _userPlans = [
+  {
+    subscription: 'basic',
+    price: 0,
+    primary: false,
+  },
+  {
+    subscription: 'starter',
+    price: 4.99,
+    primary: true,
+  },
+  {
+    subscription: 'premium',
+    price: 9.99,
+    primary: false,
+  },
 ];
 
-exportconst_userList/n=/n[...Array(20)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nzipCode:/n'85807',
-/n/nstate:/n'Virginia',
-/n/ncity:/n'RanchoCordova',
-/n/nrole:/n_mock.role(index),
-/n/nemail:/n_mock.email(index),
-/n/naddress:/n'908JackLocks',
-/n/nname:/n_mock.fullName(index),
-/n/nisVerified:/n_mock.boolean(index),
-/n/ncompany:/n_mock.companyName(index),
-/n/ncountry:/ncountries[index/n+/n1].label,
-/n/navatarUrl:/n_mock.image.avatar(index),
-/n/nphoneNumber:/n_mock.phoneNumber(index),
-/n/nstatus:
-/n/n/n/n(index/n%/n2/n&&/n'pending')/n||/n(index/n%/n3/n&&/n'banned')/n||/n(index/n%/n4/n&&/n'rejected')/n||/n'active',
+export const _userList = [...Array(20)].map((_, index) => ({
+  id: _mock.id(index),
+  zipCode: '85807',
+  state: 'Virginia',
+  city: 'Rancho Cordova',
+  role: _mock.role(index),
+  email: _mock.email(index),
+  address: '908 Jack Locks',
+  name: _mock.fullName(index),
+  isVerified: _mock.boolean(index),
+  company: _mock.companyName(index),
+  country: countries[index + 1].label,
+  avatarUrl: _mock.image.avatar(index),
+  phoneNumber: _mock.phoneNumber(index),
+  status:
+    (index % 2 && 'pending') || (index % 3 && 'banned') || (index % 4 && 'rejected') || 'active',
 }));

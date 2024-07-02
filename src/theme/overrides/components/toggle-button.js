@@ -1,67 +1,67 @@
-import/n{/nalpha/n}/nfrom/n'@mui/material/styles';
-import/n{/ntoggleButtonClasses/n}/nfrom/n'@mui/material/ToggleButton';
+import { alpha } from '@mui/material/styles';
+import { toggleButtonClasses } from '@mui/material/ToggleButton';
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-const/nCOLORS/n=/n['primary',/n'secondary',/n'info',/n'success',/n'warning',/n'error'];
+const COLORS = ['primary', 'secondary', 'info', 'success', 'warning', 'error'];
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/ntoggleButton(theme)/n{
-/n/nconst/nrootStyles/n=/n(ownerState)/n=>/n{
-/n/n/n/nconst/ndefaultStyle/n=/n{
-/n/n/n/n/n/n[`&.${toggleButtonClasses.selected}`]:/n{
-/n/n/n/n/n/n/n/nborderColor:/n'currentColor',
-/n/n/n/n/n/n/n/nboxShadow:/n'0/n0/n0/n0.5px/ncurrentColor',
-/n/n/n/n/n/n},
-/n/n/n/n};
+export function toggleButton(theme) {
+  const rootStyles = (ownerState) => {
+    const defaultStyle = {
+      [`&.${toggleButtonClasses.selected}`]: {
+        borderColor: 'currentColor',
+        boxShadow: '0 0 0 0.5px currentColor',
+      },
+    };
 
-/n/n/n/nconst/ncolorStyle/n=/nCOLORS.map((color)/n=>/n({
-/n/n/n/n/n/n...(ownerState.color/n===/ncolor/n&&/n{
-/n/n/n/n/n/n/n/n'&:hover':/n{
-/n/n/n/n/n/n/n/n/n/nborderColor:/nalpha(theme.palette[color].main,/n0.48),
-/n/n/n/n/n/n/n/n/n/nbackgroundColor:/nalpha(theme.palette[color].main,/ntheme.palette.action.hoverOpacity),
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n}),
-/n/n/n/n}));
+    const colorStyle = COLORS.map((color) => ({
+      ...(ownerState.color === color && {
+        '&:hover': {
+          borderColor: alpha(theme.palette[color].main, 0.48),
+          backgroundColor: alpha(theme.palette[color].main, theme.palette.action.hoverOpacity),
+        },
+      }),
+    }));
 
-/n/n/n/nconst/ndisabledState/n=/n{
-/n/n/n/n/n/n[`&.${toggleButtonClasses.disabled}`]:/n{
-/n/n/n/n/n/n/n/n[`&.${toggleButtonClasses.selected}`]:/n{
-/n/n/n/n/n/n/n/n/n/ncolor:/ntheme.palette.action.disabled,
-/n/n/n/n/n/n/n/n/n/nbackgroundColor:/ntheme.palette.action.selected,
-/n/n/n/n/n/n/n/n/n/nborderColor:/ntheme.palette.action.disabledBackground,
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n};
+    const disabledState = {
+      [`&.${toggleButtonClasses.disabled}`]: {
+        [`&.${toggleButtonClasses.selected}`]: {
+          color: theme.palette.action.disabled,
+          backgroundColor: theme.palette.action.selected,
+          borderColor: theme.palette.action.disabledBackground,
+        },
+      },
+    };
 
-/n/n/n/nreturn/n[defaultStyle,/n...colorStyle,/ndisabledState];
-/n/n};
+    return [defaultStyle, ...colorStyle, disabledState];
+  };
 
-/n/nreturn/n{
-/n/n/n/nMuiToggleButton:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/nroot:/n({/nownerState/n})/n=>/nrootStyles(ownerState),
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiToggleButtonGroup:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/nroot:/n{
-/n/n/n/n/n/n/n/n/n/nborderRadius:/ntheme.shape.borderRadius,
-/n/n/n/n/n/n/n/n/n/nbackgroundColor:/ntheme.palette.background.paper,
-/n/n/n/n/n/n/n/n/n/nborder:/n`solid/n1px/n${alpha(theme.palette.grey[500],/n0.08)}`,
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/ngrouped:/n{
-/n/n/n/n/n/n/n/n/n/nmargin:/n4,
-/n/n/n/n/n/n/n/n/n/n[`&.${toggleButtonClasses.selected}`]:/n{
-/n/n/n/n/n/n/n/n/n/n/n/nboxShadow:/n'none',
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/n'&:not(:first-of-type),/n&:not(:last-of-type)':/n{
-/n/n/n/n/n/n/n/n/n/n/n/nborderRadius:/ntheme.shape.borderRadius,
-/n/n/n/n/n/n/n/n/n/n/n/nborderColor:/n'transparent',
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n};
+  return {
+    MuiToggleButton: {
+      styleOverrides: {
+        root: ({ ownerState }) => rootStyles(ownerState),
+      },
+    },
+    MuiToggleButtonGroup: {
+      styleOverrides: {
+        root: {
+          borderRadius: theme.shape.borderRadius,
+          backgroundColor: theme.palette.background.paper,
+          border: `solid 1px ${alpha(theme.palette.grey[500], 0.08)}`,
+        },
+        grouped: {
+          margin: 4,
+          [`&.${toggleButtonClasses.selected}`]: {
+            boxShadow: 'none',
+          },
+          '&:not(:first-of-type), &:not(:last-of-type)': {
+            borderRadius: theme.shape.borderRadius,
+            borderColor: 'transparent',
+          },
+        },
+      },
+    },
+  };
 }

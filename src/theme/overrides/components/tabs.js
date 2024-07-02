@@ -1,39 +1,39 @@
-import/n{/ntabClasses/n}/nfrom/n'@mui/material/Tab';
+import { tabClasses } from '@mui/material/Tab';
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/ntabs(theme)/n{
-/n/nreturn/n{
-/n/n/n/nMuiTabs:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/nindicator:/n{
-/n/n/n/n/n/n/n/n/n/nbackgroundColor:/ntheme.palette.text.primary,
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/nscrollButtons:/n{
-/n/n/n/n/n/n/n/n/n/nwidth:/n48,
-/n/n/n/n/n/n/n/n/n/nborderRadius:/n'50%',
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiTab:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/nroot:/n{
-/n/n/n/n/n/n/n/n/n/npadding:/n0,
-/n/n/n/n/n/n/n/n/n/nopacity:/n1,
-/n/n/n/n/n/n/n/n/n/nminWidth:/n48,
-/n/n/n/n/n/n/n/n/n/nminHeight:/n48,
-/n/n/n/n/n/n/n/n/n/nfontWeight:/ntheme.typography.fontWeightSemiBold,
-/n/n/n/n/n/n/n/n/n/n'&:not(:last-of-type)':/n{
-/n/n/n/n/n/n/n/n/n/n/n/nmarginRight:/ntheme.spacing(3),
-/n/n/n/n/n/n/n/n/n/n/n/n[theme.breakpoints.up('sm')]:/n{
-/n/n/n/n/n/n/n/n/n/n/n/n/n/nmarginRight:/ntheme.spacing(5),
-/n/n/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/n[`&:not(.${tabClasses.selected})`]:/n{
-/n/n/n/n/n/n/n/n/n/n/n/ncolor:/ntheme.palette.text.secondary,
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n};
+export function tabs(theme) {
+  return {
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: theme.palette.text.primary,
+        },
+        scrollButtons: {
+          width: 48,
+          borderRadius: '50%',
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+          opacity: 1,
+          minWidth: 48,
+          minHeight: 48,
+          fontWeight: theme.typography.fontWeightSemiBold,
+          '&:not(:last-of-type)': {
+            marginRight: theme.spacing(3),
+            [theme.breakpoints.up('sm')]: {
+              marginRight: theme.spacing(5),
+            },
+          },
+          [`&:not(.${tabClasses.selected})`]: {
+            color: theme.palette.text.secondary,
+          },
+        },
+      },
+    },
+  };
 }

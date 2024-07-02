@@ -1,15 +1,15 @@
-exportconstcities = [
+export const cities = [
   {
-    city: 'NewYork',
+    city: 'New York',
     population: '8,175,133',
     photoUrl:
       'http://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Above_Gotham.jpg/240px-Above_Gotham.jpg',
-    state: 'NewYork',
+    state: 'New York',
     latitude: 40.6643,
     longitude: -73.9385,
   },
   {
-    city: 'LosAngeles',
+    city: 'Los Angeles',
     population: '3,792,621',
     photoUrl:
       'http://upload.wikimedia.org/wikipedia/commons/thumb/5/57/LA_Skyline_Mountains2.jpg/240px-LA_Skyline_Mountains2.jpg',
@@ -54,7 +54,7 @@ exportconstcities = [
     longitude: -75.1333,
   },
   {
-    city: 'SanAntonio',
+    city: 'San Antonio',
     population: '1,327,407',
     photoUrl:
       'http://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Downtown_San_Antonio_View.JPG/240px-Downtown_San_Antonio_View.JPG',
@@ -63,7 +63,7 @@ exportconstcities = [
     longitude: -98.5251,
   },
   {
-    city: 'SanDiego',
+    city: 'San Diego',
     population: '1,307,402',
     photoUrl:
       'http://upload.wikimedia.org/wikipedia/commons/thumb/5/53/US_Navy_110604-N-NS602-574_Navy_and_Marine_Corps_personnel%2C_along_with_community_leaders_from_the_greater_San_Diego_area_come_together_to_commemora.jpg/240px-US_Navy_110604-N-NS602-574_Navy_and_Marine_Corps_personnel%2C_along_with_community_leaders_from_the_greater_San_Diego_area_come_together_to_commemora.jpg',
@@ -81,7 +81,7 @@ exportconstcities = [
     longitude: -96.7967,
   },
   {
-    city: 'SanJose',
+    city: 'San Jose',
     population: '945,942',
     photoUrl:
       'http://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Downtown_San_Jose_skyline.PNG/240px-Downtown_San_Jose_skyline.PNG',
@@ -108,7 +108,7 @@ exportconstcities = [
     longitude: -81.6613,
   },
   {
-    city: 'SanFrancisco',
+    city: 'San Francisco',
     population: '805,235',
     photoUrl:
       'http://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/San_Francisco_skyline_from_Coit_Tower.jpg/240px-San_Francisco_skyline_from_Coit_Tower.jpg',

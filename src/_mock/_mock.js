@@ -1,75 +1,75 @@
-import/n{/nsub/n}/nfrom/n'date-fns';
+import { sub } from 'date-fns';
 
-import/n{/nASSETS_API/n}/nfrom/n'src/config-global';
+import { ASSETS_API } from 'src/config-global';
 
-import/n{
-/n/n_id,
-/n/n_ages,
-/n/n_roles,
-/n/n_prices,
-/n/n_emails,
-/n/n_ratings,
-/n/n_nativeS,
-/n/n_nativeM,
-/n/n_nativeL,
-/n/n_percents,
-/n/n_booleans,
-/n/n_sentences,
-/n/n_lastNames,
-/n/n_fullNames,
-/n/n_tourNames,
-/n/n_jobTitles,
-/n/n_taskNames,
-/n/n_postTitles,
-/n/n_firstNames,
-/n/n_fullAddress,
-/n/n_companyNames,
-/n/n_productNames,
-/n/n_descriptions,
-/n/n_phoneNumbers,
-}/nfrom/n'./assets';
+import {
+  _id,
+  _ages,
+  _roles,
+  _prices,
+  _emails,
+  _ratings,
+  _nativeS,
+  _nativeM,
+  _nativeL,
+  _percents,
+  _booleans,
+  _sentences,
+  _lastNames,
+  _fullNames,
+  _tourNames,
+  _jobTitles,
+  _taskNames,
+  _postTitles,
+  _firstNames,
+  _fullAddress,
+  _companyNames,
+  _productNames,
+  _descriptions,
+  _phoneNumbers,
+} from './assets';
 
-//----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-exportconst_mock/n=/n{
-/n/nid:/n(index)/n=>/n_id[index],
-/n/ntime:/n(index)/n=>/nsub(newDate(),/n{/ndays:/nindex,/nhours:/nindex/n}),
-/n/nboolean:/n(index)/n=>/n_booleans[index],
-/n/nrole:/n(index)/n=>/n_roles[index],
-/n/n//Text
-/n/ntaskNames:/n(index)/n=>/n_taskNames[index],
-/n/npostTitle:/n(index)/n=>/n_postTitles[index],
-/n/njobTitle:/n(index)/n=>/n_jobTitles[index],
-/n/ntourName:/n(index)/n=>/n_tourNames[index],
-/n/nproductName:/n(index)/n=>/n_productNames[index],
-/n/nsentence:/n(index)/n=>/n_sentences[index],
-/n/ndescription:/n(index)/n=>/n_descriptions[index],
-/n/n//Contact
-/n/nemail:/n(index)/n=>/n_emails[index],
-/n/nphoneNumber:/n(index)/n=>/n_phoneNumbers[index],
-/n/nfullAddress:/n(index)/n=>/n_fullAddress[index],
-/n/n//Name
-/n/nfirstName:/n(index)/n=>/n_firstNames[index],
-/n/nlastName:/n(index)/n=>/n_lastNames[index],
-/n/nfullName:/n(index)/n=>/n_fullNames[index],
-/n/ncompanyName:/n(index)/n=>/n_companyNames[index],
-/n/n//Number
-/n/nnumber:/n{
-/n/n/n/npercent:/n(index)/n=>/n_percents[index],
-/n/n/n/nrating:/n(index)/n=>/n_ratings[index],
-/n/n/n/nage:/n(index)/n=>/n_ages[index],
-/n/n/n/nprice:/n(index)/n=>/n_prices[index],
-/n/n/n/nnativeS:/n(index)/n=>/n_nativeS[index],
-/n/n/n/nnativeM:/n(index)/n=>/n_nativeM[index],
-/n/n/n/nnativeL:/n(index)/n=>/n_nativeL[index],
-/n/n},
-/n/n//Image
-/n/nimage:/n{
-/n/n/n/ncover:/n(index)/n=>/n`${ASSETS_API}/assets/images/cover/cover_${index/n+/n1}.jpg`,
-/n/n/n/navatar:/n(index)/n=>/n`${ASSETS_API}/assets/images/avatar/avatar_${index/n+/n1}.jpg`,
-/n/n/n/ntravel:/n(index)/n=>/n`${ASSETS_API}/assets/images/travel/travel_${index/n+/n1}.jpg`,
-/n/n/n/ncompany:/n(index)/n=>/n`${ASSETS_API}/assets/images/company/company_${index/n+/n1}.png`,
-/n/n/n/nproduct:/n(index)/n=>/n`${ASSETS_API}/assets/images/m_product/product_${index/n+/n1}.jpg`,
-/n/n/n/nportrait:/n(index)/n=>/n`${ASSETS_API}/assets/images/portrait/portrait_${index/n+/n1}.jpg`,
-/n/n},
+export const _mock = {
+  id: (index) => _id[index],
+  time: (index) => sub(new Date(), { days: index, hours: index }),
+  boolean: (index) => _booleans[index],
+  role: (index) => _roles[index],
+  // Text
+  taskNames: (index) => _taskNames[index],
+  postTitle: (index) => _postTitles[index],
+  jobTitle: (index) => _jobTitles[index],
+  tourName: (index) => _tourNames[index],
+  productName: (index) => _productNames[index],
+  sentence: (index) => _sentences[index],
+  description: (index) => _descriptions[index],
+  // Contact
+  email: (index) => _emails[index],
+  phoneNumber: (index) => _phoneNumbers[index],
+  fullAddress: (index) => _fullAddress[index],
+  // Name
+  firstName: (index) => _firstNames[index],
+  lastName: (index) => _lastNames[index],
+  fullName: (index) => _fullNames[index],
+  companyName: (index) => _companyNames[index],
+  // Number
+  number: {
+    percent: (index) => _percents[index],
+    rating: (index) => _ratings[index],
+    age: (index) => _ages[index],
+    price: (index) => _prices[index],
+    nativeS: (index) => _nativeS[index],
+    nativeM: (index) => _nativeM[index],
+    nativeL: (index) => _nativeL[index],
+  },
+  // Image
+  image: {
+    cover: (index) => `${ASSETS_API}/assets/images/cover/cover_${index + 1}.jpg`,
+    avatar: (index) => `${ASSETS_API}/assets/images/avatar/avatar_${index + 1}.jpg`,
+    travel: (index) => `${ASSETS_API}/assets/images/travel/travel_${index + 1}.jpg`,
+    company: (index) => `${ASSETS_API}/assets/images/company/company_${index + 1}.png`,
+    product: (index) => `${ASSETS_API}/assets/images/m_product/product_${index + 1}.jpg`,
+    portrait: (index) => `${ASSETS_API}/assets/images/portrait/portrait_${index + 1}.jpg`,
+  },
 };

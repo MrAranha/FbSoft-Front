@@ -1,554 +1,554 @@
 {
-/n/n"version":/n8,
-/n/n"name":/n"Basic",
-/n/n"metadata":/n{
-/n/n/n/n"mapbox:autocomposite":/ntrue
-/n/n},
-/n/n"sources":/n{
-/n/n/n/n"mapbox":/n{
-/n/n/n/n/n/n"url":/n"mapbox://mapbox.mapbox-streets-v7",
-/n/n/n/n/n/n"type":/n"vector"
-/n/n/n/n}
-/n/n},
-/n/n"sprite":/n"mapbox://sprites/mapbox/basic-v8",
-/n/n"glyphs":/n"mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
-/n/n"layers":/n[
-/n/n/n/n{
-/n/n/n/n/n/n"id":/n"background",
-/n/n/n/n/n/n"type":/n"background",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"background-color":/n"#dedede"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"interactive":/ntrue
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"id":/n"landuse_overlay_national_park",
-/n/n/n/n/n/n"type":/n"fill",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"source-layer":/n"landuse_overlay",
-/n/n/n/n/n/n"filter":/n["==",/n"class",/n"national_park"],
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"fill-color":/n"#d2edae",
-/n/n/n/n/n/n/n/n"fill-opacity":/n0.75
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"interactive":/ntrue
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"id":/n"landuse_park",
-/n/n/n/n/n/n"type":/n"fill",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"source-layer":/n"landuse",
-/n/n/n/n/n/n"filter":/n["==",/n"class",/n"park"],
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"fill-color":/n"#d2edae"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"interactive":/ntrue
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"id":/n"waterway",
-/n/n/n/n/n/n"type":/n"line",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"source-layer":/n"waterway",
-/n/n/n/n/n/n"filter":/n["all",/n["==",/n"$type",/n"LineString"],/n["in",/n"class",/n"river",/n"canal"]],
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"line-color":/n"#a0cfdf",
-/n/n/n/n/n/n/n/n"line-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.4,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[8,/n0.5],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n15]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"interactive":/ntrue
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"id":/n"water",
-/n/n/n/n/n/n"type":/n"fill",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"source-layer":/n"water",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"fill-color":/n"#a0cfdf"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"interactive":/ntrue
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"id":/n"building",
-/n/n/n/n/n/n"type":/n"fill",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"source-layer":/n"building",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"fill-color":/n"#d6d6d6"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"interactive":/ntrue
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"line-cap":/n"butt",
-/n/n/n/n/n/n/n/n"line-join":/n"miter"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"LineString"],
-/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n/n/n"in",
-/n/n/n/n/n/n/n/n/n/n/n/n"class",
-/n/n/n/n/n/n/n/n/n/n/n/n"motorway_link",
-/n/n/n/n/n/n/n/n/n/n/n/n"street",
-/n/n/n/n/n/n/n/n/n/n/n/n"street_limited",
-/n/n/n/n/n/n/n/n/n/n/n/n"service",
-/n/n/n/n/n/n/n/n/n/n/n/n"track",
-/n/n/n/n/n/n/n/n/n/n/n/n"pedestrian",
-/n/n/n/n/n/n/n/n/n/n/n/n"path",
-/n/n/n/n/n/n/n/n/n/n/n/n"link"
-/n/n/n/n/n/n/n/n/n/n],
-/n/n/n/n/n/n/n/n/n/n["==",/n"structure",/n"tunnel"]
-/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"line",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"tunnel_minor",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"line-color":/n"#efefef",
-/n/n/n/n/n/n/n/n"line-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.55,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[4,/n0.25],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n30]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n"line-dasharray":/n[0.36,/n0.18]
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"road"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"line-cap":/n"butt",
-/n/n/n/n/n/n/n/n"line-join":/n"miter"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"LineString"],
-/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n/n/n["in",/n"class",/n"motorway",/n"primary",/n"secondary",/n"tertiary",/n"trunk"],
-/n/n/n/n/n/n/n/n/n/n["==",/n"structure",/n"tunnel"]
-/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"line",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"tunnel_major",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"line-color":/n"#fff",
-/n/n/n/n/n/n/n/n"line-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.4,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[6,/n0.5],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n30]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n"line-dasharray":/n[0.28,/n0.14]
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"road"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"line-cap":/n"round",
-/n/n/n/n/n/n/n/n"line-join":/n"round"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"LineString"],
-/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n/n/n"in",
-/n/n/n/n/n/n/n/n/n/n/n/n"class",
-/n/n/n/n/n/n/n/n/n/n/n/n"motorway_link",
-/n/n/n/n/n/n/n/n/n/n/n/n"street",
-/n/n/n/n/n/n/n/n/n/n/n/n"street_limited",
-/n/n/n/n/n/n/n/n/n/n/n/n"service",
-/n/n/n/n/n/n/n/n/n/n/n/n"track",
-/n/n/n/n/n/n/n/n/n/n/n/n"pedestrian",
-/n/n/n/n/n/n/n/n/n/n/n/n"path",
-/n/n/n/n/n/n/n/n/n/n/n/n"link"
-/n/n/n/n/n/n/n/n/n/n],
-/n/n/n/n/n/n/n/n/n/n["in",/n"structure",/n"none",/n"ford"]
-/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"line",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"road_minor",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"line-color":/n"#efefef",
-/n/n/n/n/n/n/n/n"line-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.55,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[4,/n0.25],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n30]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"road"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"line-cap":/n"round",
-/n/n/n/n/n/n/n/n"line-join":/n"round"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"LineString"],
-/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n/n/n["in",/n"class",/n"motorway",/n"primary",/n"secondary",/n"tertiary",/n"trunk"],
-/n/n/n/n/n/n/n/n/n/n["in",/n"structure",/n"none",/n"ford"]
-/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"line",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"road_major",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"line-color":/n"#fff",
-/n/n/n/n/n/n/n/n"line-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.4,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[6,/n0.5],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n30]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"road"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"line-cap":/n"butt",
-/n/n/n/n/n/n/n/n"line-join":/n"miter"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"LineString"],
-/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n/n/n"in",
-/n/n/n/n/n/n/n/n/n/n/n/n"class",
-/n/n/n/n/n/n/n/n/n/n/n/n"motorway_link",
-/n/n/n/n/n/n/n/n/n/n/n/n"street",
-/n/n/n/n/n/n/n/n/n/n/n/n"street_limited",
-/n/n/n/n/n/n/n/n/n/n/n/n"service",
-/n/n/n/n/n/n/n/n/n/n/n/n"track",
-/n/n/n/n/n/n/n/n/n/n/n/n"pedestrian",
-/n/n/n/n/n/n/n/n/n/n/n/n"path",
-/n/n/n/n/n/n/n/n/n/n/n/n"link"
-/n/n/n/n/n/n/n/n/n/n],
-/n/n/n/n/n/n/n/n/n/n["==",/n"structure",/n"bridge"]
-/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"line",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"bridge_minor/ncase",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"line-color":/n"#dedede",
-/n/n/n/n/n/n/n/n"line-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.6,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[12,/n0.5],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n10]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n"line-gap-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.55,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[4,/n0.25],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n30]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"road"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"line-cap":/n"butt",
-/n/n/n/n/n/n/n/n"line-join":/n"miter"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"LineString"],
-/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n/n/n["in",/n"class",/n"motorway",/n"primary",/n"secondary",/n"tertiary",/n"trunk"],
-/n/n/n/n/n/n/n/n/n/n["==",/n"structure",/n"bridge"]
-/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"line",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"bridge_major/ncase",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"line-color":/n"#dedede",
-/n/n/n/n/n/n/n/n"line-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.6,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[12,/n0.5],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n10]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n"line-gap-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.55,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[4,/n0.25],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n30]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"road"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"line-cap":/n"round",
-/n/n/n/n/n/n/n/n"line-join":/n"round"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"LineString"],
-/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n/n/n"in",
-/n/n/n/n/n/n/n/n/n/n/n/n"class",
-/n/n/n/n/n/n/n/n/n/n/n/n"motorway_link",
-/n/n/n/n/n/n/n/n/n/n/n/n"street",
-/n/n/n/n/n/n/n/n/n/n/n/n"street_limited",
-/n/n/n/n/n/n/n/n/n/n/n/n"service",
-/n/n/n/n/n/n/n/n/n/n/n/n"track",
-/n/n/n/n/n/n/n/n/n/n/n/n"pedestrian",
-/n/n/n/n/n/n/n/n/n/n/n/n"path",
-/n/n/n/n/n/n/n/n/n/n/n/n"link"
-/n/n/n/n/n/n/n/n/n/n],
-/n/n/n/n/n/n/n/n/n/n["==",/n"structure",/n"bridge"]
-/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"line",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"bridge_minor",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"line-color":/n"#efefef",
-/n/n/n/n/n/n/n/n"line-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.55,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[4,/n0.25],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n30]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"road"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"line-cap":/n"round",
-/n/n/n/n/n/n/n/n"line-join":/n"round"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"LineString"],
-/n/n/n/n/n/n/n/n[
-/n/n/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n/n/n["in",/n"class",/n"motorway",/n"primary",/n"secondary",/n"tertiary",/n"trunk"],
-/n/n/n/n/n/n/n/n/n/n["==",/n"structure",/n"bridge"]
-/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"line",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"bridge_major",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"line-color":/n"#fff",
-/n/n/n/n/n/n/n/n"line-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.4,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[6,/n0.5],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n30]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"road"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"line-cap":/n"round",
-/n/n/n/n/n/n/n/n"line-join":/n"round"
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"LineString"],
-/n/n/n/n/n/n/n/n["all",/n["<=",/n"admin_level",/n2],/n["==",/n"maritime",/n0]]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"line",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"admin_country",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"line-color":/n"#8b8a8a",
-/n/n/n/n/n/n/n/n"line-width":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.3,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[3,/n0.5],
-/n/n/n/n/n/n/n/n/n/n/n/n[22,/n15]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"admin"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"minzoom":/n5,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"icon-image":/n"{maki}-11",
-/n/n/n/n/n/n/n/n"text-offset":/n[0,/n0.5],
-/n/n/n/n/n/n/n/n"text-field":/n"{name_en}",
-/n/n/n/n/n/n/n/n"text-font":/n["Open/nSans/nSemibold",/n"Arial/nUnicode/nMS/nBold"],
-/n/n/n/n/n/n/n/n"text-max-width":/n8,
-/n/n/n/n/n/n/n/n"text-anchor":/n"top",
-/n/n/n/n/n/n/n/n"text-size":/n11,
-/n/n/n/n/n/n/n/n"icon-size":/n1
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"Point"],
-/n/n/n/n/n/n/n/n["all",/n["==",/n"scalerank",/n1],/n["==",/n"localrank",/n1]]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"symbol",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"poi_label",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"text-color":/n"#666",
-/n/n/n/n/n/n/n/n"text-halo-width":/n1,
-/n/n/n/n/n/n/n/n"text-halo-color":/n"rgba(255,255,255,0.75)",
-/n/n/n/n/n/n/n/n"text-halo-blur":/n1
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"poi_label"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"symbol-placement":/n"line",
-/n/n/n/n/n/n/n/n"text-field":/n"{name_en}",
-/n/n/n/n/n/n/n/n"text-font":/n["Open/nSans/nSemibold",/n"Arial/nUnicode/nMS/nBold"],
-/n/n/n/n/n/n/n/n"text-transform":/n"uppercase",
-/n/n/n/n/n/n/n/n"text-letter-spacing":/n0.1,
-/n/n/n/n/n/n/n/n"text-size":/n{
-/n/n/n/n/n/n/n/n/n/n"base":/n1.4,
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[10,/n8],
-/n/n/n/n/n/n/n/n/n/n/n/n[20,/n14]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"LineString"],
-/n/n/n/n/n/n/n/n["in",/n"class",/n"motorway",/n"primary",/n"secondary",/n"tertiary",/n"trunk"]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"symbol",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"road_major_label",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"text-color":/n"#666",
-/n/n/n/n/n/n/n/n"text-halo-color":/n"rgba(255,255,255,0.75)",
-/n/n/n/n/n/n/n/n"text-halo-width":/n2
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"road_label"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"minzoom":/n8,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"text-field":/n"{name_en}",
-/n/n/n/n/n/n/n/n"text-font":/n["Open/nSans/nSemibold",/n"Arial/nUnicode/nMS/nBold"],
-/n/n/n/n/n/n/n/n"text-max-width":/n6,
-/n/n/n/n/n/n/n/n"text-size":/n{
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[6,/n12],
-/n/n/n/n/n/n/n/n/n/n/n/n[12,/n16]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"filter":/n[
-/n/n/n/n/n/n/n/n"all",
-/n/n/n/n/n/n/n/n["==",/n"$type",/n"Point"],
-/n/n/n/n/n/n/n/n["in",/n"type",/n"town",/n"village",/n"hamlet",/n"suburb",/n"neighbourhood",/n"island"]
-/n/n/n/n/n/n],
-/n/n/n/n/n/n"type":/n"symbol",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"place_label_other",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"text-color":/n"#666",
-/n/n/n/n/n/n/n/n"text-halo-color":/n"rgba(255,255,255,0.75)",
-/n/n/n/n/n/n/n/n"text-halo-width":/n1,
-/n/n/n/n/n/n/n/n"text-halo-blur":/n1
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"place_label"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"text-field":/n"{name_en}",
-/n/n/n/n/n/n/n/n"text-font":/n["Open/nSans/nBold",/n"Arial/nUnicode/nMS/nBold"],
-/n/n/n/n/n/n/n/n"text-max-width":/n10,
-/n/n/n/n/n/n/n/n"text-size":/n{
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[3,/n12],
-/n/n/n/n/n/n/n/n/n/n/n/n[8,/n16]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"maxzoom":/n16,
-/n/n/n/n/n/n"filter":/n["all",/n["==",/n"$type",/n"Point"],/n["==",/n"type",/n"city"]],
-/n/n/n/n/n/n"type":/n"symbol",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"place_label_city",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"text-color":/n"#666",
-/n/n/n/n/n/n/n/n"text-halo-color":/n"rgba(255,255,255,0.75)",
-/n/n/n/n/n/n/n/n"text-halo-width":/n1,
-/n/n/n/n/n/n/n/n"text-halo-blur":/n1
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"place_label"
-/n/n/n/n},
-/n/n/n/n{
-/n/n/n/n/n/n"interactive":/ntrue,
-/n/n/n/n/n/n"layout":/n{
-/n/n/n/n/n/n/n/n"text-field":/n"{name_en}",
-/n/n/n/n/n/n/n/n"text-font":/n["Open/nSans/nRegular",/n"Arial/nUnicode/nMS/nRegular"],
-/n/n/n/n/n/n/n/n"text-max-width":/n10,
-/n/n/n/n/n/n/n/n"text-size":/n{
-/n/n/n/n/n/n/n/n/n/n"stops":/n[
-/n/n/n/n/n/n/n/n/n/n/n/n[3,/n14],
-/n/n/n/n/n/n/n/n/n/n/n/n[8,/n22]
-/n/n/n/n/n/n/n/n/n/n]
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"maxzoom":/n12,
-/n/n/n/n/n/n"filter":/n["==",/n"$type",/n"Point"],
-/n/n/n/n/n/n"type":/n"symbol",
-/n/n/n/n/n/n"source":/n"mapbox",
-/n/n/n/n/n/n"id":/n"country_label",
-/n/n/n/n/n/n"paint":/n{
-/n/n/n/n/n/n/n/n"text-color":/n"#666",
-/n/n/n/n/n/n/n/n"text-halo-color":/n"rgba(255,255,255,0.75)",
-/n/n/n/n/n/n/n/n"text-halo-width":/n1,
-/n/n/n/n/n/n/n/n"text-halo-blur":/n1
-/n/n/n/n/n/n},
-/n/n/n/n/n/n"source-layer":/n"country_label"
-/n/n/n/n}
-/n/n]
+  "version": 8,
+  "name": "Basic",
+  "metadata": {
+    "mapbox:autocomposite": true
+  },
+  "sources": {
+    "mapbox": {
+      "url": "mapbox://mapbox.mapbox-streets-v7",
+      "type": "vector"
+    }
+  },
+  "sprite": "mapbox://sprites/mapbox/basic-v8",
+  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#dedede"
+      },
+      "interactive": true
+    },
+    {
+      "id": "landuse_overlay_national_park",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "landuse_overlay",
+      "filter": ["==", "class", "national_park"],
+      "paint": {
+        "fill-color": "#d2edae",
+        "fill-opacity": 0.75
+      },
+      "interactive": true
+    },
+    {
+      "id": "landuse_park",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "landuse",
+      "filter": ["==", "class", "park"],
+      "paint": {
+        "fill-color": "#d2edae"
+      },
+      "interactive": true
+    },
+    {
+      "id": "waterway",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "waterway",
+      "filter": ["all", ["==", "$type", "LineString"], ["in", "class", "river", "canal"]],
+      "paint": {
+        "line-color": "#a0cfdf",
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [8, 0.5],
+            [20, 15]
+          ]
+        }
+      },
+      "interactive": true
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "water",
+      "paint": {
+        "fill-color": "#a0cfdf"
+      },
+      "interactive": true
+    },
+    {
+      "id": "building",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "building",
+      "paint": {
+        "fill-color": "#d6d6d6"
+      },
+      "interactive": true
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        [
+          "all",
+          [
+            "in",
+            "class",
+            "motorway_link",
+            "street",
+            "street_limited",
+            "service",
+            "track",
+            "pedestrian",
+            "path",
+            "link"
+          ],
+          ["==", "structure", "tunnel"]
+        ]
+      ],
+      "type": "line",
+      "source": "mapbox",
+      "id": "tunnel_minor",
+      "paint": {
+        "line-color": "#efefef",
+        "line-width": {
+          "base": 1.55,
+          "stops": [
+            [4, 0.25],
+            [20, 30]
+          ]
+        },
+        "line-dasharray": [0.36, 0.18]
+      },
+      "source-layer": "road"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        [
+          "all",
+          ["in", "class", "motorway", "primary", "secondary", "tertiary", "trunk"],
+          ["==", "structure", "tunnel"]
+        ]
+      ],
+      "type": "line",
+      "source": "mapbox",
+      "id": "tunnel_major",
+      "paint": {
+        "line-color": "#fff",
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [6, 0.5],
+            [20, 30]
+          ]
+        },
+        "line-dasharray": [0.28, 0.14]
+      },
+      "source-layer": "road"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        [
+          "all",
+          [
+            "in",
+            "class",
+            "motorway_link",
+            "street",
+            "street_limited",
+            "service",
+            "track",
+            "pedestrian",
+            "path",
+            "link"
+          ],
+          ["in", "structure", "none", "ford"]
+        ]
+      ],
+      "type": "line",
+      "source": "mapbox",
+      "id": "road_minor",
+      "paint": {
+        "line-color": "#efefef",
+        "line-width": {
+          "base": 1.55,
+          "stops": [
+            [4, 0.25],
+            [20, 30]
+          ]
+        }
+      },
+      "source-layer": "road"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        [
+          "all",
+          ["in", "class", "motorway", "primary", "secondary", "tertiary", "trunk"],
+          ["in", "structure", "none", "ford"]
+        ]
+      ],
+      "type": "line",
+      "source": "mapbox",
+      "id": "road_major",
+      "paint": {
+        "line-color": "#fff",
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [6, 0.5],
+            [20, 30]
+          ]
+        }
+      },
+      "source-layer": "road"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        [
+          "all",
+          [
+            "in",
+            "class",
+            "motorway_link",
+            "street",
+            "street_limited",
+            "service",
+            "track",
+            "pedestrian",
+            "path",
+            "link"
+          ],
+          ["==", "structure", "bridge"]
+        ]
+      ],
+      "type": "line",
+      "source": "mapbox",
+      "id": "bridge_minor case",
+      "paint": {
+        "line-color": "#dedede",
+        "line-width": {
+          "base": 1.6,
+          "stops": [
+            [12, 0.5],
+            [20, 10]
+          ]
+        },
+        "line-gap-width": {
+          "base": 1.55,
+          "stops": [
+            [4, 0.25],
+            [20, 30]
+          ]
+        }
+      },
+      "source-layer": "road"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        [
+          "all",
+          ["in", "class", "motorway", "primary", "secondary", "tertiary", "trunk"],
+          ["==", "structure", "bridge"]
+        ]
+      ],
+      "type": "line",
+      "source": "mapbox",
+      "id": "bridge_major case",
+      "paint": {
+        "line-color": "#dedede",
+        "line-width": {
+          "base": 1.6,
+          "stops": [
+            [12, 0.5],
+            [20, 10]
+          ]
+        },
+        "line-gap-width": {
+          "base": 1.55,
+          "stops": [
+            [4, 0.25],
+            [20, 30]
+          ]
+        }
+      },
+      "source-layer": "road"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        [
+          "all",
+          [
+            "in",
+            "class",
+            "motorway_link",
+            "street",
+            "street_limited",
+            "service",
+            "track",
+            "pedestrian",
+            "path",
+            "link"
+          ],
+          ["==", "structure", "bridge"]
+        ]
+      ],
+      "type": "line",
+      "source": "mapbox",
+      "id": "bridge_minor",
+      "paint": {
+        "line-color": "#efefef",
+        "line-width": {
+          "base": 1.55,
+          "stops": [
+            [4, 0.25],
+            [20, 30]
+          ]
+        }
+      },
+      "source-layer": "road"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        [
+          "all",
+          ["in", "class", "motorway", "primary", "secondary", "tertiary", "trunk"],
+          ["==", "structure", "bridge"]
+        ]
+      ],
+      "type": "line",
+      "source": "mapbox",
+      "id": "bridge_major",
+      "paint": {
+        "line-color": "#fff",
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [6, 0.5],
+            [20, 30]
+          ]
+        }
+      },
+      "source-layer": "road"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["all", ["<=", "admin_level", 2], ["==", "maritime", 0]]
+      ],
+      "type": "line",
+      "source": "mapbox",
+      "id": "admin_country",
+      "paint": {
+        "line-color": "#8b8a8a",
+        "line-width": {
+          "base": 1.3,
+          "stops": [
+            [3, 0.5],
+            [22, 15]
+          ]
+        }
+      },
+      "source-layer": "admin"
+    },
+    {
+      "interactive": true,
+      "minzoom": 5,
+      "layout": {
+        "icon-image": "{maki}-11",
+        "text-offset": [0, 0.5],
+        "text-field": "{name_en}",
+        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+        "text-max-width": 8,
+        "text-anchor": "top",
+        "text-size": 11,
+        "icon-size": 1
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["all", ["==", "scalerank", 1], ["==", "localrank", 1]]
+      ],
+      "type": "symbol",
+      "source": "mapbox",
+      "id": "poi_label",
+      "paint": {
+        "text-color": "#666",
+        "text-halo-width": 1,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-blur": 1
+      },
+      "source-layer": "poi_label"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{name_en}",
+        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+        "text-transform": "uppercase",
+        "text-letter-spacing": 0.1,
+        "text-size": {
+          "base": 1.4,
+          "stops": [
+            [10, 8],
+            [20, 14]
+          ]
+        }
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["in", "class", "motorway", "primary", "secondary", "tertiary", "trunk"]
+      ],
+      "type": "symbol",
+      "source": "mapbox",
+      "id": "road_major_label",
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-width": 2
+      },
+      "source-layer": "road_label"
+    },
+    {
+      "interactive": true,
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name_en}",
+        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+        "text-max-width": 6,
+        "text-size": {
+          "stops": [
+            [6, 12],
+            [12, 16]
+          ]
+        }
+      },
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["in", "type", "town", "village", "hamlet", "suburb", "neighbourhood", "island"]
+      ],
+      "type": "symbol",
+      "source": "mapbox",
+      "id": "place_label_other",
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      },
+      "source-layer": "place_label"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "text-field": "{name_en}",
+        "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+        "text-max-width": 10,
+        "text-size": {
+          "stops": [
+            [3, 12],
+            [8, 16]
+          ]
+        }
+      },
+      "maxzoom": 16,
+      "filter": ["all", ["==", "$type", "Point"], ["==", "type", "city"]],
+      "type": "symbol",
+      "source": "mapbox",
+      "id": "place_label_city",
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      },
+      "source-layer": "place_label"
+    },
+    {
+      "interactive": true,
+      "layout": {
+        "text-field": "{name_en}",
+        "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
+        "text-max-width": 10,
+        "text-size": {
+          "stops": [
+            [3, 14],
+            [8, 22]
+          ]
+        }
+      },
+      "maxzoom": 12,
+      "filter": ["==", "$type", "Point"],
+      "type": "symbol",
+      "source": "mapbox",
+      "id": "country_label",
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      },
+      "source-layer": "country_label"
+    }
+  ]
 }

@@ -22,16 +22,22 @@ export function createCarros(user) {
   return response;
 }
 
-export function getUserByIDs(userID) {
+export function getCarroByIDs(userID) {
   const response = axios.get('/api/Carros/getById', { params: { Id: userID } });
   return response;
 }
 
-export function editCarros(user) {
+export function editCarros(carro, ID) {
   const response = axios({
     method: 'put',
     url: '/api/Carros/edit',
-    data: user,
+    data: {
+      Nome: carro.nome,
+      Id: ID,
+      Ano: carro.ano,
+      Quantidade: carro.quantidade,
+      Marca: carro.marca,
+    },
     headers: {
       'Content-Type': 'multipart/form-data',
     },

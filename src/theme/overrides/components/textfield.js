@@ -1,75 +1,75 @@
-import/n{/nalpha/n}/nfrom/n'@mui/material/styles';
-import/n{/ninputBaseClasses/n}/nfrom/n'@mui/material/InputBase';
-import/n{/ninputLabelClasses/n}/nfrom/n'@mui/material/InputLabel';
-import/n{/nfilledInputClasses/n}/nfrom/n'@mui/material/FilledInput';
-import/n{/noutlinedInputClasses/n}/nfrom/n'@mui/material/OutlinedInput';
+import { alpha } from '@mui/material/styles';
+import { inputBaseClasses } from '@mui/material/InputBase';
+import { inputLabelClasses } from '@mui/material/InputLabel';
+import { filledInputClasses } from '@mui/material/FilledInput';
+import { outlinedInputClasses } from '@mui/material/OutlinedInput';
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/ntextField(theme)/n{
-/n/nconst/ncolor/n=/n{
-/n/n/n/nfocused:/ntheme.palette.text.primary,
-/n/n/n/nactive:/ntheme.palette.text.secondary,
-/n/n/n/nplaceholder:/ntheme.palette.text.disabled,
-/n/n};
+export function textField(theme) {
+  const color = {
+    focused: theme.palette.text.primary,
+    active: theme.palette.text.secondary,
+    placeholder: theme.palette.text.disabled,
+  };
 
-/n/nconst/nfont/n=/n{
-/n/n/n/nlabel:/ntheme.typography.body1,
-/n/n/n/nvalue:/ntheme.typography.body2,
-/n/n};
+  const font = {
+    label: theme.typography.body1,
+    value: theme.typography.body2,
+  };
 
-/n/nreturn/n{
-/n/n/n/n///nHELPER
-/n/n/n/nMuiFormHelperText:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/nroot:/n{
-/n/n/n/n/n/n/n/n/n/nmarginTop:/ntheme.spacing(1),
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
+  return {
+    // HELPER
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          marginTop: theme.spacing(1),
+        },
+      },
+    },
 
-/n/n/n/n///nLABEL
-/n/n/n/nMuiFormLabel:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/nroot:/n{
-/n/n/n/n/n/n/n/n/n/n...font.value,
-/n/n/n/n/n/n/n/n/n/ncolor:/ncolor.placeholder,
-/n/n/n/n/n/n/n/n/n/n[`&.${inputLabelClasses.shrink}`]:/n{
-/n/n/n/n/n/n/n/n/n/n/n/n...font.label,
-/n/n/n/n/n/n/n/n/n/n/n/nfontWeight:/n600,
-/n/n/n/n/n/n/n/n/n/n/n/ncolor:/ncolor.active,
-/n/n/n/n/n/n/n/n/n/n/n/n[`&.${inputLabelClasses.focused}`]:/n{
-/n/n/n/n/n/n/n/n/n/n/n/n/n/ncolor:/ncolor.focused,
-/n/n/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/n/n/n[`&.${inputLabelClasses.error}`]:/n{
-/n/n/n/n/n/n/n/n/n/n/n/n/n/ncolor:/ntheme.palette.error.main,
-/n/n/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/n/n/n[`&.${inputLabelClasses.disabled}`]:/n{
-/n/n/n/n/n/n/n/n/n/n/n/n/n/ncolor:/ntheme.palette.text.disabled,
-/n/n/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/n/n/n[`&.${inputLabelClasses.filled}`]:/n{
-/n/n/n/n/n/n/n/n/n/n/n/n/n/ntransform:/n'translate(12px,/n6px)/nscale(0.75)',
-/n/n/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
+    // LABEL
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          ...font.value,
+          color: color.placeholder,
+          [`&.${inputLabelClasses.shrink}`]: {
+            ...font.label,
+            fontWeight: 600,
+            color: color.active,
+            [`&.${inputLabelClasses.focused}`]: {
+              color: color.focused,
+            },
+            [`&.${inputLabelClasses.error}`]: {
+              color: theme.palette.error.main,
+            },
+            [`&.${inputLabelClasses.disabled}`]: {
+              color: theme.palette.text.disabled,
+            },
+            [`&.${inputLabelClasses.filled}`]: {
+              transform: 'translate(12px, 6px) scale(0.75)',
+            },
+          },
+        },
+      },
+    },
 
-/n/n/n/n///nBASE
-/n/n/n/nMuiInputBase:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/nroot:/n{
-/n/n/n/n/n/n/n/n/n/n[`&.${inputBaseClasses.disabled}`]:/n{
-/n/n/n/n/n/n/n/n/n/n/n/n'&/nsvg':/n{
-/n/n/n/n/n/n/n/n/n/n/n/n/n/ncolor:/ntheme.palette.text.disabled,
-/n/n/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/ninput:/n{
-/n/n/n/n/n/n/n/n/n/n...font.value,
-/n/n/n/n/n/n/n/n/n/n'&::placeholder':/n{
-/n/n/n/n/n/n/n/n/n/n/n/nopacity:/n1,
-/n/n/n/n/n/n/n/n/n/n  color: color.placeholder,
+    // BASE
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          [`&.${inputBaseClasses.disabled}`]: {
+            '& svg': {
+              color: theme.palette.text.disabled,
+            },
+          },
+        },
+        input: {
+          ...font.value,
+          '&::placeholder': {
+            opacity: 1,
+            color: color.placeholder,
           },
         },
       },

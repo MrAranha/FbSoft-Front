@@ -29,6 +29,7 @@ export const EditCarroForm = ({
   setCarroID,
 }) => {
   const [Carro, setCarro] = useState({});
+
   useEffect(() => {
     if (CarroID)
       getCarroByIDs(CarroID, sendNotification)
@@ -48,6 +49,7 @@ export const EditCarroForm = ({
       setCarros={setCarros}
       Carro={Carro}
       setCarroID={setCarroID}
+      CarroID={CarroID}
       setCarro={setCarro}
     />
   );
@@ -61,23 +63,19 @@ export const EditCarroModal = ({
   setCarros,
   Carro,
   setCarroID,
+  CarroID,
   setCarro,
 }) => {
-  const validationSchema = yup.object({
-    name: yup.string('Insira o nome').required('Nome é obrigatório'),
-    email: yup
-      .string('Insira o e-mail')
-      .email('Formato de email não é válido')
-      .required('email é obrigatório'),
-  });
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      ...Carro,
+      nome: Carro ? Carro.Nome : '',
+      marca: Carro ? Carro.Marca : '',
+      quantidade: Carro ? Carro.Quantidade : 0,
+      ano: Carro ? Carro.Ano : '',
     },
-    validationSchema: validationSchema,
     onSubmit: (values) => {
-      editCarro(values, setLoading, sendNotification, handleClose, setCarros);
+      editCarro(Carro, CarroID, setLoading, sendNotification, handleClose, setCarros);
     },
   });
 
@@ -86,7 +84,7 @@ export const EditCarroModal = ({
     formik.resetForm();
     setOpen(false);
     setCarroID('');
-    setCarro();
+    setCarro({ nome: '', quantidade: 0, ano: '', marca: '' });
   };
 
   return (
@@ -98,33 +96,87 @@ export const EditCarroModal = ({
     >
       <Box sx={style}>
         <Typography id="keep-mounted-modal-title" variant="h4" component="h2" paddingBottom={1}>
-          Novo Usuário
+          Editar Carro
         </Typography>
         <form onSubmit={formik.handleSubmit}>
           <Stack direction="row" spacing={1} paddingTop={3}>
             <TextField
               fullWidth
-              id="email"
-              name="email"
+              id="Nome"
+              name="Nome"
+              label="Nome"
               inputProps={{ maxLength: 255 }}
-              label="E-mail"
-              value={formik.values.email}
-              onChange={formik.handleChange}
+              value={Carro.nome || ''}
+              onChange={(e) => {
+                setCarro({
+                  nome: e.target.value,
+                  quantidade: Carro.quantidade,
+                  ano: Carro.ano,
+                  marca: Carro.marca,
+                });
+              }}
               onBlur={formik.handleBlur}
-              error={formik.touched.email && Boolean(formik.errors.email)}
-              helperText={formik.touched.email && formik.errors.email}
+              error={formik.touched.nome && Boolean(formik.errors.nome)}
+              helperText={formik.touched.nome && formik.errors.nome}
             />
             <TextField
               fullWidth
-              id="name"
-              name="name"
+              id="Marca"
+              name="Marca"
+              label="Marca"
+              value={Carro.marca || ''}
               inputProps={{ maxLength: 255 }}
-              label="Nome"
-              value={formik.values.name}
-              onChange={formik.handleChange}
+              onChange={(e) => {
+                setCarro({
+                  nome: Carro.nome,
+                  quantidade: Carro.quantidade,
+                  ano: Carro.ano,
+                  marca: e.target.value,
+                });
+              }}
               onBlur={formik.handleBlur}
-              error={formik.touched.name && Boolean(formik.errors.name)}
-              helperText={formik.touched.name && formik.errors.name}
+              error={formik.touched.marca && Boolean(formik.errors.marca)}
+              helperText={formik.touched.marca && formik.errors.marca}
+            />
+            <TextField
+              fullWidth
+              id="Ano"
+              name="Ano"
+              label="Ano"
+              type="Ano"
+              inputProps={{ maxLength: 255 }}
+              value={Carro.ano || ''}
+              onChange={(e) => {
+                setCarro({
+                  nome: Carro.nome,
+                  quantidade: Carro.quantidade,
+                  ano: e.target.value,
+                  marca: Carro.marca,
+                });
+              }}
+              onBlur={formik.handleBlur}
+              error={formik.touched.ano && Boolean(formik.errors.ano)}
+              helperText={formik.touched.ano && formik.errors.ano}
+            />
+            <TextField
+              fullWidth
+              id="Quantidade"
+              name="Quantidade"
+              label="Quantidade"
+              type="Quantidade"
+              inputProps={{ maxLength: 255 }}
+              value={Carro.quantidade}
+              onChange={(e) => {
+                setCarro({
+                  nome: Carro.nome,
+                  quantidade: e.target.value,
+                  ano: Carro.ano,
+                  marca: Carro.marca,
+                });
+              }}
+              onBlur={formik.handleBlur}
+              error={formik.touched.quantidade && Boolean(formik.errors.quantidade)}
+              helperText={formik.touched.quantidade && formik.errors.Quantidade}
             />
           </Stack>
           <Stack

@@ -1,41 +1,41 @@
-import/n{/nalpha/n}/nfrom/n'@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 
-import/n{/ngrey,/ncommon/n}/nfrom/n'./palette';
+import { grey, common } from './palette';
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/nshadows(mode)/n{
-/n/nconst/ncolor/n=/nmode/n===/n'light'/n?/ngrey[500]/n:/ncommon.black;
+export function shadows(mode) {
+  const color = mode === 'light' ? grey[500] : common.black;
 
-/n/nconst/ntransparent1/n=/nalpha(color,/n0.2);
-/n/nconst/ntransparent2/n=/nalpha(color,/n0.14);
-/n/nconst/ntransparent3/n=/nalpha(color,/n0.12);
+  const transparent1 = alpha(color, 0.2);
+  const transparent2 = alpha(color, 0.14);
+  const transparent3 = alpha(color, 0.12);
 
-/n/nreturn/n[
-/n/n/n/n'none',
-/n/n/n/n`0px/n2px/n1px/n-1px/n${transparent1},0px/n1px/n1px/n0px/n${transparent2},0px/n1px/n3px/n0px/n${transparent3}`,
-/n/n/n/n`0px/n3px/n1px/n-2px/n${transparent1},0px/n2px/n2px/n0px/n${transparent2},0px/n1px/n5px/n0px/n${transparent3}`,
-/n/n/n/n`0px/n3px/n3px/n-2px/n${transparent1},0px/n3px/n4px/n0px/n${transparent2},0px/n1px/n8px/n0px/n${transparent3}`,
-/n/n/n/n`0px/n2px/n4px/n-1px/n${transparent1},0px/n4px/n5px/n0px/n${transparent2},0px/n1px/n10px/n0px/n${transparent3}`,
-/n/n/n/n`0px/n3px/n5px/n-1px/n${transparent1},0px/n5px/n8px/n0px/n${transparent2},0px/n1px/n14px/n0px/n${transparent3}`,
-/n/n/n/n`0px/n3px/n5px/n-1px/n${transparent1},0px/n6px/n10px/n0px/n${transparent2},0px/n1px/n18px/n0px/n${transparent3}`,
-/n/n/n/n`0px/n4px/n5px/n-2px/n${transparent1},0px/n7px/n10px/n1px/n${transparent2},0px/n2px/n16px/n1px/n${transparent3}`,
-/n/n/n/n`0px/n5px/n5px/n-3px/n${transparent1},0px/n8px/n10px/n1px/n${transparent2},0px/n3px/n14px/n2px/n${transparent3}`,
-/n/n/n/n`0px/n5px/n6px/n-3px/n${transparent1},0px/n9px/n12px/n1px/n${transparent2},0px/n3px/n16px/n2px/n${transparent3}`,
-/n/n/n/n`0px/n6px/n6px/n-3px/n${transparent1},0px/n10px/n14px/n1px/n${transparent2},0px/n4px/n18px/n3px/n${transparent3}`,
-/n/n/n/n`0px/n6px/n7px/n-4px/n${transparent1},0px/n11px/n15px/n1px/n${transparent2},0px/n4px/n20px/n3px/n${transparent3}`,
-/n/n/n/n`0px/n7px/n8px/n-4px/n${transparent1},0px/n12px/n17px/n2px/n${transparent2},0px/n5px/n22px/n4px/n${transparent3}`,
-/n/n/n/n`0px/n7px/n8px/n-4px/n${transparent1},0px/n13px/n19px/n2px/n${transparent2},0px/n5px/n24px/n4px/n${transparent3}`,
-/n/n/n/n`0px/n7px/n9px/n-4px/n${transparent1},0px/n14px/n21px/n2px/n${transparent2},0px/n5px/n26px/n4px/n${transparent3}`,
-/n/n/n/n`0px/n8px/n9px/n-5px/n${transparent1},0px/n15px/n22px/n2px/n${transparent2},0px/n6px/n28px/n5px/n${transparent3}`,
-/n/n/n/n`0px/n8px/n10px/n-5px/n${transparent1},0px/n16px/n24px/n2px/n${transparent2},0px/n6px/n30px/n5px/n${transparent3}`,
-/n/n/n/n`0px/n8px/n11px/n-5px/n${transparent1},0px/n17px/n26px/n2px/n${transparent2},0px/n6px/n32px/n5px/n${transparent3}`,
-/n/n/n/n`0px/n9px/n11px/n-5px/n${transparent1},0px/n18px/n28px/n2px/n${transparent2},0px/n7px/n34px/n6px/n${transparent3}`,
-/n/n/n/n`0px/n9px/n12px/n-6px/n${transparent1},0px/n19px/n29px/n2px/n${transparent2},0px/n7px/n36px/n6px/n${transparent3}`,
-/n/n/n/n`0px/n10px/n13px/n-6px/n${transparent1},0px/n20px/n31px/n3px/n${transparent2},0px/n8px/n38px/n7px/n${transparent3}`,
-/n/n/n/n`0px/n10px/n13px/n-6px/n${transparent1},0px/n21px/n33px/n3px/n${transparent2},0px/n8px/n40px/n7px/n${transparent3}`,
-/n/n/n/n`0px/n10px/n14px/n-6px/n${transparent1},0px/n22px/n35px/n3px/n${transparent2},0px/n8px/n42px/n7px/n${transparent3}`,
-/n/n/n/n`0px/n11px/n14px/n-7px/n${transparent1},0px/n23px/n36px/n3px/n${transparent2},0px/n9px/n44px/n8px/n${transparent3}`,
-/n/n/n/n`0px/n11px/n15px/n-7px/n${transparent1},0px/n24px/n38px/n3px/n${transparent2},0px/n9px/n46px/n8px/n${transparent3}`,
-/n/n];
+  return [
+    'none',
+    `0px 2px 1px -1px ${transparent1},0px 1px 1px 0px ${transparent2},0px 1px 3px 0px ${transparent3}`,
+    `0px 3px 1px -2px ${transparent1},0px 2px 2px 0px ${transparent2},0px 1px 5px 0px ${transparent3}`,
+    `0px 3px 3px -2px ${transparent1},0px 3px 4px 0px ${transparent2},0px 1px 8px 0px ${transparent3}`,
+    `0px 2px 4px -1px ${transparent1},0px 4px 5px 0px ${transparent2},0px 1px 10px 0px ${transparent3}`,
+    `0px 3px 5px -1px ${transparent1},0px 5px 8px 0px ${transparent2},0px 1px 14px 0px ${transparent3}`,
+    `0px 3px 5px -1px ${transparent1},0px 6px 10px 0px ${transparent2},0px 1px 18px 0px ${transparent3}`,
+    `0px 4px 5px -2px ${transparent1},0px 7px 10px 1px ${transparent2},0px 2px 16px 1px ${transparent3}`,
+    `0px 5px 5px -3px ${transparent1},0px 8px 10px 1px ${transparent2},0px 3px 14px 2px ${transparent3}`,
+    `0px 5px 6px -3px ${transparent1},0px 9px 12px 1px ${transparent2},0px 3px 16px 2px ${transparent3}`,
+    `0px 6px 6px -3px ${transparent1},0px 10px 14px 1px ${transparent2},0px 4px 18px 3px ${transparent3}`,
+    `0px 6px 7px -4px ${transparent1},0px 11px 15px 1px ${transparent2},0px 4px 20px 3px ${transparent3}`,
+    `0px 7px 8px -4px ${transparent1},0px 12px 17px 2px ${transparent2},0px 5px 22px 4px ${transparent3}`,
+    `0px 7px 8px -4px ${transparent1},0px 13px 19px 2px ${transparent2},0px 5px 24px 4px ${transparent3}`,
+    `0px 7px 9px -4px ${transparent1},0px 14px 21px 2px ${transparent2},0px 5px 26px 4px ${transparent3}`,
+    `0px 8px 9px -5px ${transparent1},0px 15px 22px 2px ${transparent2},0px 6px 28px 5px ${transparent3}`,
+    `0px 8px 10px -5px ${transparent1},0px 16px 24px 2px ${transparent2},0px 6px 30px 5px ${transparent3}`,
+    `0px 8px 11px -5px ${transparent1},0px 17px 26px 2px ${transparent2},0px 6px 32px 5px ${transparent3}`,
+    `0px 9px 11px -5px ${transparent1},0px 18px 28px 2px ${transparent2},0px 7px 34px 6px ${transparent3}`,
+    `0px 9px 12px -6px ${transparent1},0px 19px 29px 2px ${transparent2},0px 7px 36px 6px ${transparent3}`,
+    `0px 10px 13px -6px ${transparent1},0px 20px 31px 3px ${transparent2},0px 8px 38px 7px ${transparent3}`,
+    `0px 10px 13px -6px ${transparent1},0px 21px 33px 3px ${transparent2},0px 8px 40px 7px ${transparent3}`,
+    `0px 10px 14px -6px ${transparent1},0px 22px 35px 3px ${transparent2},0px 8px 42px 7px ${transparent3}`,
+    `0px 11px 14px -7px ${transparent1},0px 23px 36px 3px ${transparent2},0px 9px 44px 8px ${transparent3}`,
+    `0px 11px 15px -7px ${transparent1},0px 24px 38px 3px ${transparent2},0px 9px 46px 8px ${transparent3}`,
+  ];
 }

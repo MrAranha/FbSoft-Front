@@ -1,52 +1,52 @@
-import/n{/ncountries/n}/nfrom/n'src/assets/data';
+import { countries } from 'src/assets/data';
 
-import/n{/n_mock/n}/nfrom/n'./_mock';
-import/n{/n_tags/n}/nfrom/n'./assets';
+import { _mock } from './_mock';
+import { _tags } from './assets';
 
-//----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-exportconstTOUR_DETAILS_TABS/n=/n[
-/n/n{/nvalue:/n'content',/nlabel:/n'TourContent'/n},
-/n/n{/nvalue:/n'bookers',/nlabel:/n'Booker'/n},
+export const TOUR_DETAILS_TABS = [
+  { value: 'content', label: 'Tour Content' },
+  { value: 'bookers', label: 'Booker' },
 ];
 
-exportconstTOUR_SORT_OPTIONS/n=/n[
-/n/n{/nvalue:/n'latest',/nlabel:/n'Latest'/n},
-/n/n{/nvalue:/n'popular',/nlabel:/n'Popular'/n},
-/n/n{/nvalue:/n'oldest',/nlabel:/n'Oldest'/n},
+export const TOUR_SORT_OPTIONS = [
+  { value: 'latest', label: 'Latest' },
+  { value: 'popular', label: 'Popular' },
+  { value: 'oldest', label: 'Oldest' },
 ];
 
-exportconstTOUR_PUBLISH_OPTIONS/n=/n[
-/n/n{
-/n/n/n/nvalue:/n'published',
-/n/n/n/nlabel:/n'Published',
-/n/n},
-/n/n{
-/n/n/n/nvalue:/n'draft',
-/n/n/n/nlabel:/n'Draft',
-/n/n},
+export const TOUR_PUBLISH_OPTIONS = [
+  {
+    value: 'published',
+    label: 'Published',
+  },
+  {
+    value: 'draft',
+    label: 'Draft',
+  },
 ];
 
-exportconstTOUR_SERVICE_OPTIONS/n=/n[
-/n/n{/nvalue:/n'Audioguide',/nlabel:/n'Audioguide'/n},
-/n/n{/nvalue:/n'Foodanddrinks',/nlabel:/n'Foodanddrinks'/n},
-/n/n{/nvalue:/n'Lunch',/nlabel:/n'Lunch'/n},
-/n/n{/nvalue:/n'Privatetour',/nlabel:/n'Privatetour'/n},
-/n/n{/nvalue:/n'Specialactivities',/nlabel:/n'Specialactivities'/n},
-/n/n{/nvalue:/n'Entrancefees',/nlabel:/n'Entrancefees'/n},
-/n/n{/nvalue:/n'Gratuities',/nlabel:/n'Gratuities'/n},
-/n/n{/nvalue:/n'Pick-upanddropoff',/nlabel:/n'Pick-upanddropoff'/n},
-/n/n{/nvalue:/n'Professionalguide',/nlabel:/n'Professionalguide'/n},
-/n/n{
-/n/n/n/nvalue:/n'Transportbyair-conditioned',
-/n/n/n/nlabel:/n'Transportbyair-conditioned',
-/n/n},
+export const TOUR_SERVICE_OPTIONS = [
+  { value: 'Audio guide', label: 'Audio guide' },
+  { value: 'Food and drinks', label: 'Food and drinks' },
+  { value: 'Lunch', label: 'Lunch' },
+  { value: 'Private tour', label: 'Private tour' },
+  { value: 'Special activities', label: 'Special activities' },
+  { value: 'Entrance fees', label: 'Entrance fees' },
+  { value: 'Gratuities', label: 'Gratuities' },
+  { value: 'Pick-up and drop off', label: 'Pick-up and drop off' },
+  { value: 'Professional guide', label: 'Professional guide' },
+  {
+    value: 'Transport by air-conditioned',
+    label: 'Transport by air-conditioned',
+  },
 ];
 
-constCONTENT/n=/n`
+const CONTENT = `
 <h6>Description</h6>
 <br/>
-<p>Occaecatiestetilloquibusdamaccusamusqui.Inciduntautetmolestiaeutfacereaut.Estquidemiustopraesentiumexcepturiharumnihilteneturfacilis.Utomnisvoluptatesnihilaccusantiumdoloribuseaquedebitis.</p>
+<p>Occaecati est et illo quibusdam accusamus qui. Incidunt aut et molestiae ut facere aut. Est quidem iusto praesentium excepturi harum nihil tenetur facilis. Ut omnis voluptates nihil accusantium doloribus eaque debitis.</p>
 
 <br/>
 <br/>
@@ -55,10 +55,10 @@ constCONTENT/n=/n`
 <h6>Highlights</h6>
 <br/>
 <ul>
-<li>Afermentuminmorbipretiumaliquamadipiscingdonectempus.</li>
-<li>Vulputateplaceratametpulvinarloremnisl.</li>
-<li>Consequatfeugiathabitantgravidaquisqueelitbibendumidadipiscingsed.</li>
-<li>Etiamduislobortisinfamesultricescommodonibh.</li>
+    <li>A fermentum in morbi pretium aliquam adipiscing donec tempus.</li>
+    <li>Vulputate placerat amet pulvinar lorem nisl.</li>
+    <li>Consequat feugiat habitant gravida quisque elit bibendum id adipiscing sed.</li>
+    <li>Etiam duis lobortis in fames ultrices commodo nibh.</li>
 </ul>
 
 <br/>
@@ -67,84 +67,84 @@ constCONTENT/n=/n`
 
 <h6>Program</h6>
 <br/>
-<p><strong>Day1</strong></p>
+<p><strong>Day 1</strong></p>
 <br/>
-<p>Ametminimmollitnondeseruntullamcoestsitaliquadolordoametsint.Velitofficiaconsequatduisenimvelitmollit.Exercitationveniamconsequatsuntnostrudamet.</p>
+<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
 <br/>
-<p><strong>Day2</strong></p>
+<p><strong>Day 2</strong></p>
 <br/>
-<p>Ametminimmollitnondeseruntullamcoestsitaliquadolordoametsint.Velitofficiaconsequatduisenimvelitmollit.Exercitationveniamconsequatsuntnostrudamet.</p>
+<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
 <br/>
-<p><strong>Day3</strong></p>
+<p><strong>Day 3</strong></p>
 <br/>
-<p>Ametminimmollitnondeseruntullamcoestsitaliquadolordoametsint.Velitofficiaconsequatduisenimvelitmollit.Exercitationveniamconsequatsuntnostrudamet.</p>
+<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
 
 <br/>
 <br/>
 <br/>
 `;
 
-constBOOKER/n=/n[...Array(12)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nguests:/nindex/n+/n10,
-/n/nname:/n_mock.fullName(index),
-/n/navatarUrl:/n_mock.image.avatar(index),
+const BOOKER = [...Array(12)].map((_, index) => ({
+  id: _mock.id(index),
+  guests: index + 10,
+  name: _mock.fullName(index),
+  avatarUrl: _mock.image.avatar(index),
 }));
 
-exportconst_tourGuides/n=/n[...Array(12)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nname:/n_mock.fullName(index),
-/n/navatarUrl:/n_mock.image.avatar(index),
-/n/nphoneNumber:/n_mock.phoneNumber(index),
+export const _tourGuides = [...Array(12)].map((_, index) => ({
+  id: _mock.id(index),
+  name: _mock.fullName(index),
+  avatarUrl: _mock.image.avatar(index),
+  phoneNumber: _mock.phoneNumber(index),
 }));
 
-exportconstTRAVEL_IMAGES/n=/n[...Array(16)].map((_,/nindex)/n=>/n_mock.image.travel(index));
+export const TRAVEL_IMAGES = [...Array(16)].map((_, index) => _mock.image.travel(index));
 
-exportconst_tours/n=/n[...Array(12)].map((_,/nindex)/n=>/n{
-/n/nconstavailable/n=/n{
-/n/n/n/nstartDate:/n_mock.time(index/n+/n1),
-/n/n/n/nendDate:/n_mock.time(index),
-/n/n};
+export const _tours = [...Array(12)].map((_, index) => {
+  const available = {
+    startDate: _mock.time(index + 1),
+    endDate: _mock.time(index),
+  };
 
-/n/nconstpublish/n=/nindex/n%/n3/n?/n'published'/n:/n'draft';
+  const publish = index % 3 ? 'published' : 'draft';
 
-/n/nconstdestination/n=/ncountries.map((option)/n=>/noption.label)[index];
+  const destination = countries.map((option) => option.label)[index];
 
-/n/nconstservices/n=/n(index/n%/n2/n&&/n['Audioguide',/n'Foodanddrinks'])/n||
-/n/n/n/n(index/n%/n3/n&&/n['Lunch',/n'Privatetour'])/n||
-/n/n/n/n(index/n%/n4/n&&/n['Specialactivities',/n'Entrancefees'])/n||/n[
-/n/n/n/n/n/n'Gratuities',
-/n/n/n/n/n/n'Pick-upanddropoff',
-/n/n/n/n/n/n'Professionalguide',
-/n/n/n/n/n/n'Transportbyair-conditioned',
-/n/n/n/n];
+  const services = (index % 2 && ['Audio guide', 'Food and drinks']) ||
+    (index % 3 && ['Lunch', 'Private tour']) ||
+    (index % 4 && ['Special activities', 'Entrance fees']) || [
+      'Gratuities',
+      'Pick-up and drop off',
+      'Professional guide',
+      'Transport by air-conditioned',
+    ];
 
-/n/nconsttourGuides/n=
-/n/n/n/n(index/n===/n0/n&&/n_tourGuides.slice(0,/n1))/n||
-/n/n/n/n(index/n===/n1/n&&/n_tourGuides.slice(1,/n3))/n||
-/n/n/n/n(index/n===/n2/n&&/n_tourGuides.slice(2,/n5))/n||
-/n/n/n/n(index/n===/n3/n&&/n_tourGuides.slice(4,/n6))/n||
-/n/n/n/n_tourGuides.slice(6,/n9);
+  const tourGuides =
+    (index === 0 && _tourGuides.slice(0, 1)) ||
+    (index === 1 && _tourGuides.slice(1, 3)) ||
+    (index === 2 && _tourGuides.slice(2, 5)) ||
+    (index === 3 && _tourGuides.slice(4, 6)) ||
+    _tourGuides.slice(6, 9);
 
-/n/nconstimages/n=/nTRAVEL_IMAGES.slice(index,/nindex/n+/n5);
+  const images = TRAVEL_IMAGES.slice(index, index + 5);
 
-/n/nreturn/n{
-/n/n/n/nid:/n_mock.id(index),
-/n/n/n/nimages,
-/n/n/n/npublish,
-/n/n/n/nservices,
-/n/n/n/navailable,
-/n/n/n/ntourGuides,
-/n/n/n/ndestination,
-/n/n/n/nbookers:/nBOOKER,
-/n/n/n/ncontent:/nCONTENT,
-/n/n/n/ntags:/n_tags.slice(0,/n5),
-/n/n/n/nname:/n_mock.tourName(index),
-/n/n/n/ncreatedAt:/n_mock.time(index),
-/n/n/n/ndurations:/n'4days3nights',
-/n/n/n/nprice:/n_mock.number.price(index),
-/n/n/n/npriceSale:/n_mock.number.price(index),
-/n/n/n/ntotalViews:/n_mock.number.nativeL(index),
-/n/n/n/nratingNumber:/n_mock.number.rating(index),
-/n/n};
+  return {
+    id: _mock.id(index),
+    images,
+    publish,
+    services,
+    available,
+    tourGuides,
+    destination,
+    bookers: BOOKER,
+    content: CONTENT,
+    tags: _tags.slice(0, 5),
+    name: _mock.tourName(index),
+    createdAt: _mock.time(index),
+    durations: '4 days 3 nights',
+    price: _mock.number.price(index),
+    priceSale: _mock.number.price(index),
+    totalViews: _mock.number.nativeL(index),
+    ratingNumber: _mock.number.rating(index),
+  };
 });

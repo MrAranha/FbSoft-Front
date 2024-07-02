@@ -1,20 +1,20 @@
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/ntimeline(theme)/n{
-/n/nreturn/n{
-/n/n/n/nMuiTimelineDot:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/nroot:/n{
-/n/n/n/n/n/n/n/n/n/nboxShadow:/n'none',
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n/n/nMuiTimelineConnector:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/nroot:/n{
-/n/n/n/n/n/n/n/n/n/nbackgroundColor:/ntheme.palette.divider,
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n};
+export function timeline(theme) {
+  return {
+    MuiTimelineDot: {
+      styleOverrides: {
+        root: {
+          boxShadow: 'none',
+        },
+      },
+    },
+    MuiTimelineConnector: {
+      styleOverrides: {
+        root: {
+          backgroundColor: theme.palette.divider,
+        },
+      },
+    },
+  };
 }

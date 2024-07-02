@@ -1,14 +1,14 @@
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/nflattenArray(list,/nkey/n=/n'children')/n{
-/n/nlet/nchildren/n=/n[];
+export function flattenArray(list, key = 'children') {
+  let children = [];
 
-/n/nconst/nflatten/n=/nlist?.map((item)/n=>/n{
-/n/n/n/nif/n(item[key]/n&&/nitem[key].length)/n{
-/n/n/n/n/n/nchildren/n=/n[...children,/n...item[key]];
-/n/n/n/n}
-/n/n/n/nreturn/nitem;
-/n/n});
+  const flatten = list?.map((item) => {
+    if (item[key] && item[key].length) {
+      children = [...children, ...item[key]];
+    }
+    return item;
+  });
 
-/n/nreturn/nflatten?.concat(children.length/n?/nflattenArray(children,/nkey)/n:/nchildren);
+  return flatten?.concat(children.length ? flattenArray(children, key) : children);
 }

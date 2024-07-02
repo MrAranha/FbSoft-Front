@@ -1,95 +1,95 @@
-import/n{/n_mock/n}/nfrom/n'./_mock';
+import { _mock } from './_mock';
 
-//----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-exportconstORDER_STATUS_OPTIONS/n=/n[
-/n/n{/nvalue:/n'pending',/nlabel:/n'Pending'/n},
-/n/n{/nvalue:/n'completed',/nlabel:/n'Completed'/n},
-/n/n{/nvalue:/n'cancelled',/nlabel:/n'Cancelled'/n},
-/n/n{/nvalue:/n'refunded',/nlabel:/n'Refunded'/n},
+export const ORDER_STATUS_OPTIONS = [
+  { value: 'pending', label: 'Pending' },
+  { value: 'completed', label: 'Completed' },
+  { value: 'cancelled', label: 'Cancelled' },
+  { value: 'refunded', label: 'Refunded' },
 ];
 
-constITEMS/n=/n[...Array(3)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nsku:/n`16H9UR${index}`,
-/n/nquantity:/nindex/n+/n1,
-/n/nname:/n_mock.productName(index),
-/n/ncoverUrl:/n_mock.image.product(index),
-/n/nprice:/n_mock.number.price(index),
+const ITEMS = [...Array(3)].map((_, index) => ({
+  id: _mock.id(index),
+  sku: `16H9UR${index}`,
+  quantity: index + 1,
+  name: _mock.productName(index),
+  coverUrl: _mock.image.product(index),
+  price: _mock.number.price(index),
 }));
 
-exportconst_orders/n=/n[...Array(20)].map((_,/nindex)/n=>/n{
-/n/nconstshipping/n=/n10;
+export const _orders = [...Array(20)].map((_, index) => {
+  const shipping = 10;
 
-/n/nconstdiscount/n=/n10;
+  const discount = 10;
 
-/n/nconsttaxes/n=/n10;
+  const taxes = 10;
 
-/n/nconstitems/n=/n(index/n%/n2/n&&/nITEMS.slice(0,/n1))/n||/n(index/n%/n3/n&&/nITEMS.slice(1,/n3))/n||/nITEMS;
+  const items = (index % 2 && ITEMS.slice(0, 1)) || (index % 3 && ITEMS.slice(1, 3)) || ITEMS;
 
-/n/nconsttotalQuantity/n=/nitems.reduce((accumulator,/nitem)/n=>/naccumulator/n+/nitem.quantity,/n0);
+  const totalQuantity = items.reduce((accumulator, item) => accumulator + item.quantity, 0);
 
-/n/nconstsubTotal/n=/nitems.reduce((accumulator,/nitem)/n=>/naccumulator/n+/nitem.price/n*/nitem.quantity,/n0);
+  const subTotal = items.reduce((accumulator, item) => accumulator + item.price * item.quantity, 0);
 
-/n/nconsttotalAmount/n=/nsubTotal/n-/nshipping/n-/ndiscount/n+/ntaxes;
+  const totalAmount = subTotal - shipping - discount + taxes;
 
-/n/nconstcustomer/n=/n{
-/n/n/n/nid:/n_mock.id(index),
-/n/n/n/nname:/n_mock.fullName(index),
-/n/n/n/nemail:/n_mock.email(index),
-/n/n/n/navatarUrl:/n_mock.image.avatar(index),
-/n/n/n/nipAddress:/n'192.158.1.38',
-/n/n};
+  const customer = {
+    id: _mock.id(index),
+    name: _mock.fullName(index),
+    email: _mock.email(index),
+    avatarUrl: _mock.image.avatar(index),
+    ipAddress: '192.158.1.38',
+  };
 
-/n/nconstdelivery/n=/n{
-/n/n/n/nshipBy:/n'DHL',
-/n/n/n/nspeedy:/n'Standard',
-/n/n/n/ntrackingNumber:/n'SPX037739199373',
-/n/n};
+  const delivery = {
+    shipBy: 'DHL',
+    speedy: 'Standard',
+    trackingNumber: 'SPX037739199373',
+  };
 
-/n/nconsthistory/n=/n{
-/n/n/n/norderTime:/n_mock.time(1),
-/n/n/n/npaymentTime:/n_mock.time(2),
-/n/n/n/ndeliveryTime:/n_mock.time(3),
-/n/n/n/ncompletionTime:/n_mock.time(4),
-/n/n/n/ntimeline:/n[
-/n/n/n/n/n/n{/ntitle:/n'Deliverysuccessful',/ntime:/n_mock.time(1)/n},
-/n/n/n/n/n/n{/ntitle:/n'Transportingto[2]',/ntime:/n_mock.time(2)/n},
-/n/n/n/n/n/n{/ntitle:/n'Transportingto[1]',/ntime:/n_mock.time(3)/n},
-/n/n/n/n/n/n{
-/n/n/n/n/n/n/n/ntitle:/n'Theshippingunithaspickedupthegoods',
-/n/n/n/n/n/n/n/ntime:/n_mock.time(4),
-/n/n/n/n/n/n},
-/n/n/n/n/n/n{/ntitle:/n'Orderhasbeencreated',/ntime:/n_mock.time(5)/n},
-/n/n/n/n],
-/n/n};
+  const history = {
+    orderTime: _mock.time(1),
+    paymentTime: _mock.time(2),
+    deliveryTime: _mock.time(3),
+    completionTime: _mock.time(4),
+    timeline: [
+      { title: 'Delivery successful', time: _mock.time(1) },
+      { title: 'Transporting to [2]', time: _mock.time(2) },
+      { title: 'Transporting to [1]', time: _mock.time(3) },
+      {
+        title: 'The shipping unit has picked up the goods',
+        time: _mock.time(4),
+      },
+      { title: 'Order has been created', time: _mock.time(5) },
+    ],
+  };
 
-/n/nreturn/n{
-/n/n/n/nid:/n_mock.id(index),
-/n/n/n/norderNumber:/n`#601${index}`,
-/n/n/n/ncreatedAt:/n_mock.time(index),
-/n/n/n/ntaxes,
-/n/n/n/nitems,
-/n/n/n/nhistory,
-/n/n/n/nsubTotal,
-/n/n/n/nshipping,
-/n/n/n/ndiscount,
-/n/n/n/ncustomer,
-/n/n/n/ndelivery,
-/n/n/n/ntotalAmount,
-/n/n/n/ntotalQuantity,
-/n/n/n/nshippingAddress:/n{
-/n/n/n/n/n/nfullAddress:/n'19034VernaUnionsApt.164-Honolulu,RI/87535',
-/n/n/n/n/n/nphoneNumber:/n'365-374-4961',
-/n/n/n/n},
-/n/n/n/npayment:/n{
-/n/n/n/n/n/ncardType:/n'mastercard',
-/n/n/n/n/n/ncardNumber:/n'************5678',
-/n/n/n/n},
-/n/n/n/nstatus:
-/n/n/n/n/n/n(index/n%/n2/n&&/n'completed')/n||
-/n/n/n/n/n/n(index/n%/n3/n&&/n'pending')/n||
-/n/n/n/n/n/n(index/n%/n4/n&&/n'cancelled')/n||
-/n/n/n/n/n/n'refunded',
-/n/n};
+  return {
+    id: _mock.id(index),
+    orderNumber: `#601${index}`,
+    createdAt: _mock.time(index),
+    taxes,
+    items,
+    history,
+    subTotal,
+    shipping,
+    discount,
+    customer,
+    delivery,
+    totalAmount,
+    totalQuantity,
+    shippingAddress: {
+      fullAddress: '19034 Verna Unions Apt. 164 - Honolulu, RI / 87535',
+      phoneNumber: '365-374-4961',
+    },
+    payment: {
+      cardType: 'mastercard',
+      cardNumber: '**** **** **** 5678',
+    },
+    status:
+      (index % 2 && 'completed') ||
+      (index % 3 && 'pending') ||
+      (index % 4 && 'cancelled') ||
+      'refunded',
+  };
 });

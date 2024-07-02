@@ -1,186 +1,187 @@
-'useclient';
+'use client';
 
-importPropTypesfrom'prop-types';
-import{useMemo,useEffect,useReducer,useCallback}from'react';
+import PropTypes from 'prop-types';
+import { useMemo, useEffect, useReducer, useCallback } from 'react';
 
-importaxios,{endpoints}from'src/utils/axios';
+import axios, { endpoints } from 'src/utils/axios';
 
-import{AuthContext}from'./auth-context';
-import{setSession,isValidToken}from'./utils';
+import { AuthContext } from './auth-context';
+import { setSession, isValidToken } from './utils';
 
-//----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 /**
-*NOTE:
-*Weonlybuilddemoatbasiclevel.
-*Customerwillneedtodosomeextrahandlingyourselfifyouwanttoextendthelogicandotherfeatures...
-*/
-//----------------------------------------------------------------------
+ * NOTE:
+ * We only build demo at basic level.
+ * Customer will need to do some extra handling yourself if you want to extend the logic and other features...
+ */
+// ----------------------------------------------------------------------
 
-constinitialState={
-user:null,
-loading:true,
+const initialState = {
+  user: null,
+  loading: true,
 };
 
-constreducer=(state,action)=>{
-if(action.type==='INITIAL'){
-return{
-loading:false,
-user:action.payload.user,
+const reducer = (state, action) => {
+  if (action.type === 'INITIAL') {
+    return {
+      loading: false,
+      user: action.payload.user,
+    };
+  }
+  if (action.type === 'LOGIN') {
+    return {
+      ...state,
+      user: action.payload.user,
+    };
+  }
+  if (action.type === 'REGISTER') {
+    return {
+      ...state,
+      user: action.payload.user,
+    };
+  }
+  if (action.type === 'LOGOUT') {
+    return {
+      ...state,
+      user: null,
+    };
+  }
+  return state;
 };
+
+// ----------------------------------------------------------------------
+
+const STORAGE_KEY = 'accessToken';
+
+export function AuthProvider({ children }) {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const initialize = useCallback(async () => {
+    try {
+      const accessToken = localStorage.getItem(STORAGE_KEY);
+
+      if (accessToken && isValidToken(accessToken)) {
+        setSession(accessToken);
+
+        const response = await axios.get(endpoints.auth.me);
+
+        const { user } = response.data;
+        localStorage.setItem('username', user.username);
+        localStorage.setItem('email', user.email);
+
+        dispatch({
+          type: 'INITIAL',
+          payload: {
+            user: {
+              ...user,
+              accessToken,
+            },
+          },
+        });
+      } else {
+        dispatch({
+          type: 'INITIAL',
+          payload: {
+            user: null,
+          },
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      dispatch({
+        type: 'INITIAL',
+        payload: {
+          user: null,
+        },
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    initialize();
+  }, [initialize]);
+
+  // LOGIN
+  const login = useCallback(async (email, password) => {
+    const data = {
+      email,
+      password,
+    };
+
+    const response = await axios.post(endpoints.auth.login, data);
+
+    const { accessToken, user } = response.data;
+    setSession(accessToken, user.displayName, user.email);
+
+    dispatch({
+      type: 'LOGIN',
+      payload: {
+        user: {
+          ...user,
+          accessToken,
+        },
+      },
+    });
+  }, []);
+
+  // REGISTER
+  const register = useCallback(async (email, password, firstName, lastName) => {
+    const data = {
+      email,
+      password,
+      firstName,
+      lastName,
+    };
+
+    const response = await axios.post(endpoints.auth.register, data);
+
+    const { accessToken, user } = response.data;
+
+    localStorage.setItem(STORAGE_KEY, accessToken);
+
+    dispatch({
+      type: 'REGISTER',
+      payload: {
+        user: {
+          ...user,
+          accessToken,
+        },
+      },
+    });
+  }, []);
+
+  // LOGOUT
+  const logout = useCallback(async () => {
+    setSession(null);
+    dispatch({
+      type: 'LOGOUT',
+    });
+  }, []);
+
+  // ----------------------------------------------------------------------
+
+  const checkAuthenticated = state.user ? 'authenticated' : 'unauthenticated';
+
+  const status = state.loading ? 'loading' : checkAuthenticated;
+
+  const memoizedValue = useMemo(
+    () => ({
+      user: state.user,
+      method: 'jwt',
+      loading: status === 'loading',
+      authenticated: status === 'authenticated',
+      unauthenticated: status === 'unauthenticated',
+      //
+      login,
+      register,
+      logout,
+    }),
+    [login, logout, register, state.user, status]
+  );
+
+  return <AuthContext.Provider value={memoizedValue}>{children}</AuthContext.Provider>;
 }
-if(action.type==='LOGIN'){
-return{
-...state,
-user:action.payload.user,
-};
-}
-if(action.type==='REGISTER'){
-return{
-...state,
-user:action.payload.user,
-};
-}
-if(action.type==='LOGOUT'){
-return{
-...state,
-user:null,
-};
-}
-returnstate;
-};
 
-//----------------------------------------------------------------------
-
-constSTORAGE_KEY='accessToken';
-
-exportfunctionAuthProvider({children}){
-const[state,dispatch]=useReducer(reducer,initialState);
-
-constinitialize=useCallback(async()=>{
-try{
-constaccessToken=localStorage.getItem(STORAGE_KEY);
-
-if(accessToken&&isValidToken(accessToken)){
-setSession(accessToken);
-
-constresponse=awaitaxios.get(endpoints.auth.me);
-
-const{user}=response.data;
-
-dispatch({
-type:'INITIAL',
-payload:{
-user:{
-...user,
-accessToken,
-},
-},
-});
-}else{
-dispatch({
-type:'INITIAL',
-payload:{
-user:null,
-},
-});
-}
-}catch(error){
-console.error(error);
-dispatch({
-type:'INITIAL',
-payload:{
-user:null,
-},
-});
-}
-},[]);
-
-useEffect(()=>{
-initialize();
-},[initialize]);
-
-//LOGIN
-constlogin=useCallback(async(email,password)=>{
-constdata={
-email,
-password,
-};
-
-constresponse=awaitaxios.post(endpoints.auth.login,data);
-
-const{accessToken,user}=response.data;
-
-setSession(accessToken);
-
-dispatch({
-type:'LOGIN',
-payload:{
-user:{
-...user,
-accessToken,
-},
-},
-});
-},[]);
-
-//REGISTER
-constregister=useCallback(async(email,password,firstName,lastName)=>{
-constdata={
-email,
-password,
-firstName,
-lastName,
-};
-
-constresponse=awaitaxios.post(endpoints.auth.register,data);
-
-const{accessToken,user}=response.data;
-
-localStorage.setItem(STORAGE_KEY,accessToken);
-
-dispatch({
-type:'REGISTER',
-payload:{
-user:{
-...user,
-accessToken,
-},
-},
-});
-},[]);
-
-//LOGOUT
-constlogout=useCallback(async()=>{
-setSession(null);
-dispatch({
-type:'LOGOUT',
-});
-},[]);
-
-//----------------------------------------------------------------------
-
-constcheckAuthenticated=state.user?'authenticated':'unauthenticated';
-
-conststatus=state.loading?'loading':checkAuthenticated;
-
-constmemoizedValue=useMemo(
-()=>({
-user:state.user,
-method:'jwt',
-loading:status==='loading',
-authenticated:status==='authenticated',
-unauthenticated:status==='unauthenticated',
-//
-login,
-register,
-logout,
-}),
-[login,logout,register,state.user,status]
-);
-
-return<AuthContext.Providervalue={memoizedValue}>{children}</AuthContext.Provider>;
-}
-
-AuthProvider.propTypes={
-children:PropTypes.node,
+AuthProvider.propTypes = {
+  children: PropTypes.node,
 };

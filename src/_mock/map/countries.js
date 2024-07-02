@@ -1,8 +1,8 @@
 import { _mock } from '../_mock';
 
-//----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-exportconstcountries = [
+export const countries = [
   {
     timezones: ['America/Aruba'],
     latlng: [12.5, -69.96666666],
@@ -32,13 +32,13 @@ exportconstcountries = [
     latlng: [-16, 167],
     name: 'Vanuatu',
     country_code: 'VU',
-    capital: 'PortVila',
+    capital: 'Port Vila',
     photoUrl: _mock.image.cover(4),
   },
   {
     timezones: ['Pacific/Wallis'],
     latlng: [-13.3, -176.2],
-    name: 'WallisandFutuna',
+    name: 'Wallis and Futuna',
     country_code: 'WF',
     capital: 'Mata-Utu',
     photoUrl: _mock.image.cover(5),
@@ -62,7 +62,7 @@ exportconstcountries = [
   {
     timezones: ['Africa/Johannesburg'],
     latlng: [-29, 24],
-    name: 'SouthAfrica',
+    name: 'South Africa',
     country_code: 'ZA',
     capital: 'Pretoria',
     photoUrl: _mock.image.cover(8),

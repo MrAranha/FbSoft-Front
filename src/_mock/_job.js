@@ -1,168 +1,172 @@
-import/n{/ncountries/n}/nfrom/n'src/assets/data';
+import { countries } from 'src/assets/data';
 
-import/n{/n_mock/n}/nfrom/n'./_mock';
+import { _mock } from './_mock';
 
-//----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-exportconstJOB_DETAILS_TABS/n=/n[
-/n/n{/nvalue:/n'content',/nlabel:/n'JobContent'/n},
-/n/n{/nvalue:/n'candidates',/nlabel:/n'Candidates'/n},
+export const JOB_DETAILS_TABS = [
+  { value: 'content', label: 'Job Content' },
+  { value: 'candidates', label: 'Candidates' },
 ];
 
-exportconstJOB_SKILL_OPTIONS/n=/n[
-/n/n'UI',
-/n/n'UX',
-/n/n'Html',
-/n/n'JavaScript',
-/n/n'TypeScript',
-/n/n'Communication',
-/n/n'ProblemSolving',
-/n/n'Leadership',
-/n/n'TimeManagement',
-/n/n'Adaptability',
-/n/n'Collaboration',
-/n/n'Creativity',
-/n/n'CriticalThinking',
-/n/n'TechnicalSkills',
-/n/n'CustomerService',
-/n/n'ProjectManagement',
-/n/n'ProblemDiagnosis',
+export const JOB_SKILL_OPTIONS = [
+  'UI',
+  'UX',
+  'Html',
+  'JavaScript',
+  'TypeScript',
+  'Communication',
+  'Problem Solving',
+  'Leadership',
+  'Time Management',
+  'Adaptability',
+  'Collaboration',
+  'Creativity',
+  'Critical Thinking',
+  'Technical Skills',
+  'Customer Service',
+  'Project Management',
+  'Problem Diagnosis',
 ];
 
-exportconstJOB_WORKING_SCHEDULE_OPTIONS/n=/n['MondaytoFriday',/n'Weekendavailability',/n'Dayshift'];
-
-exportconstJOB_EMPLOYMENT_TYPE_OPTIONS/n=/n[
-/n/n{/nvalue:/n'Full-time',/nlabel:/n'Full-time'/n},
-/n/n{/nvalue:/n'Part-time',/nlabel:/n'Part-time'/n},
-/n/n{/nvalue:/n'OnDemand',/nlabel:/n'OnDemand'/n},
-/n/n{/nvalue:/n'Negotiable',/nlabel:/n'Negotiable'/n},
+export const JOB_WORKING_SCHEDULE_OPTIONS = [
+  'Monday to Friday',
+  'Weekend availability',
+  'Day shift',
 ];
 
-exportconstJOB_EXPERIENCE_OPTIONS/n=/n[
-/n/n{/nvalue:/n'Noexperience',/nlabel:/n'Noexperience'/n},
-/n/n{/nvalue:/n'1yearexp',/nlabel:/n'1yearexp'/n},
-/n/n{/nvalue:/n'2yearexp',/nlabel:/n'2yearexp'/n},
-/n/n{/nvalue:/n'>3yearexp',/nlabel:/n'>3yearexp'/n},
+export const JOB_EMPLOYMENT_TYPE_OPTIONS = [
+  { value: 'Full-time', label: 'Full-time' },
+  { value: 'Part-time', label: 'Part-time' },
+  { value: 'On Demand', label: 'On Demand' },
+  { value: 'Negotiable', label: 'Negotiable' },
 ];
 
-exportconstJOB_BENEFIT_OPTIONS/n=/n[
-/n/n{/nvalue:/n'Freeparking',/nlabel:/n'Freeparking'/n},
-/n/n{/nvalue:/n'Bonuscommission',/nlabel:/n'Bonuscommission'/n},
-/n/n{/nvalue:/n'Travel',/nlabel:/n'Travel'/n},
-/n/n{/nvalue:/n'Devicesupport',/nlabel:/n'Devicesupport'/n},
-/n/n{/nvalue:/n'Healthcare',/nlabel:/n'Healthcare'/n},
-/n/n{/nvalue:/n'Training',/nlabel:/n'Training'/n},
-/n/n{/nvalue:/n'HealthInsurance',/nlabel:/n'HealthInsurance'/n},
-/n/n{/nvalue:/n'RetirementPlans',/nlabel:/n'RetirementPlans'/n},
-/n/n{/nvalue:/n'PaidTimeOff',/nlabel:/n'PaidTimeOff'/n},
-/n/n{/nvalue:/n'FlexibleWorkSchedule',/nlabel:/n'FlexibleWorkSchedule'/n},
+export const JOB_EXPERIENCE_OPTIONS = [
+  { value: 'No experience', label: 'No experience' },
+  { value: '1 year exp', label: '1 year exp' },
+  { value: '2 year exp', label: '2 year exp' },
+  { value: '> 3 year exp', label: '> 3 year exp' },
 ];
 
-exportconstJOB_PUBLISH_OPTIONS/n=/n[
-/n/n{
-/n/n/n/nvalue:/n'published',
-/n/n/n/nlabel:/n'Published',
-/n/n},
-/n/n{
-/n/n/n/nvalue:/n'draft',
-/n/n/n/nlabel:/n'Draft',
-/n/n},
+export const JOB_BENEFIT_OPTIONS = [
+  { value: 'Free parking', label: 'Free parking' },
+  { value: 'Bonus commission', label: 'Bonus commission' },
+  { value: 'Travel', label: 'Travel' },
+  { value: 'Device support', label: 'Device support' },
+  { value: 'Health care', label: 'Health care' },
+  { value: 'Training', label: 'Training' },
+  { value: 'Health Insurance', label: 'Health Insurance' },
+  { value: 'Retirement Plans', label: 'Retirement Plans' },
+  { value: 'Paid Time Off', label: 'Paid Time Off' },
+  { value: 'Flexible Work Schedule', label: 'Flexible Work Schedule' },
 ];
 
-exportconstJOB_SORT_OPTIONS/n=/n[
-/n/n{/nvalue:/n'latest',/nlabel:/n'Latest'/n},
-/n/n{/nvalue:/n'popular',/nlabel:/n'Popular'/n},
-/n/n{/nvalue:/n'oldest',/nlabel:/n'Oldest'/n},
+export const JOB_PUBLISH_OPTIONS = [
+  {
+    value: 'published',
+    label: 'Published',
+  },
+  {
+    value: 'draft',
+    label: 'Draft',
+  },
 ];
 
-constCANDIDATES/n=/n[...Array(12)].map((_,/nindex)/n=>/n({
-/n/nid:/n_mock.id(index),
-/n/nrole:/n_mock.role(index),
-/n/nname:/n_mock.fullName(index),
-/n/navatarUrl:/n_mock.image.avatar(index),
+export const JOB_SORT_OPTIONS = [
+  { value: 'latest', label: 'Latest' },
+  { value: 'popular', label: 'Popular' },
+  { value: 'oldest', label: 'Oldest' },
+];
+
+const CANDIDATES = [...Array(12)].map((_, index) => ({
+  id: _mock.id(index),
+  role: _mock.role(index),
+  name: _mock.fullName(index),
+  avatarUrl: _mock.image.avatar(index),
 }));
 
-constCONTENT/n=/n`
-<h6>JobDescription</h6>
+const CONTENT = `
+<h6>Job Description</h6>
 <br/>
 
-<p>Occaecatiestetilloquibusdamaccusamusqui.Inciduntautetmolestiaeutfacereaut.Estquidemiustopraesentiumexcepturiharumnihilteneturfacilis.Utomnisvoluptatesnihilaccusantiumdoloribuseaquedebitis.</p>
+<p>Occaecati est et illo quibusdam accusamus qui. Incidunt aut et molestiae ut facere aut. Est quidem iusto praesentium excepturi harum nihil tenetur facilis. Ut omnis voluptates nihil accusantium doloribus eaque debitis.</p>
 
 <br/>
 <br/>
 
-<h6>KeyResponsibilities</h6>
+<h6>Key Responsibilities</h6>
 <br/>
 <ul>
-<li>Workingwithagencyfordesigndrawingdetail,quotationandlocalproduction.</li>
-<li>Producewindowdisplays,signs,interiordisplays,floorplansandspecialpromotionsdisplays.</li>
-<li>Changedisplaystopromotenewproductlaunchesandreflectfestiveorseasonalthemes.</li>
-<li>Planningandexecutingtheopen/renovation/closingstoreprocedure.</li>
-<li>Follow‐upstoremaintenanceprocedureandkeepupdatingSKUIn&amp;Out.</li>
-<li>Monitorcostsandworkwithinbudget.</li>
-<li>Liaisewithsuppliersandsourceelements.</li>
+  <li>Working with agency for design drawing detail, quotation and local production.</li>
+  <li>Produce window displays, signs, interior displays, floor plans and special promotions displays.</li>
+  <li>Change displays to promote new product launches and reflect festive or seasonal themes.</li>
+  <li>Planning and executing the open/renovation/ closing store procedure.</li>
+  <li>Follow‐up store maintenance procedure and keep updating SKU In &amp; Out.</li>
+  <li>Monitor costs and work within budget.</li>
+  <li>Liaise with suppliers and source elements.</li>
 </ul>
 
 <br/>
 <br/>
 
-<h6>WhyYou'llLoveWorkingHere</h6>
+<h6>Why You'll Love Working Here</h6>
 <br/>
 <ul>
-<li>Workingwithagencyfordesigndrawingdetail,quotationandlocalproduction.</li>
-<li>Producewindowdisplays,signs,interiordisplays,floorplansandspecialpromotionsdisplays.</li>
-<li>Changedisplaystopromotenewproductlaunchesandreflectfestiveorseasonalthemes.</li>
-<li>Planningandexecutingtheopen/renovation/closingstoreprocedure.</li>
-<li>Follow‐upstoremaintenanceprocedureandkeepupdatingSKUIn&amp;Out.</li>
-<li>Monitorcostsandworkwithinbudget.</li>
-<li>Liaisewithsuppliersandsourceelements.</li>
+  <li>Working with agency for design drawing detail, quotation and local production.</li>
+  <li>Produce window displays, signs, interior displays, floor plans and special promotions displays.</li>
+  <li>Change displays to promote new product launches and reflect festive or seasonal themes.</li>
+  <li>Planning and executing the open/renovation/ closing store procedure.</li>
+  <li>Follow‐up store maintenance procedure and keep updating SKU In &amp; Out.</li>
+  <li>Monitor costs and work within budget.</li>
+  <li>Liaise with suppliers and source elements.</li>
 </ul>
 `;
 
-exportconst_jobs/n=/n[...Array(12)].map((_,/nindex)/n=>/n{
-/n/nconstpublish/n=/nindex/n%/n3/n?/n'published'/n:/n'draft';
+export const _jobs = [...Array(12)].map((_, index) => {
+  const publish = index % 3 ? 'published' : 'draft';
 
-/n/nconstsalary/n=/n{
-/n/n/n/ntype:/n(index/n%/n5/n&&/n'Custom')/n||/n'Hourly',
-/n/n/n/nprice:/n_mock.number.price(index),
-/n/n/n/nnegotiable:/n_mock.boolean(index),
-/n/n};
+  const salary = {
+    type: (index % 5 && 'Custom') || 'Hourly',
+    price: _mock.number.price(index),
+    negotiable: _mock.boolean(index),
+  };
 
-/n/nconstbenefits/n=/nJOB_BENEFIT_OPTIONS.slice(0,/n3).map((option)/n=>/noption.label);
+  const benefits = JOB_BENEFIT_OPTIONS.slice(0, 3).map((option) => option.label);
 
-/n/nconstexperience/n=
-/n/n/n/nJOB_EXPERIENCE_OPTIONS.map((option)/n=>/noption.label)[index]/n||/nJOB_EXPERIENCE_OPTIONS[1].label;
+  const experience =
+    JOB_EXPERIENCE_OPTIONS.map((option) => option.label)[index] || JOB_EXPERIENCE_OPTIONS[1].label;
 
-/n/nconstemploymentTypes/n=/n(index/n%/n2/n&&/n['Part-time'])/n||
-/n/n/n/n(index/n%/n3/n&&/n['OnDemand'])/n||
-/n/n/n/n(index/n%/n4/n&&/n['Negotiable'])/n||/n['Full-time'];
+  const employmentTypes = (index % 2 && ['Part-time']) ||
+    (index % 3 && ['On Demand']) ||
+    (index % 4 && ['Negotiable']) || ['Full-time'];
 
-/n/nconstcompany/n=/n{
-/n/n/n/nname:/n_mock.companyName(index),
-/n/n/n/nlogo:/n_mock.image.company(index),
-/n/n/n/nphoneNumber:/n_mock.phoneNumber(index),
-/n/n/n/nfullAddress:/n_mock.fullAddress(index),
-/n/n};
+  const company = {
+    name: _mock.companyName(index),
+    logo: _mock.image.company(index),
+    phoneNumber: _mock.phoneNumber(index),
+    fullAddress: _mock.fullAddress(index),
+  };
 
-/n/nconstlocations/n=/ncountries.slice(1,/nindex/n+/n2).map((option)/n=>/noption.label);
+  const locations = countries.slice(1, index + 2).map((option) => option.label);
 
-/n/nreturn/n{
-/n/n/n/nid:/n_mock.id(index),
-/n/n/n/nsalary,
-/n/n/n/npublish,
-/n/n/n/ncompany,
-/n/n/n/nbenefits,
-/n/n/n/nlocations,
-/n/n/n/nexperience,
-/n/n/n/nemploymentTypes,
-/n/n/n/ncontent:/nCONTENT,
-/n/n/n/ncandidates:/nCANDIDATES,
-/n/n/n/nrole:/n_mock.role(index),
-/n/n/n/ntitle:/n_mock.jobTitle(index),
-/n/n/n/ncreatedAt:/n_mock.time(index),
-/n/n/n/nexpiredDate:/n_mock.time(index),
-/n/n/n/nskills:/nJOB_SKILL_OPTIONS.slice(0,/n3),
-/n/n/n/ntotalViews:/n_mock.number.nativeL(index),
-/n/n/n/nworkingSchedule:/nJOB_WORKING_SCHEDULE_OPTIONS.slice(0,/n2),
-/n/n};
+  return {
+    id: _mock.id(index),
+    salary,
+    publish,
+    company,
+    benefits,
+    locations,
+    experience,
+    employmentTypes,
+    content: CONTENT,
+    candidates: CANDIDATES,
+    role: _mock.role(index),
+    title: _mock.jobTitle(index),
+    createdAt: _mock.time(index),
+    expiredDate: _mock.time(index),
+    skills: JOB_SKILL_OPTIONS.slice(0, 3),
+    totalViews: _mock.number.nativeL(index),
+    workingSchedule: JOB_WORKING_SCHEDULE_OPTIONS.slice(0, 2),
+  };
 });

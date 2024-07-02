@@ -1,21 +1,21 @@
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-export/nfunction/nbreadcrumbs(theme)/n{
-/n/nreturn/n{
-/n/n/n/nMuiBreadcrumbs:/n{
-/n/n/n/n/n/nstyleOverrides:/n{
-/n/n/n/n/n/n/n/nseparator:/n{
-/n/n/n/n/n/n/n/n/n/nmarginLeft:/ntheme.spacing(2),
-/n/n/n/n/n/n/n/n/n/nmarginRight:/ntheme.spacing(2),
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/nli:/n{
-/n/n/n/n/n/n/n/n/n/ndisplay:/n'inline-flex',
-/n/n/n/n/n/n/n/n/n/nmargin:/ntheme.spacing(0.25,/n0),
-/n/n/n/n/n/n/n/n/n/n'&/n>/n*':/n{
-/n/n/n/n/n/n/n/n/n/n/n/n...theme.typography.body2,
-/n/n/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n/n/n},
-/n/n/n/n/n/n},
-/n/n/n/n},
-/n/n};
+export function breadcrumbs(theme) {
+  return {
+    MuiBreadcrumbs: {
+      styleOverrides: {
+        separator: {
+          marginLeft: theme.spacing(2),
+          marginRight: theme.spacing(2),
+        },
+        li: {
+          display: 'inline-flex',
+          margin: theme.spacing(0.25, 0),
+          '& > *': {
+            ...theme.typography.body2,
+          },
+        },
+      },
+    },
+  };
 }

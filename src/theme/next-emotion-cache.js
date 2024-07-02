@@ -1,89 +1,89 @@
-'use/nclient';
+'use client';
 
-import/n*/nas/nReact/nfrom/n'react';
-import/nPropTypes/nfrom/n'prop-types';
-import/ncreateCache/nfrom/n'@emotion/cache';
-import/n{/nuseServerInsertedHTML/n}/nfrom/n'next/navigation';
-import/n{/nCacheProvider/nas/nDefaultCacheProvider/n}/nfrom/n'@emotion/react';
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import createCache from '@emotion/cache';
+import { useServerInsertedHTML } from 'next/navigation';
+import { CacheProvider as DefaultCacheProvider } from '@emotion/react';
 
-///n----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-///nAdapted/nfrom/nhttps://github.com/garronej/tss-react/blob/main/src/next/appDir.tsx
-export/ndefault/nfunction/nNextAppDirEmotionCacheProvider(props)/n{
-/n/nconst/n{/noptions,/nCacheProvider/n=/nDefaultCacheProvider,/nchildren/n}/n=/nprops;
+// Adapted from https://github.com/garronej/tss-react/blob/main/src/next/appDir.tsx
+export default function NextAppDirEmotionCacheProvider(props) {
+  const { options, CacheProvider = DefaultCacheProvider, children } = props;
 
-/n/nconst/n[registry]/n=/nReact.useState(()/n=>/n{
-/n/n/n/nconst/ncache/n=/ncreateCache(options);
-/n/n/n/ncache.compat/n=/ntrue;
-/n/n/n/nconst/nprevInsert/n=/ncache.insert;
-/n/n/n/nlet/ninserted/n=/n[];
-/n/n/n/ncache.insert/n=/n(...args)/n=>/n{
-/n/n/n/n/n/nconst/n[selector,/nserialized]/n=/nargs;
-/n/n/n/n/n/nif/n(cache.inserted[serialized.name]/n===/nundefined)/n{
-/n/n/n/n/n/n/n/ninserted.push({
-/n/n/n/n/n/n/n/n/n/nname:/nserialized.name,
-/n/n/n/n/n/n/n/n/n/nisGlobal:/n!selector,
-/n/n/n/n/n/n/n/n});
-/n/n/n/n/n/n}
-/n/n/n/n/n/nreturn/nprevInsert(...args);
-/n/n/n/n};
-/n/n/n/nconst/nflush/n=/n()/n=>/n{
-/n/n/n/n/n/nconst/nprevInserted/n=/ninserted;
-/n/n/n/n/n/ninserted/n=/n[];
-/n/n/n/n/n/nreturn/nprevInserted;
-/n/n/n/n};
-/n/n/n/nreturn/n{/ncache,/nflush/n};
-/n/n});
+  const [registry] = React.useState(() => {
+    const cache = createCache(options);
+    cache.compat = true;
+    const prevInsert = cache.insert;
+    let inserted = [];
+    cache.insert = (...args) => {
+      const [selector, serialized] = args;
+      if (cache.inserted[serialized.name] === undefined) {
+        inserted.push({
+          name: serialized.name,
+          isGlobal: !selector,
+        });
+      }
+      return prevInsert(...args);
+    };
+    const flush = () => {
+      const prevInserted = inserted;
+      inserted = [];
+      return prevInserted;
+    };
+    return { cache, flush };
+  });
 
-/n/nuseServerInsertedHTML(()/n=>/n{
-/n/n/n/nconst/ninserted/n=/nregistry.flush();
-/n/n/n/nif/n(inserted.length/n===/n0)/n{
-/n/n/n/n/n/nreturn/nnull;
-/n/n/n/n}
-/n/n/n/nlet/nstyles/n=/n'';
-/n/n/n/nlet/ndataEmotionAttribute/n=/nregistry.cache.key;
+  useServerInsertedHTML(() => {
+    const inserted = registry.flush();
+    if (inserted.length === 0) {
+      return null;
+    }
+    let styles = '';
+    let dataEmotionAttribute = registry.cache.key;
 
-/n/n/n/nconst/nglobals/n=/n[];
+    const globals = [];
 
-/n/n/n/ninserted.forEach(({/nname,/nisGlobal/n})/n=>/n{
-/n/n/n/n/n/nconst/nstyle/n=/nregistry.cache.inserted[name];
+    inserted.forEach(({ name, isGlobal }) => {
+      const style = registry.cache.inserted[name];
 
-/n/n/n/n/n/nif/n(typeof/nstyle/n!==/n'boolean')/n{
-/n/n/n/n/n/n/n/nif/n(isGlobal)/n{
-/n/n/n/n/n/n/n/n/n/nglobals.push({/nname,/nstyle/n});
-/n/n/n/n/n/n/n/n}/nelse/n{
-/n/n/n/n/n/n/n/n/n/nstyles/n+=/nstyle;
-/n/n/n/n/n/n/n/n/n/ndataEmotionAttribute/n+=/n`/n${name}`;
-/n/n/n/n/n/n/n/n}
-/n/n/n/n/n/n}
-/n/n/n/n});
+      if (typeof style !== 'boolean') {
+        if (isGlobal) {
+          globals.push({ name, style });
+        } else {
+          styles += style;
+          dataEmotionAttribute += ` ${name}`;
+        }
+      }
+    });
 
-/n/n/n/nreturn/n(
-/n/n/n/n/n/n<>
-/n/n/n/n/n/n/n/n{globals.map(({/nname,/nstyle/n})/n=>/n(
-/n/n/n/n/n/n/n/n/n/n<style
-/n/n/n/n/n/n/n/n/n/n/n/nkey={name}
-/n/n/n/n/n/n/n/n/n/n/n/ndata-emotion={`${registry.cache.key}-global/n${name}`}
-/n/n/n/n/n/n/n/n/n/n/n/n///neslint-disable-next-line/nreact/no-danger
-/n/n/n/n/n/n/n/n/n/n/n/ndangerouslySetInnerHTML={{/n__html:/nstyle/n}}
-/n/n/n/n/n/n/n/n/n/n/>
-/n/n/n/n/n/n/n/n))}
-/n/n/n/n/n/n/n/n{styles/n&&/n(
-/n/n/n/n/n/n/n/n/n/n<style
-/n/n/n/n/n/n/n/n/n/n/n/ndata-emotion={dataEmotionAttribute}
-/n/n/n/n/n/n/n/n/n/n/n/n///neslint-disable-next-line/nreact/no-danger
-/n/n/n/n/n/n/n/n/n/n/n/ndangerouslySetInnerHTML={{/n__html:/nstyles/n}}
-/n/n/n/n/n/n/n/n/n/n/>
-/n/n/n/n/n/n/n/n)}
-/n/n/n/n/n/n</>
-/n/n/n/n);
-/n/n});
+    return (
+      <>
+        {globals.map(({ name, style }) => (
+          <style
+            key={name}
+            data-emotion={`${registry.cache.key}-global ${name}`}
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: style }}
+          />
+        ))}
+        {styles && (
+          <style
+            data-emotion={dataEmotionAttribute}
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: styles }}
+          />
+        )}
+      </>
+    );
+  });
 
-/n/nreturn/n<CacheProvider/nvalue={registry.cache}>{children}</CacheProvider>;
+  return <CacheProvider value={registry.cache}>{children}</CacheProvider>;
 }
 
-NextAppDirEmotionCacheProvider.propTypes/n=/n{
-/n/nCacheProvider:/nPropTypes.element,
-/n/nchildren:/nPropTypes.node,
-/n/noptions:/nPropTypes.object,
+NextAppDirEmotionCacheProvider.propTypes = {
+  CacheProvider: PropTypes.element,
+  children: PropTypes.node,
+  options: PropTypes.object,
 };

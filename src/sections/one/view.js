@@ -30,9 +30,10 @@ export default function OneView() {
   const [loading, setLoading] = useState(false);
   const [queries, setQueries] = useState({
     Nome: '',
-    Email: '',
-    Empresa: '',
+    Ano: '',
+    Marca: '',
   });
+
   useEffect(() => {
     setLoading(true);
     getCarros(queries)
